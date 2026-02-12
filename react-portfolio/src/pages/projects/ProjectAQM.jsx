@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import aqmImg from "../assets/aqm.png";
+import aqmImg from "../../assets/aqm.png";
 
 function ProjectAQM() {
   const { t } = useTranslation()

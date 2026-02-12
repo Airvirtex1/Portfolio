@@ -62,6 +62,22 @@
     "learningTitle": "Skills Developed",
     "figcaption1":"Technical drawing of an exploded view of the device, created in Fusion 360.",
     "learningText": "This project gave me a global understanding of the IoT product lifecycle, from design to industrial production. I strengthened my skills in production management, financial analysis and teamwork."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "You can send me a message using this form.",
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "firstNamePlaceholder": "e.g. Mateo",
+    "lastNamePlaceholder": "e.g. Repulles",
+    "emailPlaceholder": "e.g. mateo@email.com",
+    "messagePlaceholder": "Write your message here...",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent ✅",
+    "error": "Error while sending ❌"
   }
 
 

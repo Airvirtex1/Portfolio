@@ -4,8 +4,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import ProjectPortfolio from "./pages/ProjectPortfolio"
-import ProjectAQM from "./pages/ProjectAQM"
+import ProjectPortfolio from "./pages/projects/ProjectPortfolio"
+import ProjectAQM from "./pages/projects/ProjectAQM"
 
 
 export default function App() {

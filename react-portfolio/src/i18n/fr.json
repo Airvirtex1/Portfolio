@@ -59,6 +59,22 @@
     "learningTitle": "Compétences développées",
     "figcaption1":"Dessin technique d’une vue éclaté du dispositif, fait sur FUSION 360",
     "learningText": "Ce projet m’a permis d’acquérir une vision globale du cycle de production d’un produit IoT, de la conception à l’industrialisation. J’ai renforcé mes compétences en gestion de production, analyse financière et travail en équipe."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Tu peux m’envoyer un message via ce formulaire.",
+    "firstNameLabel": "Prénom",
+    "lastNameLabel": "Nom",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "firstNamePlaceholder": "Ex: Mateo",
+    "lastNamePlaceholder": "Ex: Repulles",
+    "emailPlaceholder": "Ex: mateo@email.com",
+    "messagePlaceholder": "Écris ton message ici...",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé ✅",
+    "error": "Erreur lors de l'envoi ❌"
   }
 }
 
