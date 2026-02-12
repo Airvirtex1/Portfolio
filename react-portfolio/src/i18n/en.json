@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hey, I'm Mateo 👋",
+    "subtitle": "Web developer focused on creating modern and performant interfaces.",
+    "viewProjects": "View Projects",
+    "contact": "Contact Me",
+    "selectedProjects": "Selected Projects",
+    "portfolioDesc": "Personal portfolio built with React and Tailwind CSS.",
+    "dashboardDesc": "Modern dashboard interface with analytics components.",
+    "mobileDesc": "Cross-platform mobile app built with React Native.",
+    "readMore": "Read more →"
+  },
+  
+  "projects": {
+    "title": "My Projects",
+    "portfolioDesc": "Personal portfolio built with React and Tailwind.",
+    "dashboardDesc": "Modern dashboard interface with analytics.",
+    "mobileDesc": "Cross-platform mobile application.",
+    "aqm": {
+      "title": "AQM Device",
+      "description": "Industrialization of an IoT air quality monitoring device (production management, financial analysis and optimization).",
+      "button": "View project"
+    },
+    "aqmDesc": "Industrialization of an IoT air quality monitoring device including financial analysis and production optimization."
+
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a developer passionate about building modern and performant interfaces.",
+    "skillsTitle": "Skills",
+    "goalTitle": "Goal",
+    "goalText": "To build elegant and efficient digital products."
+  },
+  
+  "portfolioProject": {
+    "title": "Personal Portfolio",
+    "subtitle": "A modern showcase website to present my projects and skills.",
+    "overviewTitle": "Overview",
+    "overviewText": "This portfolio was designed to present my projects, skills and experience in a clean and professional way.",
+    "challengeTitle": "Challenge",
+    "challengeText": "Create a minimal, responsive and multilingual interface while maintaining high performance.",
+    "resultTitle": "Result",
+    "resultText": "A fast, modern and scalable website ready for future projects and improvements."
+  },
+  "aqm": {
+    "title": "AQM Device (Air Quality Monitoring)",
+    "subtitle": "Industrialization of an IoT air quality monitoring device.",
+    "contextTitle": "Context",
+    "contextText": "As part of a group project (4 members), we worked on the production management of a connected device for the French start-up NOSE. The goal was to transform a prototype into an industrializable product.",
+    "approachTitle": "Approach",
+    "step1": "Design and validation of the device prototype.",
+    "step2": "Definition of the assembly process and manufacturing steps.",
+    "step3": "Complete financial analysis (materials, production, assembly costs).",
+    "step4": "Proposed improvements to optimize the production line.",
+    "step5": "Final report writing and presentation.",
+    "learningTitle": "Skills Developed",
+    "figcaption1":"Technical drawing of an exploded view of the device, created in Fusion 360.",
+    "learningText": "This project gave me a global understanding of the IoT product lifecycle, from design to industrial production. I strengthened my skills in production management, financial analysis and teamwork."
+  }
+
+
+}

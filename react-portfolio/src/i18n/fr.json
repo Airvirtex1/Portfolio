@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Salut, moi c'est Mateo 👋",
+    "subtitle": "Développeur web spécialisé dans la création d'interfaces modernes et performantes.",
+    "viewProjects": "Voir les projets",
+    "contact": "Me contacter",
+    "selectedProjects": "Projets sélectionnés",
+    "portfolioDesc": "Site web Portfolio",
+    "dashboardDesc": "Interface dashboard moderne avec composants analytiques.",
+    "mobileDesc": "Application mobile cross-platform développée avec React Native.",
+    "readMore": "Voir plus →"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "portfolioDesc": "Portfolio Website",
+    "dashboardDesc": "Interface dashboard moderne avec analytics.",
+    "mobileDesc": "Application mobile cross-platform.",
+    "aqm": {
+      "title": "Boîtier AQM",
+      "description": "SMART_IO, une entreprise experte dans les dispositifs IoT, a été désignée par la start-up française NOSE pour concevoir et fabriquer l'AQM (Air Quality Monitoring). Ce projet a impliqué la transition de la phase de prototypage conformément au cahier des charges vers la gestion de la production et des coûts financiers du produit.",
+      "button": "Voir le projet"
+    }
+    
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Je suis un développeur passionné par la création d'interfaces modernes et performantes.",
+    "skillsTitle": "Compétences",
+    "goalTitle": "Objectif",
+    "goalText": "Créer des produits digitaux élégants et efficaces."
+  },
+  "portfolioProject": {
+    "title": "Portfolio Personnel",
+    "subtitle": "Un site vitrine moderne pour présenter mes projets et compétences.",
+    "overviewTitle": "Vue d'ensemble",
+    "overviewText": "Ce portfolio a été conçu pour présenter mes projets, mes compétences et mon parcours de manière claire et professionnelle.",
+    "challengeTitle": "Challenge",
+    "challengeText": "Créer une interface minimaliste, responsive et multilingue tout en gardant de bonnes performances.",
+    "resultTitle": "Résultat",
+    "resultText": "Un site rapide, moderne et évolutif, prêt à accueillir de nouveaux projets et fonctionnalités."
+  },
+  "aqm": {
+    "title": "Boîtier AQM (Air Quality Monitoring)",
+    "subtitle": "Industrialisation d’un dispositif IoT de surveillance de la qualité de l’air.",
+    "contextTitle": "Contexte",
+    "contextText": "Dans le cadre d’un projet de groupe (4 personnes), nous avons travaillé sur la gestion de production d’un objet connecté pour la start-up française NOSE. L’objectif était de transformer un prototype conforme au cahier des charges en un produit industrialisable.",
+    "approachTitle": "Démarche",
+    "step1": "Conception et validation du prototype du dispositif.",
+    "step2": "Définition du procédé d’assemblage et des étapes de fabrication.",
+    "step3": "Réalisation d’un bilan financier complet (coûts matières, production, assemblage).",
+    "step4": "Proposition d’améliorations de la ligne de production pour optimiser l’efficacité.",
+    "step5": "Rédaction et soutenance d’un dossier final détaillé.",
+    "learningTitle": "Compétences développées",
+    "figcaption1":"Dessin technique d’une vue éclaté du dispositif, fait sur FUSION 360",
+    "learningText": "Ce projet m’a permis d’acquérir une vision globale du cycle de production d’un produit IoT, de la conception à l’industrialisation. J’ai renforcé mes compétences en gestion de production, analyse financière et travail en équipe."
+  }
+}
+
+
