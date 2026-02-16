@@ -1,20 +1,17 @@
-# Utiliser l'image officielle Node.js (version LTS)
-FROM node:20-alpine
-
-# Définir le répertoire de travail dans le conteneur
+  GNU nano 7.2                                           Dockerfile
+FROM node:18-alpine AS build
 WORKDIR /app
-
-# Copier les fichiers package.json et package-lock.json
 COPY package*.json ./
-
-# Installer les dépendances
 RUN npm install
-
-# Copier le reste des fichiers de l'application
 COPY . .
+RUN npm run build
 
-# Exposer le port sur lequel l'application écoute (ajustez selon votre app)
-EXPOSE 3000
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 
-# Commande pour démarrer l'application
-CMD ["node", "index.js"]
+
+
+
+

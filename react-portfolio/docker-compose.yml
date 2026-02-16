@@ -1,13 +1,14 @@
-version: '3.8'
+GNU nano 7.2                                       
+version: "3.8"
 
 services:
-  app:
+  portfolio:
     build: .
+    container_name: portfolio
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
-    restart: unless-stopped
+      - "8080:80"
+    restart: always
+
+
+
+
