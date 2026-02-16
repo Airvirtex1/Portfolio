@@ -11,14 +11,14 @@ function Projects() {
       description: t("projects.portfolioDesc"),
     },
     {
-      id: "dashboard",
-      title: "Dashboard UI",
-      description: t("projects.dashboardDesc"),
+      id: "meteo",
+      title: "Station Meto",
+      description: t("projects.descMeteo"),
     },
     {
-      id: "mobile-app",
-      title: "Mobile App",
-      description: t("projects.mobileDesc"),
+      id: "tourrelle",
+      title: "Tourelle de Reconnaissance Faciale",
+      description: t("projectsdesctourrellet"),
     },
     {
       id: "asservissement",
@@ -34,6 +34,21 @@ function Projects() {
       id: "boitier-aqm",
       title: "Boîtier AQM",
       description: t("projects.aqm.description"),
+    },
+    {
+      id: "crabe",
+      title: "Robot crabe",
+      description: t("projects.desccrabe"),
+    },
+    {
+      id: "argentique",
+      title: "Declencheur argentique",
+      description: t("projects.descargentique"),
+    },
+    {
+      id: "decors",
+      title: "Décors Automatisés de Spectacle ",
+      description: t("projects.descdecors"),
     },
   ]
 
