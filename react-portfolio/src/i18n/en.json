@@ -662,6 +662,222 @@
         }
       }
     },
+    "argentique": {
+      "title": "Film Camera Remote Trigger",
+      "intro": "Remote trigger device for film cameras. Professional project combining ESP32, 433 MHz communication, 3D printing and battery management.",
+      "objective": {
+        "title": "Objective",
+        "text": "Design a practical, portable and easy-to-use trigger for the general public"
+      },
+      "timeline": {
+        "title": "Status",
+        "text": "V1 complete - Testing phase"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Professional project"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "As part of a project for a company specializing in film photography development, I participated in the design and realization of a remote trigger for film cameras.",
+        "p2": "The product had to be practical, portable and easily usable by the public, while integrating advanced remote triggering features via 433 MHz radio communication."
+      },
+      "goals": {
+        "title": "Device Objectives",
+        "trigger": {
+          "title": "Remote Triggering",
+          "text": "Trigger the camera remotely via 433 MHz radio remote control"
+        },
+        "modes": {
+          "title": "Trigger Modes",
+          "text": "Immediate triggering or with 5-second timer according to needs"
+        },
+        "portable": {
+          "title": "Portable & Autonomous",
+          "text": "Powered by rechargeable 18650 battery with clean and ergonomic design"
+        }
+      },
+      "prototype": {
+        "title": "Prototype V1",
+        "caption": "Film camera remote trigger prototype"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Component Selection",
+          "text": "Selection of components: ESP32, servomotor, BMS, 18650 battery, 433 MHz receiver and mechanical trigger adapted to film cameras."
+        },
+        "step2": {
+          "title": "Prototyping and Design",
+          "text": "Creation of a functional prototype, integrating mechanics, electronics and programming."
+        },
+        "step3": {
+          "title": "3D Enclosure",
+          "text": "Modeling and PLA printing to ensure robustness and ergonomics of the final product."
+        },
+        "step4": {
+          "title": "Software Development",
+          "text": "ESP32 programming to manage different trigger modes and reception of remote control signals."
+        },
+        "step5": {
+          "title": "Testing and Adjustments",
+          "text": "Validation of reliability, autonomy and trigger precision under real conditions."
+        }
+      },
+      "status": {
+        "title": "Project Status",
+        "badge": "V1 - Testing phase",
+        "text": "The first version of the prototype (V1) is complete and currently in the testing phase. Preliminary results are encouraging in terms of trigger reliability and battery life. Adjustments are underway to optimize precision and range of radio communication."
+      },
+      "technical": {
+        "title": "Technical Stack",
+        "hardware": "Hardware",
+        "software": "Software & Design",
+        "esp32": "ESP32 - Main microcontroller",
+        "servo": "Servomotor - Trigger mechanism",
+        "radio": "433 MHz receiver - Wireless communication",
+        "battery": "18650 battery - Rechargeable power supply",
+        "bms": "BMS - Battery management and protection",
+        "programming": "C++ programming on ESP32",
+        "modes": "Trigger mode management (immediate / 5s)",
+        "signal": "433 MHz radio signal reception and decoding",
+        "cad": "3D PLA enclosure modeling on Fusion 360"
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to develop skills in embedded systems, prototyping, electronics and mechanical design, while taking into account constraints of portability, autonomy and user ergonomics.",
+        "badge1": {
+          "title": "Radio Communication",
+          "text": "433 MHz transmission and signal reception"
+        },
+        "badge2": {
+          "title": "3D Prototyping",
+          "text": "PLA enclosure design and printing"
+        },
+        "badge3": {
+          "title": "Battery Management",
+          "text": "BMS, 18650 and autonomy optimization"
+        }
+      }
+    },
+    "decors": {
+      "title": "Automated Stage Decor",
+      "intro": "Automated decor system for theatrical production with rotating crane, traffic lights and motorized vehicles. Professional project combining Arduino, stepper motors, 3D printing and automation.",
+      "objective": {
+        "title": "Objective",
+        "text": "Design autonomous and reliable stage decor for rehearsals and performances, controllable with a single button"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "Professional project - Delivered in production"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Professional project"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "As part of a project for a show production company, I participated in the design and realization of automated stage decor.",
+        "p2": "These decors had to perform different mechanical actions (rotation, movement, signaling) autonomously, while being easily controllable by an operator via a single button, running on battery."
+      },
+      "goals": {
+        "title": "System Objectives",
+        "crane": {
+          "title": "Rotating Crane",
+          "text": "Rotate a crane by a defined angle, then return to its initial position in an automatic loop"
+        },
+        "lights": {
+          "title": "Traffic Lights",
+          "text": "Control a light alternating between red and green every x seconds autonomously"
+        },
+        "cars": {
+          "title": "Motorized Vehicles",
+          "text": "Drive miniature cars across the stage in a synchronized manner"
+        },
+        "control": {
+          "title": "Simplified Control",
+          "text": "Everything activated by a single button, running on battery, reliable for rehearsals and performances"
+        }
+      },
+      "scene": {
+        "title": "Stage View",
+        "caption": "Automated stage decor for theatrical production"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Analysis and Component Selection",
+          "text": "Use of Arduino Uno, 2 stepper motor drivers, BMS, voltage booster, switch, servomotor and 2 stepper motors."
+        },
+        "step2": {
+          "title": "Prototyping",
+          "text": "Creation of functional prototypes to test mechanics, motors and programming before the final version."
+        },
+        "step3": {
+          "title": "Wiring and Soldering",
+          "text": "Complete realization of connections between all electronic components to ensure reliable and safe operation."
+        },
+        "step4": {
+          "title": "Mechanical Design",
+          "text": "3D modeling and printing of motor supports and main enclosure, ensuring robustness and optimal integration."
+        },
+        "step5": {
+          "title": "Software Development",
+          "text": "Programming of motor and light movements, with loop cycle management and button control."
+        },
+        "step6": {
+          "title": "Testing and Adjustments",
+          "text": "Validation of trajectories, timings and battery power to ensure reliability under real conditions."
+        }
+      },
+      "technical": {
+        "title": "Technical Stack",
+        "hardware": "Hardware",
+        "software": "Software & Design",
+        "arduino": "Arduino Uno - Main controller",
+        "steppers": "2 stepper motors for crane and vehicles",
+        "drivers": "2 stepper motor drivers",
+        "servo": "Servomotor for signaling mechanism",
+        "power": "BMS + voltage booster + battery",
+        "programming": "Arduino C/C++ programming",
+        "cycles": "Automatic loop cycle management",
+        "button": "Single switch control",
+        "cad": "3D modeling of supports and enclosure"
+      },
+      "constraints": {
+        "title": "Stage Constraints",
+        "intro": "The stage use context imposes particularly strict constraints. The system must work perfectly at each performance without technical intervention, which requires high standards in terms of reliability and ease of use.",
+        "reliability": {
+          "title": "Absolute Reliability",
+          "text": "Zero failures tolerated during performances"
+        },
+        "battery": {
+          "title": "Battery Life",
+          "text": "Wireless operation throughout the entire show"
+        },
+        "simplicity": {
+          "title": "Ease of Use",
+          "text": "Single button to control everything without technical training"
+        }
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to develop complete skills in prototyping, embedded systems, Arduino programming, motorization and electronic wiring.",
+        "p2": "I also strengthened my abilities in mechanical design and integration of electromechanical systems, while respecting reliability and ergonomics constraints for stage use.",
+        "badge1": {
+          "title": "Automation",
+          "text": "Stepper motors and loop cycles"
+        },
+        "badge2": {
+          "title": "Electronic Wiring",
+          "text": "Complete integration and soldering"
+        },
+        "badge3": {
+          "title": "Stage Constraints",
+          "text": "Reliability and ergonomics in production"
+        }
+      }
+    },
     "portfolio": {
       "title": "Portfolio Website",
       "intro": "Modern multilingual portfolio website showcasing my projects, skills, and experiences in embedded systems. Built with React and Tailwind CSS to deliver a smooth and responsive user experience.",

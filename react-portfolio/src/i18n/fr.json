@@ -553,6 +553,222 @@
         }
       }
     },
+    "argentique": {
+      "title": "Déclencheur Photo Argentique",
+      "intro": "Dispositif de déclenchement à distance pour appareils photo argentiques. Projet professionnel combinant ESP32, communication 433 MHz, impression 3D et gestion de batterie.",
+      "objective": {
+        "title": "Objectif",
+        "text": "Concevoir un déclencheur pratique, transportable et facilement utilisable par le grand public"
+      },
+      "timeline": {
+        "title": "Statut",
+        "text": "V1 terminée - En phase de test"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Projet professionnel"
+      },
+      "context": {
+        "title": "Contexte du projet",
+        "p1": "Dans le cadre d'un projet pour une entreprise spécialisée dans le développement de photographie argentique, j'ai participé à la conception et à la réalisation d'un déclencheur à distance pour appareils photo argentiques.",
+        "p2": "Le produit devait être pratique, transportable et facilement utilisable par le public, tout en intégrant des fonctionnalités avancées de déclenchement à distance via communication radio 433 MHz."
+      },
+      "goals": {
+        "title": "Objectifs du dispositif",
+        "trigger": {
+          "title": "Déclenchement à distance",
+          "text": "Déclencher l'appareil photo à distance via télécommande radio 433 MHz"
+        },
+        "modes": {
+          "title": "Modes de déclenchement",
+          "text": "Déclenchement immédiat ou avec retardateur de 5 secondes selon les besoins"
+        },
+        "portable": {
+          "title": "Transportable & autonome",
+          "text": "Alimenté par batterie 18650 rechargeable avec design sobre et ergonomique"
+        }
+      },
+      "prototype": {
+        "title": "Prototype V1",
+        "caption": "Prototype du déclencheur photo argentique"
+      },
+      "approach": {
+        "title": "Démarche",
+        "step1": {
+          "title": "Choix des composants",
+          "text": "Sélection des composants : ESP32, servomoteur, BMS, batterie 18650, récepteur 433 MHz et déclencheur mécanique adapté aux appareils argentiques."
+        },
+        "step2": {
+          "title": "Prototypage et conception",
+          "text": "Réalisation d'un prototype fonctionnel, intégrant la mécanique, l'électronique et la programmation."
+        },
+        "step3": {
+          "title": "Boîtier 3D",
+          "text": "Modélisation et impression en PLA pour assurer robustesse et ergonomie du produit final."
+        },
+        "step4": {
+          "title": "Développement logiciel",
+          "text": "Programmation de l'ESP32 pour gérer les différents modes de déclenchement et la réception des signaux de télécommande."
+        },
+        "step5": {
+          "title": "Tests et ajustements",
+          "text": "Validation de la fiabilité, autonomie et précision du déclenchement en conditions réelles."
+        }
+      },
+      "status": {
+        "title": "État du projet",
+        "badge": "V1 - En phase de test",
+        "text": "La première version du prototype (V1) est terminée et actuellement en phase de test. Les résultats préliminaires sont encourageants en termes de fiabilité du déclenchement et d'autonomie de la batterie. Des ajustements sont en cours pour optimiser la précision et la portée de la communication radio."
+      },
+      "technical": {
+        "title": "Stack technique",
+        "hardware": "Hardware",
+        "software": "Logiciel & Conception",
+        "esp32": "ESP32 - Microcontrôleur principal",
+        "servo": "Servomoteur - Mécanisme de déclenchement",
+        "radio": "Récepteur 433 MHz - Communication sans fil",
+        "battery": "Batterie 18650 - Alimentation rechargeable",
+        "bms": "BMS - Gestion et protection de la batterie",
+        "programming": "Programmation C++ sur ESP32",
+        "modes": "Gestion des modes de déclenchement (immédiat / 5s)",
+        "signal": "Réception et décodage signaux radio 433 MHz",
+        "cad": "Modélisation 3D boîtier PLA sur Fusion 360"
+      },
+      "skills": {
+        "title": "Compétences développées",
+        "p1": "Ce projet m'a permis de développer des compétences en systèmes embarqués, prototypage, électronique et conception mécanique, tout en prenant en compte les contraintes de transportabilité, autonomie et ergonomie utilisateur.",
+        "badge1": {
+          "title": "Communication radio",
+          "text": "Transmission 433 MHz et réception de signaux"
+        },
+        "badge2": {
+          "title": "Prototypage 3D",
+          "text": "Conception et impression boîtier PLA"
+        },
+        "badge3": {
+          "title": "Gestion batterie",
+          "text": "BMS, 18650 et optimisation autonomie"
+        }
+      }
+    },
+    "decors": {
+      "title": "Décors Automatisés de Spectacle",
+      "intro": "Système automatisé de décors pour production théâtrale avec grue rotative, feux de signalisation et véhicules motorisés. Projet professionnel combinant Arduino, moteurs pas à pas, impression 3D et automatisation.",
+      "objective": {
+        "title": "Objectif",
+        "text": "Concevoir des décors autonomes et fiables pour répétitions et représentations, contrôlables par un simple bouton"
+      },
+      "timeline": {
+        "title": "Durée",
+        "text": "Projet professionnel - Livré en production"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Projet professionnel"
+      },
+      "context": {
+        "title": "Contexte du projet",
+        "p1": "Dans le cadre d'un projet réalisé pour une entreprise de production de spectacles, j'ai participé à la conception et à la réalisation de décors automatisés.",
+        "p2": "Ces décors devaient pouvoir effectuer différentes actions mécaniques (rotation, déplacement, signalisation) de manière autonome, tout en étant facilement contrôlables par un opérateur via un simple bouton, fonctionnant sur batterie."
+      },
+      "goals": {
+        "title": "Objectifs du système",
+        "crane": {
+          "title": "Grue rotative",
+          "text": "Faire tourner une grue d'un angle défini, puis revenir à sa position initiale en boucle automatique"
+        },
+        "lights": {
+          "title": "Feux de signalisation",
+          "text": "Contrôler un feu alternant entre rouge et vert toutes les x secondes de manière autonome"
+        },
+        "cars": {
+          "title": "Véhicules motorisés",
+          "text": "Faire avancer des voitures miniatures sur scène de façon synchronisée"
+        },
+        "control": {
+          "title": "Contrôle simplifié",
+          "text": "Tout actionné par un simple bouton, fonctionnant sur batterie, fiable pour répétitions et représentations"
+        }
+      },
+      "scene": {
+        "title": "Vue du décor",
+        "caption": "Décors automatisés pour spectacle"
+      },
+      "approach": {
+        "title": "Démarche",
+        "step1": {
+          "title": "Analyse et choix des composants",
+          "text": "Utilisation d'une Arduino Uno, de 2 drivers de moteur pas à pas, d'un BMS, d'un élévateur de tension, d'un interrupteur, d'un servomoteur et de 2 moteurs pas à pas."
+        },
+        "step2": {
+          "title": "Prototypage",
+          "text": "Réalisation de prototypes fonctionnels pour tester la mécanique, les moteurs et la programmation avant la version finale."
+        },
+        "step3": {
+          "title": "Câblage et soudure",
+          "text": "Réalisation complète des connexions entre tous les composants électroniques pour assurer un fonctionnement fiable et sécurisé."
+        },
+        "step4": {
+          "title": "Conception mécanique",
+          "text": "Modélisation et impression 3D de supports pour moteurs et du boîtier principal, garantissant robustesse et intégration optimale."
+        },
+        "step5": {
+          "title": "Développement logiciel",
+          "text": "Programmation des mouvements des moteurs et des feux, avec gestion des cycles en boucle et contrôle via bouton."
+        },
+        "step6": {
+          "title": "Tests et ajustements",
+          "text": "Validation des trajectoires, des timings et de l'alimentation sur batterie pour garantir la fiabilité en conditions réelles."
+        }
+      },
+      "technical": {
+        "title": "Stack technique",
+        "hardware": "Hardware",
+        "software": "Logiciel & Conception",
+        "arduino": "Arduino Uno - Contrôleur principal",
+        "steppers": "2 moteurs pas à pas pour grue et véhicules",
+        "drivers": "2 drivers de moteur pas à pas",
+        "servo": "Servomoteur pour mécanisme de signalisation",
+        "power": "BMS + élévateur de tension + batterie",
+        "programming": "Programmation Arduino C/C++",
+        "cycles": "Gestion des cycles en boucle automatique",
+        "button": "Contrôle via interrupteur unique",
+        "cad": "Modélisation 3D supports et boîtier"
+      },
+      "constraints": {
+        "title": "Contraintes scéniques",
+        "intro": "Le contexte d'utilisation scénique impose des contraintes particulièrement strictes. Le système doit fonctionner parfaitement à chaque représentation sans intervention technique, ce qui impose des exigences élevées en termes de fiabilité et de simplicité d'utilisation.",
+        "reliability": {
+          "title": "Fiabilité absolue",
+          "text": "Zéro panne tolérée pendant les représentations"
+        },
+        "battery": {
+          "title": "Autonomie batterie",
+          "text": "Fonctionnement sans fil pendant toute la durée du spectacle"
+        },
+        "simplicity": {
+          "title": "Simplicité d'usage",
+          "text": "Un seul bouton pour tout contrôler sans formation technique"
+        }
+      },
+      "skills": {
+        "title": "Compétences développées",
+        "p1": "Ce projet m'a permis de développer des compétences complètes en prototypage, systèmes embarqués, programmation Arduino, motorisation et câblage électronique.",
+        "p2": "J'ai également renforcé mes capacités en conception mécanique et intégration de systèmes électromécaniques, tout en respectant les contraintes de fiabilité et d'ergonomie pour un usage scénique.",
+        "badge1": {
+          "title": "Automatisation",
+          "text": "Moteurs pas à pas et cycles en boucle"
+        },
+        "badge2": {
+          "title": "Câblage électronique",
+          "text": "Intégration complète et soudure"
+        },
+        "badge3": {
+          "title": "Contraintes scéniques",
+          "text": "Fiabilité et ergonomie en production"
+        }
+      }
+    },
     "crabe": {
       "title": "Robot Crabe Motorisé",
       "intro": "Conception d'un robot quadrupède contrôlable via interface web sans fil. Projet personnel combinant modélisation 3D, électronique embarquée ESP32 et développement web.",

@@ -7,56 +7,56 @@ function Projects() {
   const projects = [
     {
       id: "portfolio",
-      title: "Portfolio Website",
-      description: t("projects.portfolioDesc"),
+      title: t("project.portfolio.title"),
+      description: t("project.portfolio.intro"),
       image: "/images/portfolio.jpg", // Remplace par le chemin de ton image
     },
     {
       id: "meteo",
       title: t("meteo.title"),
-      description: t("meteo.subtitle"),
+      description: t("project.meteo.intro"),
       image: "/images/meteo.jpg",
     },
     {
       id: "tourrelle",
-      title: t("tourelle.title"),
-      description: t("tourelle.subtitle"),
+      title: t("project.tourelle.title"),
+      description: t("project.tourelle.intro"),
       image: "/images/tourelle.jpg",
     },
     {
       id: "asservissement",
-      title: t("asservissement.title"),
-      description: t("asservissement.subtitle"),
+      title: t("project.asservissement.title"),
+      description: t("project.asservissement.intro"),
       image: "/images/asservissement.jpg",
     },
     {
       id: "amplification",
-      title: t("amplification.title"),
-      description: t("amplification.subtitle"),
+      title: t("project.amplification.title"),
+      description: t("project.amplification.intro"),
       image: "/images/amplification.jpg",
     },
     {
       id: "boitier-aqm",
-      title: t("aqm.title"),
-      description: t("aqm.subtitle"),
+      title: t("project.aqm.title"),
+      description: t("project.aqm.intro"),
       image: "/images/aqm.jpg",
     },
     {
       id: "crabe",
-      title: t("robotcrabe.title"),
-      description: t("robotcrabe.subtitle"),
+      title: t("project.crabe.title"),
+      description: t("project.crabe.intro"),
       image: "/images/crabe.jpg",
     },
     {
       id: "argentique",
-      title: t("declencheur.title"),
-      description: t("declencheur.subtitle"),
+      title: t("project.argentique.title"),
+      description: t("project.argentique.intro"),
       image: "/images/argentique.jpg",
     },
     {
       id: "decors",
-      title: t("decors.title"),
-      description: t("decors.subtitle"),
+      title: t("project.decors.title"),
+      description: t("project.decors.intro"),
       image: "/images/decors.jpg",
     },
   ]
@@ -162,7 +162,7 @@ function Projects() {
                 </a>
                 
                 <a 
-                  href="https://github.com/mateorepulles" 
+                  href="https://github.com/airvirtex1" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neutral-800 p-3 rounded-lg hover:bg-neutral-700 transition"

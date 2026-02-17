@@ -427,7 +427,7 @@ function CrabeProject() {
                 </a>
                 
                 <a 
-                  href="https://github.com/mateorepulles" 
+                  href="https://github.com/airvirtex1" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neutral-800 p-3 rounded-lg hover:bg-neutral-700 transition"
