@@ -97,10 +97,10 @@ function Home() {
           {/* CARD 1 */}
           <div className="bg-neutral-900 p-6 rounded-2xl hover:bg-neutral-800 transition">
             <h3 className="text-xl font-semibold mb-3">
-              {t("home.portfolioDesc")}
+              {t("portfolioProject.title")}
             </h3>
             <p className="text-neutral-400 mb-4">
-              {t("home.dashboardDesc")}
+              {t("portfolioProject.subtitle")}
             </p>
             <Link
               to="/projects"
@@ -113,32 +113,32 @@ function Home() {
           {/* CARD 2 */}
           <div className="bg-neutral-900 p-6 rounded-2xl hover:bg-neutral-800 transition">
             <h3 className="text-xl font-semibold mb-3">
-              Dashboard UI
+              {t("meteo.title")}
             </h3>
             <p className="text-neutral-400 mb-4">
-              Modern admin dashboard interface with analytics components.
+              {t("meteo.subtitle")}
             </p>
             <Link
               to="/projects"
               className="text-sm underline hover:text-neutral-300"
             >
-              Read more →
+              {t("home.readMore")}
             </Link>
           </div>
 
           {/* CARD 3 */}
           <div className="bg-neutral-900 p-6 rounded-2xl hover:bg-neutral-800 transition">
             <h3 className="text-xl font-semibold mb-3">
-              Mobile App
+              {t("robotcrabe.title")}
             </h3>
             <p className="text-neutral-400 mb-4">
-              Cross-platform mobile app built with React Native.
+              {t("robotcrabe.subtitle")}
             </p>
             <Link
               to="/projects"
               className="text-sm underline hover:text-neutral-300"
             >
-              Read more →
+              {t("home.readMore")}
             </Link>
           </div>
 

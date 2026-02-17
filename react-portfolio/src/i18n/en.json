@@ -12,7 +12,7 @@
     "contact": "Contact me",
     "aboutTitle": "About me",
     "aboutText": "Passionate about embedded systems, I combine firmware development and hardware design to create complete IoT solutions. From drone validation at Aerommaper (Thales affiliate) to additive manufacturing projects integrating electronics, I love transforming ideas into functional prototypes.",
-    "aboutText2": "With expertise in STM32, ESP32, communication protocols (UART, SPI, I2C, MQTT), and real-time systems, I'm constantly seeking to deepen my technical skills and take on new challenges in the embedded field.",
+    "aboutText2": "With experience in STM32, ESP32, communication protocols (UART, SPI, I2C, MQTT), and real-time systems, I'm constantly seeking to deepen my technical skills and take on new challenges in the embedded field.",
     "currentFocus": "Current Focus",
     "education": "Education",
     "availability": "Availability",
@@ -32,25 +32,757 @@
     "madeWith": "Made with"
   },
   
-  "projects": {
+  "project": {
     "title": "My Projects",
-    "portfolioDesc": "Personal portfolio built with React and Tailwind.",
-    "dashboardDesc": "Modern dashboard interface with analytics.",
-    "mobileDesc": "Cross-platform mobile application.",
-    "aqm": {
-      "title": "AQM Device",
-      "description": "Industrialization of an IoT air quality monitoring device (production management, financial analysis and optimization).",
-      "button": "View project"
+    "subtitle": "Discover my work in embedded systems, IoT and electronics",
+    "viewDetails": "View details",
+    "backToProjects": "Back to projects",
+    "tourelle": {
+      "title": "Facial Recognition Turret",
+      "intro": "Motorized system integrating computer vision and facial recognition on Raspberry Pi. Internship project combining electronics, mechanics, Python development and technical communication.",
+      "objective": {
+        "title": "Objective",
+        "text": "Design a functional motorized turret with accessible and educational facial recognition system"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "Internship - April to July 2024"
+      },
+      "team": {
+        "title": "Team",
+        "text": "Pair project"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "During my internship, conducted as a pair, we worked on developing a motorized turret integrating a facial recognition system. This project combined electronics, mechanics, computer vision and technical communication.",
+        "p2": "The main objective was to design an imposing and functional turret, based on a Raspberry Pi and Python development, while ensuring ease of use. The project also had to be educational and accessible to a wide audience, through regular communication via weekly videos demonstrating progress, without compromising visual quality or technical clarity."
+      },
+      "demo": {
+        "title": "Demonstration in action",
+        "caption": "Screenshot of facial recognition video feedback"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Needs Analysis",
+          "text": "Identification of technical, mechanical and software constraints to ensure robustness and simplicity."
+        },
+        "step2": {
+          "title": "System Design",
+          "text": "Definition of architecture (connection between Raspberry Pi, motors and camera)."
+        },
+        "step3": {
+          "title": "3D Modeling",
+          "text": "Design of mechanical parts necessary for turret support and movement."
+        },
+        "step4": {
+          "title": "Manufacturing",
+          "text": "3D printing and assembly of various mechanical and electronic components."
+        },
+        "step5": {
+          "title": "Software Development",
+          "text": "Python programming for motor management and facial recognition implementation."
+        },
+        "step6": {
+          "title": "Testing and Validation",
+          "text": "Performance evaluation, adjustments and public demonstrations of operation."
+        }
+      },
+      "cad": {
+        "title": "Mechanical Design",
+        "caption": "CAD of firing system"
+      },
+      "features": {
+        "title": "Key Features",
+        "recognition": {
+          "title": "Facial Recognition",
+          "text": "Real-time face detection and identification via computer vision algorithms"
+        },
+        "motor": {
+          "title": "Motorized System",
+          "text": "Precise pan/tilt movement control for automatic target tracking"
+        },
+        "mechanical": {
+          "title": "Mechanical Design",
+          "text": "Robust and functional 3D printed structure for an imposing system"
+        },
+        "communication": {
+          "title": "Technical Communication",
+          "text": "Weekly videos documenting project progress and operation"
+        }
+      },
+      "technical": {
+        "title": "Technical Stack",
+        "hardware": "Hardware",
+        "software": "Software & Design",
+        "raspberry": "Raspberry Pi - Central processing unit",
+        "camera": "Raspberry Pi compatible camera for vision",
+        "motors": "Servo motors for pan/tilt movements",
+        "print3d": "3D printed mechanical parts",
+        "python": "Python - Main development language",
+        "opencv": "OpenCV - Computer vision and facial recognition",
+        "motorControl": "Motor control via Raspberry Pi GPIO",
+        "cad": "CAD software for 3D modeling of parts"
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to develop concrete skills in Python programming, particularly in computer vision and motor control via Raspberry Pi.",
+        "p2": "I also gained experience in 3D modeling and mechanical-electronic integration, while learning to effectively communicate technical results in a clear and accessible manner.",
+        "p3": "Working in pairs strengthened my ability to collaborate, plan and meet time constraints in a semi-professional setting.",
+        "badge1": {
+          "title": "Python & Vision",
+          "text": "OpenCV and facial recognition"
+        },
+        "badge2": {
+          "title": "Integration",
+          "text": "Mechanical, electronic and software"
+        },
+        "badge3": {
+          "title": "Communication",
+          "text": "Accessible technical outreach"
+        }
+      }
     },
-    "aqmDesc": "Industrialization of an IoT air quality monitoring device including financial analysis and production optimization."
+    "asservissement": {
+      "title": "Interactive Toy with Control System",
+      "intro": "Design of a mechatronic system integrating a rotating base and marble launcher. Project combining power electronics, PID control and Arduino programming.",
+      "objective": {
+        "title": "Objective",
+        "text": "Design a playful and functional device combining power electronics and control systems"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "School project - 3 months"
+      },
+      "team": {
+        "title": "Team",
+        "text": "Team project of 4 people"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "As part of a school project in a team of four, we worked on the design and development of an interactive toy. It consisted of a rotating base and a marble launcher, integrating mechanical, electronic components and a control system.",
+        "p2": "The project's objective was to design a playful and functional device, combining power electronics and control systems. The system had to use a DC motor for rotation and a servomotor for shooting, all controlled by an Arduino board."
+      },
+      "diagram": {
+        "title": "Electrical Diagram",
+        "caption": "Wiring diagram of the device"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Functional Analysis",
+          "text": "Development of precise specifications defining needs, constraints and expected functionalities."
+        },
+        "step2": {
+          "title": "Prototyping",
+          "text": "Creation of a prototype integrating the rotating base and progressive development of components (motor, servomotor, electromagnet)."
+        },
+        "step3": {
+          "title": "Command and Control",
+          "text": "Arduino programming to manage movements, with implementation of PID control to ensure precision."
+        },
+        "step4": {
+          "title": "Testing and Adjustments",
+          "text": "Conducting test series to verify reliability and adjust parameters, while considering safety and efficiency aspects."
+        }
+      },
+      "features": {
+        "title": "Key Features",
+        "rotation": {
+          "title": "Rotating Base",
+          "text": "Precise rotation system controlled by DC motor with feedback control"
+        },
+        "launcher": {
+          "title": "Marble Launcher",
+          "text": "Shooting mechanism actuated by servomotor for projectile launching"
+        },
+        "pid": {
+          "title": "PID Control",
+          "text": "Precise movement control with proportional-integral-derivative regulation"
+        },
+        "power": {
+          "title": "Power Electronics",
+          "text": "Power supply and high-power actuator control management"
+        }
+      },
+      "technical": {
+        "title": "Technical Stack",
+        "hardware": "Hardware",
+        "software": "Software & Control",
+        "arduino": "Arduino Board - Central system control",
+        "dcMotor": "DC motor for rotation",
+        "servo": "Servomotor for shooting mechanism",
+        "electromagnet": "Electromagnet for marble manipulation",
+        "powerElectronics": "Power circuits for motor control",
+        "programming": "Arduino programming (C/C++)",
+        "pidControl": "PID algorithm implementation for control",
+        "motorControl": "PWM motor control",
+        "specs": "Detailed functional specifications"
+      },
+      "pid": {
+        "title": "What is PID Control?",
+        "p1": "A PID (Proportional-Integral-Derivative) controller is a control system that allows precise achievement and maintenance of a setpoint. In our project, it ensures precise rotation of the base by continuously correcting the error between the desired and actual position.",
+        "proportional": "Correction proportional to current error",
+        "integral": "Correction based on accumulation of past errors",
+        "derivative": "Anticipation based on error rate of change"
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to put into practice my knowledge in electronics, embedded programming and control systems.",
+        "p2": "I was able to deepen my understanding of PID loops and their practical application, while working on the integration of mechanical and electronic elements in a single system.",
+        "p3": "This experience strengthened my skills in collaborative work, prototyping and development of automated systems.",
+        "badge1": {
+          "title": "Embedded Electronics",
+          "text": "Arduino and power electronics"
+        },
+        "badge2": {
+          "title": "PID Control",
+          "text": "Precise control and regulation"
+        },
+        "badge3": {
+          "title": "Integration",
+          "text": "Mechanical, electronic and software"
+        }
+      }
+    },
+    "amplification": {
+      "title": "Connected Audio Amplifier",
+      "intro": "Design of an audio amplifier with energy optimization and SIGFOX IoT connectivity. Project combining analog electronics, amplification, filtering and data transmission.",
+      "objective": {
+        "title": "Objective",
+        "text": "Develop an audio amplifier combining energy efficiency, power gain and IoT connectivity"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "School project - 3 months"
+      },
+      "team": {
+        "title": "Team",
+        "text": "Team project of 4 people"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "As part of a school project in a team of four, we worked on the design and realization of an audio amplifier integrating advanced optimization and connectivity features.",
+        "p2": "The main objective was to develop an amplifier prototype combining energy efficiency and power gain, while ensuring mechanical robustness and ease of maintenance. A unique feature of this project was integrating data transmission via the SIGFOX network, allowing the device to connect to an IoT network."
+      },
+      "circuit": {
+        "title": "Electronic Architecture",
+        "caption": "Push-pull circuit diagram with transistors"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Preliminary Study",
+          "text": "Analysis of different types of amplifiers (passive and active) to determine the most suitable architecture."
+        },
+        "step2": {
+          "title": "Simulation",
+          "text": "Design and validation of a first prototype on software to anticipate circuit behavior."
+        },
+        "step3": {
+          "title": "Complete Prototype Realization",
+          "text": "Integration of electronic and mechanical components to build a functional system."
+        },
+        "step4": {
+          "title": "Demonstration",
+          "text": "Presentation of the final prototype and validation of its performance under real conditions."
+        }
+      },
+      "features": {
+        "title": "Key Features",
+        "audio": {
+          "title": "Audio Amplification",
+          "text": "Audio signal amplification and filtering with optimized power gain"
+        },
+        "power": {
+          "title": "Energy Optimization",
+          "text": "Design focused on energy efficiency to minimize consumption"
+        },
+        "iot": {
+          "title": "SIGFOX Connectivity",
+          "text": "Data transmission via SIGFOX IoT network for remote monitoring"
+        },
+        "robust": {
+          "title": "Mechanical Robustness",
+          "text": "Robust structure with ease of maintenance and repair"
+        }
+      },
+      "technical": {
+        "title": "Technical Stack",
+        "hardware": "Hardware",
+        "design": "Design & Simulation",
+        "amplifier": "Push-pull transistor amplifier circuit",
+        "filters": "Active and passive filters for signal processing",
+        "sigfox": "SIGFOX module for IoT connectivity",
+        "power": "Power management and energy optimization",
+        "ltspice": "LTspice - Electronic circuit simulation",
+        "pcb": "PCB design for component integration",
+        "analysis": "Frequency and time analysis of signals",
+        "optimization": "Gain and energy efficiency optimization"
+      },
+      "types": {
+        "title": "Amplifier Types",
+        "intro": "Our preliminary study focused on comparative analysis of different amplification architectures to select the optimal solution.",
+        "passive": {
+          "title": "Passive Amplifiers",
+          "text": "Use of passive components (resistors, capacitors) - Simplicity but limited gain"
+        },
+        "active": {
+          "title": "Active Amplifiers",
+          "text": "Use of transistors or operational amplifiers - High gain and better control"
+        }
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to develop skills in analog and digital electronics, particularly in signal amplification and filtering.",
+        "p2": "I also gained better mastery of electronic circuit simulation tools and was able to experiment with integrating an IoT connectivity solution (SIGFOX) into an embedded system.",
+        "p3": "Finally, this teamwork taught me to reconcile technical performance, robustness and energy consumption constraints in electronic design.",
+        "badge1": {
+          "title": "Analog Electronics",
+          "text": "Signal amplification and filtering"
+        },
+        "badge2": {
+          "title": "Circuit Simulation",
+          "text": "LTspice and performance analysis"
+        },
+        "badge3": {
+          "title": "IoT Connectivity",
+          "text": "SIGFOX integration and transmission"
+        }
+      }
+    },
 
+    "meteo": {
+      "title": "Embedded Weather Station",
+      "intro": "Environmental monitoring device designed for maritime context. Embedded weather station capable of providing complete measurement, monitoring and recording functions for environmental data.",
+      "objective": {
+        "title": "Objective",
+        "text": "Design an easy-to-use environmental monitoring device for maritime crew"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "School project - 3 months"
+      },
+      "team": {
+        "title": "Team",
+        "text": "Team project of 4 people"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "As a team of four, we carried out a project around embedded systems aimed at designing an environmental monitoring device usable in a maritime context.",
+        "p2": "The objective was to develop an embedded weather station, both easy to use for a crew member and capable of ensuring complete functions for measuring, monitoring and recording environmental data (temperature, humidity, pressure, etc.)."
+      },
+      "diagram": {
+        "title": "System Diagram",
+        "caption": "Weather station operation diagram"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "System Analysis",
+          "text": "Definition of functional needs, technical constraints and operating conditions in embedded environment."
+        },
+        "step2": {
+          "title": "Software Design",
+          "text": "Development of program architecture to organize sensor management, data storage and user interface."
+        },
+        "step3": {
+          "title": "Prototyping",
+          "text": "Creation of a functional prototype integrating sensors and embedded processing."
+        },
+        "step4": {
+          "title": "Documentation",
+          "text": "Writing of a complete technical document detailing the design, software and hardware architecture, as well as technological choices."
+        }
+      },
+      "features": {
+        "title": "Key Features",
+        "sensors": {
+          "title": "Environmental Measurements",
+          "text": "Real-time acquisition of temperature, humidity, atmospheric pressure and other meteorological parameters"
+        },
+        "storage": {
+          "title": "Data Recording",
+          "text": "Local storage of measurements for analysis and traceability of environmental conditions"
+        },
+        "interface": {
+          "title": "User Interface",
+          "text": "Simple and intuitive data display to facilitate crew usage"
+        },
+        "marine": {
+          "title": "Marine Adaptation",
+          "text": "Robust design adapted to maritime embedded environment constraints"
+        }
+      },
+      "technical": {
+        "title": "Technical Stack",
+        "hardware": "Hardware",
+        "software": "Software",
+        "mcu": "Microcontroller for embedded processing",
+        "tempSensor": "Temperature and humidity sensors",
+        "pressureSensor": "Atmospheric pressure sensor",
+        "display": "LCD screen for data display",
+        "embedded": "Embedded programming in C/C++",
+        "protocols": "I2C/SPI communication protocols for sensors",
+        "dataManagement": "Environmental data management and storage",
+        "architecture": "Modular and maintainable software architecture"
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to deepen my skills in embedded systems, particularly in sensor management and data acquisition.",
+        "p2": "I also learned to structure a project around a clear software architecture and produce complete technical documentation, essential for reproducibility and maintenance.",
+        "p3": "This collaborative work strengthened my ability to link user requirements, technical constraints and concrete realization.",
+        "badge1": {
+          "title": "Embedded Systems",
+          "text": "Sensor management and data acquisition"
+        },
+        "badge2": {
+          "title": "Software Architecture",
+          "text": "Modular and structured design"
+        },
+        "badge3": {
+          "title": "Technical Documentation",
+          "text": "Complete and detailed writing"
+        }
+      }
+    },
+    "aqm": {
+      "title": "AQM Device (Air Quality Monitoring)",
+      "intro": "Industrialization of an IoT air quality monitoring device for French startup NOSE. Production management project transforming a prototype into an industrializable product.",
+      "objective": {
+        "title": "Objective",
+        "text": "Transform a prototype meeting specifications into an industrializable and profitable product"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "School project - 4 months"
+      },
+      "team": {
+        "title": "Team",
+        "text": "Team project of 4 people"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "As part of a group project (4 people), we worked on production management of a connected device for French startup NOSE.",
+        "p2": "The objective was to transform a prototype meeting specifications into an industrializable product, considering all aspects of production: design, manufacturing, assembly and costs."
+      },
+      "drawing": {
+        "title": "Technical Design",
+        "caption": "Technical drawing of an exploded view of the device, made on Fusion 360"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Prototype Design and Validation",
+          "text": "Validation of the device prototype meeting initial specifications."
+        },
+        "step2": {
+          "title": "Assembly Process Definition",
+          "text": "Detailed definition of assembly process and manufacturing steps for optimal production."
+        },
+        "step3": {
+          "title": "Complete Financial Analysis",
+          "text": "Detailed financial assessment including material, production and assembly costs."
+        },
+        "step4": {
+          "title": "Production Optimization",
+          "text": "Proposals for production line improvements to optimize efficiency and reduce costs."
+        },
+        "step5": {
+          "title": "Documentation and Presentation",
+          "text": "Writing and presentation of a detailed final document covering the entire project."
+        }
+      },
+      "aspects": {
+        "title": "Key Project Aspects",
+        "design": {
+          "title": "Mechanical Design",
+          "text": "3D modeling on Fusion 360 with exploded view and technical drawings for production"
+        },
+        "production": {
+          "title": "Production Management",
+          "text": "Complete definition of assembly process and manufacturing steps planning"
+        },
+        "financial": {
+          "title": "Financial Analysis",
+          "text": "Detailed calculation of production costs, raw materials and assembly"
+        },
+        "optimization": {
+          "title": "Optimization",
+          "text": "Improvement proposals to increase production line efficiency"
+        }
+      },
+      "technical": {
+        "title": "Technical Skills",
+        "design": "Design & CAD",
+        "management": "Management & Analysis",
+        "fusion360": "Fusion 360 - 3D modeling and technical drawings",
+        "technical": "Technical drawings with exploded views",
+        "assembly": "Mechanical assembly design",
+        "productionManagement": "Production management and planning",
+        "costAnalysis": "Financial analysis and cost calculation",
+        "processOptimization": "Manufacturing process optimization",
+        "documentation": "Complete technical documentation"
+      },
+      "industrialization": {
+        "title": "Industrialization Process",
+        "p1": "The project allowed us to gain a complete vision of an IoT product lifecycle, from initial design to large-scale industrialization.",
+        "p2": "We particularly focused on optimizing the quality-price ratio, identifying cost reduction opportunities without compromising device performance.",
+        "phase1": "Prototype",
+        "phase1Text": "Design and functionality validation",
+        "phase2": "Production",
+        "phase2Text": "Assembly process definition",
+        "phase3": "Optimization",
+        "phase3Text": "Continuous efficiency improvement"
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to gain a global vision of the production cycle of an IoT product, from design to industrialization.",
+        "p2": "I strengthened my skills in production management, financial analysis and teamwork, while developing a better understanding of the challenges of industrializing connected devices.",
+        "badge1": {
+          "title": "Industrialization",
+          "text": "Prototype to product transition"
+        },
+        "badge2": {
+          "title": "Financial Management",
+          "text": "Cost analysis and profitability"
+        },
+        "badge3": {
+          "title": "CAD Fusion 360",
+          "text": "Modeling and technical drawings"
+        }
+      }
+    },
+    "crabe": {
+      "title": "Motorized Crab Robot",
+      "intro": "Design of a quadruped robot controllable via wireless web interface. Personal project combining 3D modeling, ESP32 embedded electronics and web development.",
+      "objective": {
+        "title": "Objective",
+        "text": "Create a functional quadruped robot with coordinated movements and wireless control via web interface"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "Personal project - 2 months"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Personal project"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "This personal project consisted of designing and building a motorized crab robot, integrating mechanical, electronic and software aspects. The goal was to create an immersive experience combining 3D modeling, embedded electronics and wireless connectivity.",
+        "p2": "The objective was to develop a robot capable of coordinated leg movements, controllable via a mobile interface. The project combines mechanical design, embedded programming and wireless connectivity, offering complete integration of different engineering disciplines."
+      },
+      "assembled": {
+        "title": "Assembled Robot",
+        "caption": "Photo of the assembled crab robot"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "3D Modeling",
+          "text": "Design of different parts of the crab to ensure functionality and mechanical robustness."
+        },
+        "step2": {
+          "title": "Manufacturing",
+          "text": "3D printing of parts and preparation of electronic components."
+        },
+        "step3": {
+          "title": "Assembly",
+          "text": "Mechanical assembly and integration of servomotors and ESP32 board."
+        },
+        "step4": {
+          "title": "Programming",
+          "text": "Development of an HTML web interface allowing control of leg movements and onboard camera via wireless connection."
+        }
+      },
+      "features": {
+        "title": "Key Features",
+        "quadruped": {
+          "title": "Quadruped Robot",
+          "text": "Four motorized legs with coordinated movements for realistic locomotion"
+        },
+        "web": {
+          "title": "Web Interface",
+          "text": "Remote control via HTML interface accessible from mobile or computer"
+        },
+        "camera": {
+          "title": "Onboard Camera",
+          "text": "Remotely controllable camera for live view from interface"
+        },
+        "print3d": {
+          "title": "3D Printed Structure",
+          "text": "Body and mechanical components entirely designed and 3D printed"
+        }
+      },
+      "technical": {
+        "title": "Technical Stack",
+        "hardware": "Hardware",
+        "software": "Software & Interface",
+        "esp32": "ESP32 - Microcontroller with integrated WiFi",
+        "servos": "Servo motors for leg control",
+        "camera": "Camera module for onboard vision",
+        "printed": "3D printed mechanical parts",
+        "programming": "C++ programming for ESP32",
+        "webInterface": "HTML/CSS/JavaScript web interface",
+        "wifi": "WiFi communication for wireless control",
+        "cad": "3D modeling for mechanical design"
+      },
+      "integration": {
+        "title": "Multidisciplinary Integration",
+        "p1": "This project illustrates the complete integration of three major engineering disciplines: mechanics, electronics and software. Each system had to work in harmony to obtain a functional and responsive robot.",
+        "meca": {
+          "title": "Mechanics",
+          "text": "Design and 3D printing of structure"
+        },
+        "elec": {
+          "title": "Electronics",
+          "text": "ESP32, servomotors and camera"
+        },
+        "soft": {
+          "title": "Software",
+          "text": "Embedded firmware and web interface"
+        }
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project allowed me to develop cross-functional skills in mechanical design, 3D prototyping, embedded programming and user interface development.",
+        "p2": "I learned to coordinate different systems (mechanical, electronic and software) to obtain a functional and interactive device, while exploring wireless connectivity for remote control.",
+        "badge1": {
+          "title": "Robotics",
+          "text": "Robot design and control"
+        },
+        "badge2": {
+          "title": "ESP32 & WiFi",
+          "text": "Wireless connectivity and web interface"
+        },
+        "badge3": {
+          "title": "Full Integration",
+          "text": "Mechanical, electronic and software"
+        }
+      }
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "intro": "Modern multilingual portfolio website showcasing my projects, skills, and experiences in embedded systems. Built with React and Tailwind CSS to deliver a smooth and responsive user experience.",
+      "objective": {
+        "title": "Objective",
+        "text": "Create a professional portfolio to showcase my projects and facilitate international internship opportunities"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "text": "February 2025 (ongoing)"
+      },
+      "role": {
+        "title": "Role",
+        "text": "Design, Frontend Development, Deployment"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "As an embedded systems engineering student seeking international internship opportunities, I needed a platform to effectively present my technical skills and achievements.",
+        "p2": "The goal was to create a modern, multilingual (French, English, Spanish) and easily maintainable website that reflects my technical expertise while providing an optimal user experience.",
+        "p3": "I chose React for its flexibility and performance, combined with Tailwind CSS for modern, responsive design, and i18next for multilingual management."
+      },
+      "features": {
+        "title": "Key Features",
+        "multilingual": {
+          "title": "Multilingual support",
+          "text": "Interface available in French, English, and Spanish with dynamic language switching"
+        },
+        "responsive": {
+          "title": "Responsive design",
+          "text": "Perfect adaptation to all screens (mobile, tablet, desktop)"
+        },
+        "design": {
+          "title": "Modern interface",
+          "text": "Clean and professional design with smooth animations and transitions"
+        },
+        "navigation": {
+          "title": "Intuitive navigation",
+          "text": "Clear structure with client-side routing for seamless experience"
+        }
+      },
+      "technical": {
+        "title": "Technical Details",
+        "frontend": "Frontend",
+        "features": "Features",
+        "reactDesc": "JavaScript framework for a dynamic and performant interface",
+        "routerDesc": "Client-side navigation for a smooth SPA experience",
+        "tailwindDesc": "Utility-first CSS framework for fast and consistent design",
+        "i18nDesc": "Translation and multilingual internationalization management",
+        "responsiveDesc": "Mobile-first adaptation with optimized breakpoints",
+        "componentDesc": "Modular and reusable code organization"
+      },
+      "challenges": {
+        "title": "Challenges & Solutions",
+        "solution": "Solution",
+        "challenge1": {
+          "title": "Multilingual management",
+          "problem": "Setting up an efficient translation system covering all sections of the site with instant language switching.",
+          "solution": "Implementation of react-i18next with separate JSON files per language, enabling language change without reload and easy translation maintenance."
+        },
+        "challenge2": {
+          "title": "Consistent responsive design",
+          "problem": "Ensuring optimal visual experience across all screen types while maintaining design consistency.",
+          "solution": "Using Tailwind CSS with mobile-first approach and custom breakpoint system, tested on various devices."
+        }
+      },
+      "results": {
+        "title": "Results",
+        "p1": "The portfolio provides a modern and professional user experience, facilitating the presentation of my technical skills and projects to international recruiters.",
+        "p2": "The modular structure and well-organized code make it easy to add new projects and keep the site updated with my future experiences.",
+        "languages": "Supported languages",
+        "responsive": "Responsive",
+        "performance": "Optimal performance"
+      }
+    }
   },
-  "about": {
-    "title": "About Me",
-    "description": "I am a developer passionate about building modern and performant interfaces.",
-    "skillsTitle": "Skills",
-    "goalTitle": "Goal",
-    "goalText": "To build elegant and efficient digital products."
+   "about": {
+    "title": "About",
+    "intro": "Engineering student passionate about embedded systems, IoT, and electronics. Discover my journey, skills, and experiences.",
+    "whoAmI": "Who am I?",
+    "bio1": "I'm Matéo Repulles, a Master's student in Embedded Systems & IoT at EFREI, after completing my preparatory classes and Bachelor's degree at CESI. Passionate about electronics and firmware development for several years, I've had the opportunity to work on various projects ranging from drone validation to the design of electronic systems integrating additive manufacturing.",
+    "bio2": "My approach combines solid theoretical training with concrete practical experience. Whether developing firmware on STM32, designing a PCB on KiCad, or debugging a real-time system, I enjoy tackling technical challenges and learning new technologies.",
+    "bio3": "Beyond my studies and professional experiences, I'm also involved in the maker community, a member of the MakerCesi board, and a participant in WorldSkills for additive manufacturing. My hobbies include guitar, photography, 3D printing, and FPV drones.",
+    "experience": "Professional Experience",
+    "exp1": {
+      "title": "Technician",
+      "company": "Aerommaper (Thales affiliate)",
+      "date": "Jan 2025 - Apr 2025",
+      "task1": "Validated production processes for drones and ground equipment",
+      "task2": "Assisted in firmware development, hardware testing, and debugging"
+    },
+    "exp2": {
+      "title": "Self-Employed",
+      "company": "Urban Custom Print",
+      "date": "Aug 2024 - Present",
+      "task1": "Provided on-demand printing and design services",
+      "task2": "Delivered technical support in collaboration with a partner company",
+      "task3": "Managed invoices, quotes, and client communications"
+    },
+    "exp3": {
+      "title": "Technician",
+      "company": "La Nouvelle École",
+      "date": "Apr 2024 - Jul 2024",
+      "task1": "Designed and developed AM-based projects involving electronics",
+      "task2": "Authored detailed technical descriptions and documentation for various projects",
+      "task3": "Supervised technical workspace and provided customer service"
+    },
+    "skills": "Technical Skills",
+    "hardware": "Hardware",
+    "programming": "Programming",
+    "protocols": "Communication Protocols",
+    "tools": "Tools & Software",
+    "systems": "Operating Systems",
+    "network": "Network & Security",
+    "education": "Education",
+    "edu1": {
+      "degree": "Master in Embedded Systems & IoT",
+      "focus": "Real-time systems, Digital communications, ARM/Cortex, Embedded software, VHDL, MATLAB"
+    },
+    "edu2": {
+      "degree": "Preparatory cycle (Years 1–2 / L1–L2) • Engineering cycle (Year 3 / L3)"
+    }
   },
   
   "portfolioProject": {

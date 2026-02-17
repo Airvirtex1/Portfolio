@@ -1,82 +1,481 @@
+import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
-import aqmImg from "../../assets/aqm.png";
 
-function ProjectAQM() {
+function AqmProject() {
   const { t } = useTranslation()
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white px-6 py-24">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-neutral-950 text-white">
+      
+      {/* HERO SECTION */}
+      <section className="max-w-6xl mx-auto px-6 pt-32 pb-16">
+        <Link 
+          to="/projects" 
+          className="inline-flex items-center text-neutral-400 hover:text-white transition mb-8"
+        >
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          {t("project.backToProjects")}
+        </Link>
 
-        {/* HEADER */}
-        <h1 className="text-5xl font-bold mb-6">
-          {t("aqm.title")}
-        </h1> 
-
-        <p className="text-neutral-400 text-lg mb-12">
-          {t("aqm.subtitle")}
-        </p>
-
-        {/* TAGS */}
-        <div className="flex flex-wrap gap-3 mb-16">
-          {["IoT", "Industrialisation", "Production Management", "Fusion 360","School Project"].map((tag) => (
-            <span
-              key={tag}
-              className="bg-neutral-900 px-4 py-2 rounded-full text-sm"
-            >
-              {tag}
-            </span>
-          ))}
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          {t("project.aqm.title")}
+        </h1>
+        
+        <div className="flex flex-wrap gap-3 mb-8">
+          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">IoT</span>
+          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Industrialisation</span>
+          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Production Management</span>
+          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Fusion 360</span>
+          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">CAO</span>
         </div>
 
-        {/* CONTEXT */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-4">
-            {t("aqm.contextTitle")}
+        <p className="text-xl text-neutral-400 leading-relaxed max-w-4xl">
+          {t("project.aqm.intro")}
+        </p>
+      </section>
+
+      {/* MAIN IMAGE */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="rounded-2xl overflow-hidden bg-neutral-900">
+          <img 
+            src="/images/aqm-hero.jpg" 
+            alt="Boîtier AQM"
+            className="w-full h-auto"
+            onError={(e) => {
+              e.target.src = 'https://via.placeholder.com/1200x600/262626/ffffff?text=AQM+Device'
+            }}
+          />
+        </div>
+      </section>
+
+      {/* OVERVIEW */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="grid md:grid-cols-3 gap-8">
+          
+          <div className="bg-neutral-900 p-6 rounded-2xl">
+            <h3 className="text-lg font-semibold mb-2 flex items-center">
+              <span className="mr-3">🎯</span>
+              {t("project.aqm.objective.title")}
+            </h3>
+            <p className="text-neutral-400 text-sm">
+              {t("project.aqm.objective.text")}
+            </p>
+          </div>
+
+          <div className="bg-neutral-900 p-6 rounded-2xl">
+            <h3 className="text-lg font-semibold mb-2 flex items-center">
+              <span className="mr-3">📅</span>
+              {t("project.aqm.timeline.title")}
+            </h3>
+            <p className="text-neutral-400 text-sm">
+              {t("project.aqm.timeline.text")}
+            </p>
+          </div>
+
+          <div className="bg-neutral-900 p-6 rounded-2xl">
+            <h3 className="text-lg font-semibold mb-2 flex items-center">
+              <span className="mr-3">👥</span>
+              {t("project.aqm.team.title")}
+            </h3>
+            <p className="text-neutral-400 text-sm">
+              {t("project.aqm.team.text")}
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTEXT */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="bg-neutral-900 rounded-2xl p-8 md:p-12">
+          <h2 className="text-3xl font-semibold mb-6">
+            {t("project.aqm.context.title")}
           </h2>
-          <p className="text-neutral-400 leading-relaxed">
-            {t("aqm.contextText")}
-          </p>
-        </section>
+          <div className="space-y-4 text-neutral-400 leading-relaxed">
+            <p>{t("project.aqm.context.p1")}</p>
+            <p>{t("project.aqm.context.p2")}</p>
+          </div>
+        </div>
+      </section>
 
-       <figure className="mb-12">
-            <img
-                src={aqmImg}
-                alt="Vue éclatée du dispositif AQM"
-                className="w-1/2 mx-auto rounded-2xl border border-neutral-800"
-            />
-            <figcaption className="mt-3 text-sm text-neutral-500 text-center">
-                {t("aqm.figcaption1")}
-            </figcaption>
-        </figure>
-        {/* APPROACH */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">
-            {t("aqm.approachTitle")}
+      {/* TECHNICAL DRAWING */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <h2 className="text-3xl font-semibold mb-8">
+          {t("project.aqm.drawing.title")}
+        </h2>
+        <div className="bg-neutral-900 rounded-2xl overflow-hidden">
+          <img 
+            src="/images/aqm-drawing.jpg" 
+            alt="Dessin technique d'une vue éclaté du dispositif"
+            className="w-full h-auto"
+            onError={(e) => {
+              e.target.src = 'https://via.placeholder.com/1200x800/262626/ffffff?text=Technical+Drawing'
+            }}
+          />
+          <div className="p-4 text-center text-sm text-neutral-400">
+            {t("project.aqm.drawing.caption")}
+          </div>
+        </div>
+      </section>
+
+      {/* APPROACH */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <h2 className="text-3xl font-semibold mb-8">
+          {t("project.aqm.approach.title")}
+        </h2>
+
+        <div className="space-y-6">
+          
+          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+            <div className="flex items-start mb-4">
+              <span className="text-3xl mr-4">1️⃣</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {t("project.aqm.approach.step1.title")}
+                </h3>
+                <p className="text-neutral-400">
+                  {t("project.aqm.approach.step1.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+            <div className="flex items-start mb-4">
+              <span className="text-3xl mr-4">2️⃣</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {t("project.aqm.approach.step2.title")}
+                </h3>
+                <p className="text-neutral-400">
+                  {t("project.aqm.approach.step2.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+            <div className="flex items-start mb-4">
+              <span className="text-3xl mr-4">3️⃣</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {t("project.aqm.approach.step3.title")}
+                </h3>
+                <p className="text-neutral-400">
+                  {t("project.aqm.approach.step3.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+            <div className="flex items-start mb-4">
+              <span className="text-3xl mr-4">4️⃣</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {t("project.aqm.approach.step4.title")}
+                </h3>
+                <p className="text-neutral-400">
+                  {t("project.aqm.approach.step4.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+            <div className="flex items-start mb-4">
+              <span className="text-3xl mr-4">5️⃣</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {t("project.aqm.approach.step5.title")}
+                </h3>
+                <p className="text-neutral-400">
+                  {t("project.aqm.approach.step5.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* KEY ASPECTS */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <h2 className="text-3xl font-semibold mb-8">
+          {t("project.aqm.aspects.title")}
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          
+          <div className="bg-neutral-900 p-6 rounded-2xl">
+            <div className="flex items-start mb-4">
+              <span className="text-2xl mr-4">🔧</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {t("project.aqm.aspects.design.title")}
+                </h3>
+                <p className="text-neutral-400 text-sm">
+                  {t("project.aqm.aspects.design.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 p-6 rounded-2xl">
+            <div className="flex items-start mb-4">
+              <span className="text-2xl mr-4">🏭</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {t("project.aqm.aspects.production.title")}
+                </h3>
+                <p className="text-neutral-400 text-sm">
+                  {t("project.aqm.aspects.production.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 p-6 rounded-2xl">
+            <div className="flex items-start mb-4">
+              <span className="text-2xl mr-4">💰</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {t("project.aqm.aspects.financial.title")}
+                </h3>
+                <p className="text-neutral-400 text-sm">
+                  {t("project.aqm.aspects.financial.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900 p-6 rounded-2xl">
+            <div className="flex items-start mb-4">
+              <span className="text-2xl mr-4">📈</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {t("project.aqm.aspects.optimization.title")}
+                </h3>
+                <p className="text-neutral-400 text-sm">
+                  {t("project.aqm.aspects.optimization.text")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* TECHNICAL STACK */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <h2 className="text-3xl font-semibold mb-8">
+          {t("project.aqm.technical.title")}
+        </h2>
+
+        <div className="bg-neutral-900 rounded-2xl p-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">
+                {t("project.aqm.technical.design")}
+              </h3>
+              <ul className="space-y-2 text-neutral-400">
+                <li className="flex items-start">
+                  <span className="text-white mr-2">•</span>
+                  <span>{t("project.aqm.technical.fusion360")}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white mr-2">•</span>
+                  <span>{t("project.aqm.technical.technical")}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white mr-2">•</span>
+                  <span>{t("project.aqm.technical.assembly")}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-4">
+                {t("project.aqm.technical.management")}
+              </h3>
+              <ul className="space-y-2 text-neutral-400">
+                <li className="flex items-start">
+                  <span className="text-white mr-2">•</span>
+                  <span>{t("project.aqm.technical.productionManagement")}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white mr-2">•</span>
+                  <span>{t("project.aqm.technical.costAnalysis")}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white mr-2">•</span>
+                  <span>{t("project.aqm.technical.processOptimization")}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white mr-2">•</span>
+                  <span>{t("project.aqm.technical.documentation")}</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIALIZATION PROCESS */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="bg-gradient-to-br from-green-950/30 to-neutral-900 rounded-2xl p-8 md:p-12 border border-green-900/20">
+          <h2 className="text-3xl font-semibold mb-6">
+            {t("project.aqm.industrialization.title")}
           </h2>
+          <div className="space-y-4 text-neutral-400 leading-relaxed mb-6">
+            <p>{t("project.aqm.industrialization.p1")}</p>
+            <p>{t("project.aqm.industrialization.p2")}</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+              <div className="text-green-400 font-semibold mb-2">{t("project.aqm.industrialization.phase1")}</div>
+              <div className="text-sm text-neutral-400">{t("project.aqm.industrialization.phase1Text")}</div>
+            </div>
+            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+              <div className="text-green-400 font-semibold mb-2">{t("project.aqm.industrialization.phase2")}</div>
+              <div className="text-sm text-neutral-400">{t("project.aqm.industrialization.phase2Text")}</div>
+            </div>
+            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+              <div className="text-green-400 font-semibold mb-2">{t("project.aqm.industrialization.phase3")}</div>
+              <div className="text-sm text-neutral-400">{t("project.aqm.industrialization.phase3Text")}</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <ul className="space-y-4 text-neutral-400 list-disc list-inside">
-            <li>{t("aqm.step1")}</li>
-            <li>{t("aqm.step2")}</li>
-            <li>{t("aqm.step3")}</li>
-            <li>{t("aqm.step4")}</li>
-            <li>{t("aqm.step5")}</li>
-          </ul>
-        </section>
-
-        {/* LEARNING */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">
-            {t("aqm.learningTitle")}
+      {/* SKILLS DEVELOPED */}
+      <section className="max-w-6xl mx-auto px-6 pb-32">
+        <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl p-8 md:p-12">
+          <h2 className="text-3xl font-semibold mb-6">
+            {t("project.aqm.skills.title")}
           </h2>
-          <p className="text-neutral-400 leading-relaxed">
-            {t("aqm.learningText")}
-          </p>
-        </section>
+          <div className="space-y-4 text-neutral-400 leading-relaxed">
+            <p>{t("project.aqm.skills.p1")}</p>
+            <p>{t("project.aqm.skills.p2")}</p>
+          </div>
 
-      </div>
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+              <div className="text-2xl mb-2">🏭</div>
+              <div className="font-semibold mb-1">{t("project.aqm.skills.badge1.title")}</div>
+              <div className="text-sm text-neutral-400">{t("project.aqm.skills.badge1.text")}</div>
+            </div>
+            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+              <div className="text-2xl mb-2">💼</div>
+              <div className="font-semibold mb-1">{t("project.aqm.skills.badge2.title")}</div>
+              <div className="text-sm text-neutral-400">{t("project.aqm.skills.badge2.text")}</div>
+            </div>
+            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+              <div className="text-2xl mb-2">🎨</div>
+              <div className="font-semibold mb-1">{t("project.aqm.skills.badge3.title")}</div>
+              <div className="text-sm text-neutral-400">{t("project.aqm.skills.badge3.text")}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-neutral-800">
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            
+            {/* Column 1 - About */}
+            <div>
+              <h3 className="font-semibold mb-4">Matéo Repulles</h3>
+              <p className="text-sm text-neutral-400">
+                Embedded Systems & IoT Engineering Student
+              </p>
+              <p className="text-sm text-neutral-400 mt-2">
+                Paris, France
+              </p>
+            </div>
+
+            {/* Column 2 - Quick Links */}
+            <div>
+              <h3 className="font-semibold mb-4">{t("footer.quickLinks")}</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/projects" className="text-sm text-neutral-400 hover:text-white transition">
+                    {t("footer.projects")}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="text-sm text-neutral-400 hover:text-white transition">
+                    {t("footer.about")}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-sm text-neutral-400 hover:text-white transition">
+                    {t("footer.contact")}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3 - Social Links */}
+            <div>
+              <h3 className="font-semibold mb-4">{t("footer.connect")}</h3>
+              <div className="flex gap-4">
+                <a 
+                  href="https://www.linkedin.com/in/mateo-repulles" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-neutral-800 p-3 rounded-lg hover:bg-neutral-700 transition"
+                  aria-label="LinkedIn"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                
+                <a 
+                  href="https://github.com/mateorepulles" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-neutral-800 p-3 rounded-lg hover:bg-neutral-700 transition"
+                  aria-label="GitHub"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+
+                <a 
+                  href="mailto:mateo.repulles.perso@gmail.com"
+                  className="bg-neutral-800 p-3 rounded-lg hover:bg-neutral-700 transition"
+                  aria-label="Email"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-neutral-400">
+              © 2025 Matéo Repulles. {t("footer.rights")}
+            </p>
+            <p className="text-sm text-neutral-400">
+              {t("footer.madeWith")} React & Tailwind CSS
+            </p>
+          </div>
+        </div>
+      </footer>
+
     </div>
   )
 }
 
-export default ProjectAQM
+export default AqmProject
