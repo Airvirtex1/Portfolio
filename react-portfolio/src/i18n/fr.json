@@ -5,16 +5,32 @@
     "projects": "Projets",
     "contact": "Contact"
   },
-  "home": {
+  
+    "home": {
     "title": "Salut, moi c'est Mateo 👋",
-    "subtitle": "Développeur web spécialisé dans la création d'interfaces modernes et performantes.",
-    "viewProjects": "Voir les projets",
+    "subtitle": "Étudiant ingénieur en systèmes embarqués et IoT basé à Paris. J'écris du firmware, je conçois des PCB et j'imprime mes boîtiers en 3D. Sur ce site, tu trouveras mes projets IoT, mes expériences professionnelles et tout ce qui tourne autour des microcontrôleurs et de l'électronique embarquée. Actuellement en recherche de stage à l'international !",
+    "viewProjects": "Voir mes projets",
     "contact": "Me contacter",
+    "aboutTitle": "À propos de moi",
+    "aboutText": "Passionné par les systèmes embarqués, je combine développement firmware et conception hardware pour créer des solutions IoT complètes. De la validation de drones chez Aerommaper (filiale Thales) aux projets de fabrication additive intégrant l'électronique, j'aime transformer des idées en prototypes fonctionnels.",
+    "aboutText2": "Avec une expertise en STM32, ESP32, protocoles de communication (UART, SPI, I2C, MQTT) et systèmes temps réel, je cherche constamment à approfondir mes compétences techniques et à relever de nouveaux défis dans le domaine de l'embarqué.",
+    "currentFocus": "Focus actuel",
+    "education": "Formation",
+    "availability": "Disponibilité",
+    "availabilityText": "Ouvert aux stages internationaux",
     "selectedProjects": "Projets sélectionnés",
-    "portfolioDesc": "Site web Portfolio",
-    "dashboardDesc": "Interface dashboard moderne avec composants analytiques.",
-    "mobileDesc": "Application mobile cross-platform développée avec React Native.",
-    "readMore": "Voir plus →"
+    "portfolioDesc": "Portfolio Web",
+    "dashboardDesc": "Site portfolio moderne développé avec React et Tailwind CSS.",
+    "readMore": "En savoir plus →"
+  },
+  "footer": {
+    "quickLinks": "Liens rapides",
+    "projects": "Projets",
+    "about": "À propos",
+    "contact": "Contact",
+    "connect": "Me suivre",
+    "rights": "Tous droits réservés.",
+    "madeWith": "Créé avec"
   },
   "projects": {
     "title": "Mes Projets",

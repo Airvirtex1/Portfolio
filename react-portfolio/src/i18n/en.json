@@ -7,14 +7,29 @@
   },
   "home": {
     "title": "Hey, I'm Mateo 👋",
-    "subtitle": "Web developer focused on creating modern and performant interfaces.",
-    "viewProjects": "View Projects",
-    "contact": "Contact Me",
+    "subtitle": "Embedded systems and IoT engineering student based in Paris. I write firmware, design PCBs, and 3D print my enclosures. On this site, you'll find my IoT projects, professional experiences, and everything related to microcontrollers and embedded electronics. Currently seeking an international internship!",
+    "viewProjects": "View my projects",
+    "contact": "Contact me",
+    "aboutTitle": "About me",
+    "aboutText": "Passionate about embedded systems, I combine firmware development and hardware design to create complete IoT solutions. From drone validation at Aerommaper (Thales affiliate) to additive manufacturing projects integrating electronics, I love transforming ideas into functional prototypes.",
+    "aboutText2": "With expertise in STM32, ESP32, communication protocols (UART, SPI, I2C, MQTT), and real-time systems, I'm constantly seeking to deepen my technical skills and take on new challenges in the embedded field.",
+    "currentFocus": "Current Focus",
+    "education": "Education",
+    "availability": "Availability",
+    "availabilityText": "Open to international internships",
     "selectedProjects": "Selected Projects",
-    "portfolioDesc": "Personal portfolio built with React and Tailwind CSS.",
-    "dashboardDesc": "Modern dashboard interface with analytics components.",
-    "mobileDesc": "Cross-platform mobile app built with React Native.",
+    "portfolioDesc": "Web Portfolio",
+    "dashboardDesc": "Modern portfolio website built with React and Tailwind CSS.",
     "readMore": "Read more →"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "madeWith": "Made with"
   },
   
   "projects": {
