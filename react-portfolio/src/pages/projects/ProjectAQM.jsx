@@ -107,9 +107,9 @@ function AqmProject() {
         </h2>
         <div className="bg-neutral-900 rounded-2xl overflow-hidden">
           <img 
-            src="/images/aqm-drawing.jpg" 
+            src="..\src\assets\aqm.png" 
             alt="Dessin technique d'une vue éclaté du dispositif"
-            className="w-full h-auto"
+            className="w-1/2 h-auto mx-auto"
             onError={(e) => {
               e.target.src = 'https://via.placeholder.com/1200x800/262626/ffffff?text=Technical+Drawing'
             }}
