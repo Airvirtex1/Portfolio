@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: portfolio-mateo # Mets ici le nom de ton App Service Azure
+  AZURE_WEBAPP_NAME: portfolio-mateo
 
 jobs:
   build:
@@ -23,7 +23,8 @@ jobs:
 
       - name: Build and push container image
         run: |
-          docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/portfolio:${{ github.sha }} -t ${{ secrets.ACR_LOGIN_SERVER }}/portfolio:latest
+          # On précise le dossier 'react-portfolio' pour le build
+          docker build ./react-portfolio -t ${{ secrets.ACR_LOGIN_SERVER }}/portfolio:${{ github.sha }} -t ${{ secrets.ACR_LOGIN_SERVER }}/portfolio:latest
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/portfolio:${{ github.sha }}
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/portfolio:latest
 
