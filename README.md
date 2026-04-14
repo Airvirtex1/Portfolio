@@ -16,7 +16,7 @@
 
 | Dark mode | Light mode |
 |-----------|------------|
-| ![Dark]([react-portfolio/src/assets/site_black.png]) | ![Light]([react-portfolio/src/assets/site_white.png]) |
+| ![Dark]([/src/assets/site_black.png]) | ![Light]([/src/assets/site_white.png]) |
 
 🔗 **Live demo:** [portfolio](https://portfolio.indecis.ovh/)
 
