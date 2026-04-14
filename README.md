@@ -18,7 +18,7 @@
 |-----------|------------|
 | ![Dark]([SCREENSHOT_DARK]) | ![Light]([SCREENSHOT_LIGHT]) |
 
-🔗 **Live demo:** ![portfolio](https://portfolio.indecis.ovh/)
+🔗 **Live demo:** [portfolio](https://portfolio.indecis.ovh/)
 
 ---
 
