@@ -15,7 +15,7 @@ function Section({ children, delay = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="max-w-container mx-auto px-6 pb-16"
+      className="max-w-container mx-auto px-4 sm:px-6 pb-12 md:pb-16"
     >
       {children}
     </motion.section>
@@ -30,13 +30,13 @@ function About() {
 
       {/* Hero */}
       <motion.section
-        className="max-w-container mx-auto px-6 pt-32 pb-16"
+        className="max-w-container mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-12 md:pb-16"
         variants={slideIn}
         initial="hidden"
         animate="visible"
       >
-        <h1 className="font-display text-5xl md:text-6xl font-bold mb-6">{t("about.title")}</h1>
-        <p className="text-xl text-text-secondary max-w-3xl leading-relaxed">{t("about.intro")}</p>
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 md:mb-6">{t("about.title")}</h1>
+        <p className="text-base md:text-xl text-text-secondary max-w-3xl leading-relaxed">{t("about.intro")}</p>
       </motion.section>
 
       {/* Bio */}
@@ -53,7 +53,7 @@ function About() {
 
       {/* Experience */}
       <Section>
-        <h2 className="font-display text-3xl font-semibold mb-8">{t("about.experience")}</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6 md:mb-8">{t("about.experience")}</h2>
         <div className="space-y-4">
           {[
             {
@@ -98,7 +98,7 @@ function About() {
 
       {/* Skills */}
       <Section>
-        <h2 className="font-display text-3xl font-semibold mb-8">{t("about.skills")}</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6 md:mb-8">{t("about.skills")}</h2>
         <div className="grid md:grid-cols-2 gap-4">
           {skills.map(({ id, labelKey, emoji, items }) => (
             <motion.div
@@ -127,7 +127,7 @@ function About() {
 
       {/* Education */}
       <Section>
-        <h2 className="font-display text-3xl font-semibold mb-8">{t("about.education")}</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6 md:mb-8">{t("about.education")}</h2>
         <div className="space-y-4">
           {[
             { school: "EFREI Engineering School", degreeKey: "about.edu1.degree", focusKey: "about.edu1.focus", years: "2025–2028" },
