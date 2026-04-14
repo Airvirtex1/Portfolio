@@ -18,7 +18,7 @@
 |-----------|------------|
 | ![Dark]([SCREENSHOT_DARK]) | ![Light]([SCREENSHOT_LIGHT]) |
 
-🔗 **Live demo:** `[DEPLOY_URL]`
+🔗 **Live demo:** `https://portfolio.indecis.ovh/`
 
 ---
 
