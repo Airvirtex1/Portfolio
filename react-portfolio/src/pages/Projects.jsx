@@ -1,121 +1,77 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import meteoImg from "../assets/station_meteo.png";
-import opencvImg from "../assets/opencv.png";
-import asservissementImg from "../assets/asservissement.png";
-import amplificationImg from "../assets/amplification_filtrage.png";
-import aqmImg from "../assets/aqm.png";
-import crabeImg from "../assets/crabe.png";
-import decorsImg from "../assets/decors1.png";
+import { motion } from "framer-motion";
+import { projects } from "../data/projects";
 import Footer from "../components/Footer";
 
 function Projects() {
-  const { t } = useTranslation()
-
-  const projects = [
-    {
-      id: "portfolio",
-      title: t("project.portfolio.title"),
-      description: t("project.portfolio.intro"),
-      image: meteoImg,
-    },
-    {
-      id: "meteo",
-      title: t("project.meteo.title"),
-      description: t("project.meteo.intro"),
-      image: meteoImg,
-    },
-    {
-      id: "tourrelle",
-      title: t("project.tourelle.title"),
-      description: t("project.tourelle.intro"),
-      image: opencvImg,
-    },
-    {
-      id: "asservissement",
-      title: t("project.asservissement.title"),
-      description: t("project.asservissement.intro"),
-      image: asservissementImg,
-    },
-    {
-      id: "amplification",
-      title: t("project.amplification.title"),
-      description: t("project.amplification.intro"),
-      image: amplificationImg,
-    },
-    {
-      id: "boitier-aqm",
-      title: t("project.aqm.title"),
-      description: t("project.aqm.intro"),
-      image: aqmImg,
-    },
-    {
-      id: "crabe",
-      title: t("project.crabe.title"),
-      description: t("project.crabe.intro"),
-      image: crabeImg,
-    },
-    {
-      id: "argentique",
-      title: t("project.argentique.title"),
-      description: t("project.argentique.intro"),
-      image: "/assets/argentique.png",
-    },
-    {
-      id: "decors",
-      title: t("project.decors.title"),
-      description: t("project.decors.intro"),
-      image: decorsImg,
-    },
-  ]
+  const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
-      <div className="max-w-6xl mx-auto px-6 py-24">
+    <div className="min-h-screen bg-surface-base text-text-primary transition-colors duration-300">
+      <div className="max-w-container mx-auto px-6 py-24">
 
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">
-          {t("project.title")}
-        </h1>
-        <p className="text-xl text-neutral-400 mb-16 max-w-3xl">
-          {t("project.subtitle")}
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <h1 className="font-display text-5xl md:text-6xl font-bold mb-4">
+            {t("project.title")}
+          </h1>
+          <p className="text-lg text-text-secondary mb-16 max-w-2xl">
+            {t("project.subtitle")}
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <Link
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project, i) => (
+            <motion.div
               key={project.id}
-              to={`/projects/${project.id}`}
-              className="bg-neutral-900 rounded-2xl overflow-hidden hover:bg-neutral-800 transition group"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -5, transition: { type: "spring", stiffness: 380, damping: 22 } }}
             >
-              {/* Image */}
-              <div className="aspect-video w-full overflow-hidden bg-neutral-800">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/600x400/262626/ffffff?text=Project+Image'
-                  }}
-                />
-              </div>
+              <Link
+                to={`/projects/${project.id}`}
+                className="block bg-surface-raised border border-border-subtle rounded-2xl overflow-hidden hover:border-accent/30 transition-colors duration-200 group"
+              >
+                <div className="aspect-video w-full overflow-hidden bg-surface-overlay">
+                  <img
+                    src={project.image}
+                    alt={t(project.titleKey)}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { e.target.style.display = "none"; }}
+                  />
+                </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold mb-3">
-                  {project.title}
-                </h2>
-                <p className="text-neutral-400 line-clamp-3">
-                  {project.description}
-                </p>
-              </div>
-            </Link>
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-mono text-xs bg-accent-bg text-accent border border-accent/20 px-2 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 className="font-display text-xl font-semibold mb-2">
+                    {t(project.titleKey)}
+                  </h2>
+                  <p className="text-text-secondary text-sm line-clamp-2 leading-relaxed">
+                    {t(project.descKey)}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
-
       </div>
 
       <Footer />
-
     </div>
   );
 }

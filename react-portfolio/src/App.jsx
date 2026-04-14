@@ -18,6 +18,7 @@ import ProjectDecors from "./pages/projects/ProjectDecors";
 export default function App() {
   return (
     <BrowserRouter>
+      <div className="grain">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/projects/argentique" element={<ProjectDeclencheur />} />
         <Route path="/projects/decors" element={<ProjectDecors />} />
       </Routes>
+      </div>
     </BrowserRouter>
   );
 }

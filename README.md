@@ -14,11 +14,12 @@
 
 | 🌐 Demo Live | 📸 Capture d'écran |
 |:---:|:---:|
-| **[→ Voir le site]([LIEN_DEMO])** | ![Aperçu du portfolio]([LIEN_SCREENSHOT]) |
+| **[→ Voir le site](https://portfolio.indecis.ovh/)** | ![Aperçu du portfolio](react-portfolio\src\assets\site.png) |
 
 ---
 
 ## ✨ Fonctionnalités
+
 
 - **Design responsive** — Mise en page fluide sur mobile, tablette et desktop via les utilitaires Tailwind CSS
 - **Mode sombre / clair** — Bascule thématique persistante avec `localStorage` et respect de `prefers-color-scheme`
@@ -113,5 +114,5 @@ Distribué sous licence **MIT**. Voir le fichier [`LICENSE`](./LICENSE) pour le 
 ---
 
 <p align="center">
-  Fait avec ☕ et trop peu de sommeil par <strong><a href="[portfolio.indecis.ovh]">[Matéo Repulles]</a></strong>
+  Fait avec ☕ et trop peu de sommeil par <strong><a href="https://portfolio.indecis.ovh/">Matéo Repulles</a></strong>
 </p>

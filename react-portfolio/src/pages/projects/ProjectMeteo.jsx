@@ -1,45 +1,48 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import Footer from "../../components/Footer";
 
 function MeteoProject() {
   const { t } = useTranslation()
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-surface-base text-text-primary transition-colors duration-300">
       
       {/* HERO SECTION */}
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-16">
-        <Link 
-          to="/projects" 
-          className="inline-flex items-center text-neutral-400 hover:text-white transition mb-8"
+        <motion.div initial={{ opacity:0, x:-12 }} animate={{ opacity:1, x:0 }} transition={{ duration:0.4 }}>
+        <Link
+          to="/projects"
+          className="inline-flex items-center text-text-secondary hover:text-text-primary transition mb-8"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           {t("project.backToProjects")}
         </Link>
+        </motion.div>
 
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        <motion.h1 initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5, delay:0.1 }} className="font-display text-5xl md:text-6xl font-bold mb-6">
           {t("project.meteo.title")}
-        </h1>
+        </motion.h1>
         
         <div className="flex flex-wrap gap-3 mb-8">
-          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Systèmes Embarqués</span>
-          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Capteurs</span>
-          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Acquisition de Données</span>
-          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Maritime</span>
-          <span className="bg-neutral-800 px-4 py-2 rounded-lg text-sm">Météorologie</span>
+          <span className="bg-surface-overlay px-4 py-2 rounded-lg text-sm">Systèmes Embarqués</span>
+          <span className="bg-surface-overlay px-4 py-2 rounded-lg text-sm">Capteurs</span>
+          <span className="bg-surface-overlay px-4 py-2 rounded-lg text-sm">Acquisition de Données</span>
+          <span className="bg-surface-overlay px-4 py-2 rounded-lg text-sm">Maritime</span>
+          <span className="bg-surface-overlay px-4 py-2 rounded-lg text-sm">Météorologie</span>
         </div>
 
-        <p className="text-xl text-neutral-400 leading-relaxed max-w-4xl">
+        <p className="text-xl text-text-secondary leading-relaxed max-w-4xl">
           {t("project.meteo.intro")}
         </p>
       </section>
 
       {/* MAIN IMAGE */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="rounded-2xl overflow-hidden bg-neutral-900">
+        <div className="rounded-2xl overflow-hidden bg-surface-raised">
           <img 
             src="/images/meteo-hero.jpg" 
             alt="Station Météo"
@@ -55,32 +58,32 @@ function MeteoProject() {
       <section className="max-w-6xl mx-auto px-6 pb-16">
         <div className="grid md:grid-cols-3 gap-8">
           
-          <div className="bg-neutral-900 p-6 rounded-2xl">
+          <div className="bg-surface-raised p-6 rounded-2xl">
             <h3 className="text-lg font-semibold mb-2 flex items-center">
               <span className="mr-3">🎯</span>
               {t("project.meteo.objective.title")}
             </h3>
-            <p className="text-neutral-400 text-sm">
+            <p className="text-text-secondary text-sm">
               {t("project.meteo.objective.text")}
             </p>
           </div>
 
-          <div className="bg-neutral-900 p-6 rounded-2xl">
+          <div className="bg-surface-raised p-6 rounded-2xl">
             <h3 className="text-lg font-semibold mb-2 flex items-center">
               <span className="mr-3">📅</span>
               {t("project.meteo.timeline.title")}
             </h3>
-            <p className="text-neutral-400 text-sm">
+            <p className="text-text-secondary text-sm">
               {t("project.meteo.timeline.text")}
             </p>
           </div>
 
-          <div className="bg-neutral-900 p-6 rounded-2xl">
+          <div className="bg-surface-raised p-6 rounded-2xl">
             <h3 className="text-lg font-semibold mb-2 flex items-center">
               <span className="mr-3">👥</span>
               {t("project.meteo.team.title")}
             </h3>
-            <p className="text-neutral-400 text-sm">
+            <p className="text-text-secondary text-sm">
               {t("project.meteo.team.text")}
             </p>
           </div>
@@ -90,11 +93,11 @@ function MeteoProject() {
 
       {/* CONTEXT */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="bg-neutral-900 rounded-2xl p-8 md:p-12">
-          <h2 className="text-3xl font-semibold mb-6">
+        <div className="bg-surface-raised rounded-2xl p-8 md:p-12">
+          <h2 className="font-display text-3xl font-semibold mb-6">
             {t("project.meteo.context.title")}
           </h2>
-          <div className="space-y-4 text-neutral-400 leading-relaxed">
+          <div className="space-y-4 text-text-secondary leading-relaxed">
             <p>{t("project.meteo.context.p1")}</p>
             <p>{t("project.meteo.context.p2")}</p>
           </div>
@@ -103,10 +106,10 @@ function MeteoProject() {
 
       {/* SYSTEM DIAGRAM */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
-        <h2 className="text-3xl font-semibold mb-8">
+        <h2 className="font-display text-3xl font-semibold mb-8">
           {t("project.meteo.diagram.title")}
         </h2>
-        <div className="bg-neutral-900 rounded-2xl overflow-hidden">
+        <div className="bg-surface-raised rounded-2xl overflow-hidden">
           <img 
             src="/images/meteo-diagram.jpg" 
             alt="Schéma du fonctionnement de la station météo"
@@ -115,7 +118,7 @@ function MeteoProject() {
               e.target.src = 'https://via.placeholder.com/1200x800/262626/ffffff?text=Schema+Fonctionnement'
             }}
           />
-          <div className="p-4 text-center text-sm text-neutral-400">
+          <div className="p-4 text-center text-sm text-text-secondary">
             {t("project.meteo.diagram.caption")}
           </div>
         </div>
@@ -123,62 +126,62 @@ function MeteoProject() {
 
       {/* APPROACH */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
-        <h2 className="text-3xl font-semibold mb-8">
+        <h2 className="font-display text-3xl font-semibold mb-8">
           {t("project.meteo.approach.title")}
         </h2>
 
         <div className="space-y-6">
           
-          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+          <div className="bg-surface-raised rounded-2xl p-6 md:p-8">
             <div className="flex items-start mb-4">
-              <span className="text-3xl mr-4">1️⃣</span>
+              <span className="font-display text-3xl mr-4">1️⃣</span>
               <div>
                 <h3 className="text-xl font-semibold mb-3">
                   {t("project.meteo.approach.step1.title")}
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-text-secondary">
                   {t("project.meteo.approach.step1.text")}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+          <div className="bg-surface-raised rounded-2xl p-6 md:p-8">
             <div className="flex items-start mb-4">
-              <span className="text-3xl mr-4">2️⃣</span>
+              <span className="font-display text-3xl mr-4">2️⃣</span>
               <div>
                 <h3 className="text-xl font-semibold mb-3">
                   {t("project.meteo.approach.step2.title")}
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-text-secondary">
                   {t("project.meteo.approach.step2.text")}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+          <div className="bg-surface-raised rounded-2xl p-6 md:p-8">
             <div className="flex items-start mb-4">
-              <span className="text-3xl mr-4">3️⃣</span>
+              <span className="font-display text-3xl mr-4">3️⃣</span>
               <div>
                 <h3 className="text-xl font-semibold mb-3">
                   {t("project.meteo.approach.step3.title")}
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-text-secondary">
                   {t("project.meteo.approach.step3.text")}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-900 rounded-2xl p-6 md:p-8">
+          <div className="bg-surface-raised rounded-2xl p-6 md:p-8">
             <div className="flex items-start mb-4">
-              <span className="text-3xl mr-4">4️⃣</span>
+              <span className="font-display text-3xl mr-4">4️⃣</span>
               <div>
                 <h3 className="text-xl font-semibold mb-3">
                   {t("project.meteo.approach.step4.title")}
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-text-secondary">
                   {t("project.meteo.approach.step4.text")}
                 </p>
               </div>
@@ -190,62 +193,62 @@ function MeteoProject() {
 
       {/* TECHNICAL FEATURES */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
-        <h2 className="text-3xl font-semibold mb-8">
+        <h2 className="font-display text-3xl font-semibold mb-8">
           {t("project.meteo.features.title")}
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6">
           
-          <div className="bg-neutral-900 p-6 rounded-2xl">
+          <div className="bg-surface-raised p-6 rounded-2xl">
             <div className="flex items-start mb-4">
               <span className="text-2xl mr-4">🌡️</span>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
                   {t("project.meteo.features.sensors.title")}
                 </h3>
-                <p className="text-neutral-400 text-sm">
+                <p className="text-text-secondary text-sm">
                   {t("project.meteo.features.sensors.text")}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-900 p-6 rounded-2xl">
+          <div className="bg-surface-raised p-6 rounded-2xl">
             <div className="flex items-start mb-4">
               <span className="text-2xl mr-4">💾</span>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
                   {t("project.meteo.features.storage.title")}
                 </h3>
-                <p className="text-neutral-400 text-sm">
+                <p className="text-text-secondary text-sm">
                   {t("project.meteo.features.storage.text")}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-900 p-6 rounded-2xl">
+          <div className="bg-surface-raised p-6 rounded-2xl">
             <div className="flex items-start mb-4">
               <span className="text-2xl mr-4">📊</span>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
                   {t("project.meteo.features.interface.title")}
                 </h3>
-                <p className="text-neutral-400 text-sm">
+                <p className="text-text-secondary text-sm">
                   {t("project.meteo.features.interface.text")}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-neutral-900 p-6 rounded-2xl">
+          <div className="bg-surface-raised p-6 rounded-2xl">
             <div className="flex items-start mb-4">
               <span className="text-2xl mr-4">⚓</span>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
                   {t("project.meteo.features.marine.title")}
                 </h3>
-                <p className="text-neutral-400 text-sm">
+                <p className="text-text-secondary text-sm">
                   {t("project.meteo.features.marine.text")}
                 </p>
               </div>
@@ -257,32 +260,32 @@ function MeteoProject() {
 
       {/* TECHNICAL STACK */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
-        <h2 className="text-3xl font-semibold mb-8">
+        <h2 className="font-display text-3xl font-semibold mb-8">
           {t("project.meteo.technical.title")}
         </h2>
 
-        <div className="bg-neutral-900 rounded-2xl p-8">
+        <div className="bg-surface-raised rounded-2xl p-8">
           <div className="grid md:grid-cols-2 gap-8">
             
             <div>
               <h3 className="text-xl font-semibold mb-4">
                 {t("project.meteo.technical.hardware")}
               </h3>
-              <ul className="space-y-2 text-neutral-400">
+              <ul className="space-y-2 text-text-secondary">
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.mcu")}</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.tempSensor")}</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.pressureSensor")}</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.display")}</span>
                 </li>
               </ul>
@@ -292,21 +295,21 @@ function MeteoProject() {
               <h3 className="text-xl font-semibold mb-4">
                 {t("project.meteo.technical.software")}
               </h3>
-              <ul className="space-y-2 text-neutral-400">
+              <ul className="space-y-2 text-text-secondary">
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.embedded")}</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.protocols")}</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.dataManagement")}</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
+                  <span className="text-text-primary mr-2">•</span>
                   <span>{t("project.meteo.technical.architecture")}</span>
                 </li>
               </ul>
@@ -318,31 +321,31 @@ function MeteoProject() {
 
       {/* SKILLS DEVELOPED */}
       <section className="max-w-6xl mx-auto px-6 pb-32">
-        <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl p-8 md:p-12">
-          <h2 className="text-3xl font-semibold mb-6">
+        <div className="bg-gradient-to-br from-surface-raised to-surface-overlay border border-border-subtle rounded-2xl p-8 md:p-12">
+          <h2 className="font-display text-3xl font-semibold mb-6">
             {t("project.meteo.skills.title")}
           </h2>
-          <div className="space-y-4 text-neutral-400 leading-relaxed">
+          <div className="space-y-4 text-text-secondary leading-relaxed">
             <p>{t("project.meteo.skills.p1")}</p>
             <p>{t("project.meteo.skills.p2")}</p>
             <p>{t("project.meteo.skills.p3")}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+            <div className="bg-surface-base/50 rounded-xl p-6 text-center">
               <div className="text-2xl mb-2">🎯</div>
               <div className="font-semibold mb-1">{t("project.meteo.skills.badge1.title")}</div>
-              <div className="text-sm text-neutral-400">{t("project.meteo.skills.badge1.text")}</div>
+              <div className="text-sm text-text-secondary">{t("project.meteo.skills.badge1.text")}</div>
             </div>
-            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+            <div className="bg-surface-base/50 rounded-xl p-6 text-center">
               <div className="text-2xl mb-2">📡</div>
               <div className="font-semibold mb-1">{t("project.meteo.skills.badge2.title")}</div>
-              <div className="text-sm text-neutral-400">{t("project.meteo.skills.badge2.text")}</div>
+              <div className="text-sm text-text-secondary">{t("project.meteo.skills.badge2.text")}</div>
             </div>
-            <div className="bg-neutral-950/50 rounded-xl p-6 text-center">
+            <div className="bg-surface-base/50 rounded-xl p-6 text-center">
               <div className="text-2xl mb-2">📝</div>
               <div className="font-semibold mb-1">{t("project.meteo.skills.badge3.title")}</div>
-              <div className="text-sm text-neutral-400">{t("project.meteo.skills.badge3.text")}</div>
+              <div className="text-sm text-text-secondary">{t("project.meteo.skills.badge3.text")}</div>
             </div>
           </div>
         </div>
