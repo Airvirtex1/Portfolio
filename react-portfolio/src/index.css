@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ─── Theme tokens ──────────────────────────────────────────── */
+:root {
+  /* Light mode */
+  --surface-base:    #fafaf9;
+  --surface-raised:  #ffffff;
+  --surface-overlay: #f4f4f5;
+  --border-subtle:   #e4e4e7;
+  --border-strong:   #d4d4d8;
+  --text-primary:    #09090b;
+  --text-secondary:  #52525b;
+  --text-muted:      #71717a;
+  --accent:          #d97706;
+  --accent-muted:    #b45309;
+  --accent-bg:       #fffbeb;
+}
+
+.dark {
+  /* Dark mode */
+  --surface-base:    #09090b;
+  --surface-raised:  #18181b;
+  --surface-overlay: #27272a;
+  --border-subtle:   rgba(39,39,42,0.8);
+  --border-strong:   #3f3f46;
+  --text-primary:    #fafafa;
+  --text-secondary:  #a1a1aa;
+  --text-muted:      #71717a;
+  --accent:          #f59e0b;
+  --accent-muted:    #fbbf24;
+  --accent-bg:       rgba(120,53,15,0.25);
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: var(--surface-base);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar       { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface-base); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface-overlay);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+}
+
+/* ─── Noise grain overlay ───────────────────────────────────── */
+@layer utilities {
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028;
+    pointer-events: none;
+    z-index: 9999;
+  }
+}

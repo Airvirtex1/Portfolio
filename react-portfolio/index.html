@@ -4,7 +4,50 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>react-portfolio</title>
+    <meta name="description" content="Matéo Repulles — Embedded Systems & IoT Engineering Student. Portfolio of electronics, firmware and IoT projects." />
+
+    <!--
+      Content Security Policy
+      ─────────────────────────────────────────────────────────────
+      • script-src 'self'          → only scripts from this origin (Vite build output)
+      • style-src  'unsafe-inline' → required for Framer Motion inline transforms
+      • font-src                   → Google Fonts files
+      • connect-src                → EmailJS API calls only
+      • img-src    data: blob:     → local assets + data URIs (CSS grain, onError fallback)
+      • object/frame-src 'none'    → no iframes, no plugins
+      • upgrade-insecure-requests  → force HTTPS on any legacy HTTP resource
+      ─────────────────────────────────────────────────────────────
+      NOTE: 'unsafe-inline' on style-src is the minimal concession for
+      Framer Motion. Scripts stay strict ('self' only, no eval, no inline).
+      In production also set these as HTTP response headers (stronger than meta).
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: blob:;
+      connect-src 'self' https://api.emailjs.com;
+      media-src 'none';
+      object-src 'none';
+      frame-src 'none';
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+    " />
+
+    <!-- Prevent clickjacking -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <!-- Prevent MIME sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <!-- Minimal referrer leak -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>Matéo Repulles — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
