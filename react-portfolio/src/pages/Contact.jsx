@@ -126,20 +126,20 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-surface-base text-text-primary transition-colors duration-300">
-      <div className="px-6 py-24">
+      <div className="px-4 sm:px-6 py-16 md:py-24">
         <motion.div
           className="max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="font-display text-4xl font-bold mb-3">{t("contact.title")}</h1>
-          <p className="text-text-secondary mb-10">{t("contact.subtitle")}</p>
+          <h1 className="font-display text-3xl sm:text-4xl font-bold mb-3">{t("contact.title")}</h1>
+          <p className="text-text-secondary mb-8 md:mb-10">{t("contact.subtitle")}</p>
 
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="space-y-5 bg-surface-raised border border-border-subtle p-8 rounded-2xl"
+            className="space-y-5 bg-surface-raised border border-border-subtle p-5 sm:p-8 rounded-2xl"
           >
             {/* ── Honeypot (invisible to real users) ─────────── */}
             <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}>

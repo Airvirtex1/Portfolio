@@ -9,22 +9,22 @@ function Projects() {
 
   return (
     <div className="min-h-screen bg-surface-base text-text-primary transition-colors duration-300">
-      <div className="max-w-container mx-auto px-6 py-24">
+      <div className="max-w-container mx-auto px-4 sm:px-6 py-16 md:py-24">
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="font-display text-5xl md:text-6xl font-bold mb-4">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             {t("project.title")}
           </h1>
-          <p className="text-lg text-text-secondary mb-16 max-w-2xl">
+          <p className="text-base md:text-lg text-text-secondary mb-8 md:mb-16 max-w-2xl">
             {t("project.subtitle")}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -47,7 +47,7 @@ function Projects() {
                   />
                 </div>
 
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <div className="flex flex-wrap gap-2 mb-3">
                     {project.tags.map((tag) => (
                       <span
