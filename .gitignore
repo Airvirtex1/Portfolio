@@ -1,0 +1,20 @@
+# Dépendances — jamais versionnées, régénérées par npm install
+node_modules/
+
+# Builds
+dist/
+build/
+
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Éditeurs / OS
+.DS_Store
+.vscode/
+.idea/
