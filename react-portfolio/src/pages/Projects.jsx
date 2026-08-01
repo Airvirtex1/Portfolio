@@ -39,12 +39,19 @@ function Projects() {
                 className="block bg-surface-raised border border-border-subtle rounded-2xl overflow-hidden hover:border-accent/30 transition-colors duration-200 group"
               >
                 <div className="aspect-video w-full overflow-hidden bg-surface-overlay">
-                  <img
-                    src={project.image}
-                    alt={t(project.titleKey)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => { e.target.style.display = "none"; }}
-                  />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={t(project.titleKey)}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface-overlay to-surface-raised">
+                      <span className="font-mono text-xs text-text-secondary">
+                        {project.tags[0]}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-4 sm:p-6">

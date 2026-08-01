@@ -5,8 +5,7 @@
     "projects": "Projets",
     "contact": "Contact"
   },
-  
-    "home": {
+  "home": {
     "title": "Salut, moi c'est Mateo 👋",
     "subtitle": "Étudiant ingénieur en systèmes embarqués et IoT basé à Paris. J'écris du firmware, je conçois des PCB et j'imprime mes boîtiers en 3D. Sur ce site, tu trouveras mes projets IoT, mes expériences professionnelles et tout ce qui tourne autour des microcontrôleurs et de l'électronique embarquée. Actuellement en recherche de stage à l'international !",
     "viewProjects": "Voir mes projets",
@@ -36,11 +35,17 @@
     "title": "Mes Projets",
     "subtitle": "Découvrez mes réalisations en systèmes embarqués, IoT et électronique",
     "viewDetails": "Voir les détails",
-
     "backToProjects": "Retour aux projets",
     "asservissement": {
       "title": "Jouet Interactif avec Système d'Asservissement",
       "intro": "Conception d'un système mécatronique intégrant une base rotative et un lanceur de billes. Projet combinant électronique de puissance, asservissement PID et programmation Arduino.",
+      "heroTags": [
+        "Arduino",
+        "PID",
+        "Électronique",
+        "Asservissement",
+        "Mécatronique"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir un dispositif ludique et fonctionnel combinant électronique de puissance et systèmes d'asservissement"
@@ -143,6 +148,13 @@
     "amplification": {
       "title": "Amplificateur Audio Connecté",
       "intro": "Conception d'un amplificateur audio avec optimisation énergétique et connectivité IoT SIGFOX. Projet combinant électronique analogique, amplification, filtrage et transmission de données.",
+      "heroTags": [
+        "Électronique Analogique",
+        "Amplification",
+        "Filtrage",
+        "SIGFOX",
+        "IoT"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Développer un amplificateur audio alliant efficacité énergétique, gain en puissance et connectivité IoT"
@@ -249,6 +261,13 @@
     "aqm": {
       "title": "Boîtier AQM (Air Quality Monitoring)",
       "intro": "Industrialisation d'un dispositif IoT de surveillance de la qualité de l'air pour la start-up française NOSE. Projet de gestion de production transformant un prototype en produit industrialisable.",
+      "heroTags": [
+        "IoT",
+        "Industrialisation",
+        "Gestion de Production",
+        "Fusion 360",
+        "CAO"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Transformer un prototype conforme au cahier des charges en un produit industrialisable et rentable"
@@ -356,6 +375,13 @@
     "tourelle": {
       "title": "Tourelle de Reconnaissance Faciale",
       "intro": "Système motorisé intégrant vision par ordinateur et reconnaissance faciale sur Raspberry Pi. Projet de stage combinant électronique, mécanique, développement Python et communication technique.",
+      "heroTags": [
+        "Python",
+        "Raspberry Pi",
+        "Vision par Ordinateur",
+        "Reconnaissance Faciale",
+        "Impression 3D"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir une tourelle motorisée fonctionnelle avec système de reconnaissance faciale accessible et pédagogique"
@@ -462,6 +488,13 @@
     "meteo": {
       "title": "Station Météo Embarquée",
       "intro": "Dispositif de surveillance environnementale conçu pour un contexte maritime. Station météo embarquée capable d'assurer des fonctions complètes de mesure, surveillance et enregistrement des données environnementales.",
+      "heroTags": [
+        "Systèmes Embarqués",
+        "Capteurs",
+        "Acquisition de Données",
+        "Maritime",
+        "Météorologie"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir un dispositif de surveillance environnementale simple d'utilisation pour un équipage maritime"
@@ -556,6 +589,13 @@
     "argentique": {
       "title": "Déclencheur Photo Argentique",
       "intro": "Dispositif de déclenchement à distance pour appareils photo argentiques. Projet professionnel combinant ESP32, communication 433 MHz, impression 3D et gestion de batterie.",
+      "heroTags": [
+        "ESP32",
+        "Impression 3D",
+        "433 MHz",
+        "Prototypage",
+        "Photographie"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir un déclencheur pratique, transportable et facilement utilisable par le grand public"
@@ -654,6 +694,13 @@
     "decors": {
       "title": "Décors Automatisés de Spectacle",
       "intro": "Système automatisé de décors pour production théâtrale avec grue rotative, feux de signalisation et véhicules motorisés. Projet professionnel combinant Arduino, moteurs pas à pas, impression 3D et automatisation.",
+      "heroTags": [
+        "Arduino",
+        "Moteurs Pas à Pas",
+        "Automatisation",
+        "Spectacle",
+        "Impression 3D"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir des décors autonomes et fiables pour répétitions et représentations, contrôlables par un simple bouton"
@@ -772,6 +819,13 @@
     "crabe": {
       "title": "Robot Crabe Motorisé",
       "intro": "Conception d'un robot quadrupède contrôlable via interface web sans fil. Projet personnel combinant modélisation 3D, électronique embarquée ESP32 et développement web.",
+      "heroTags": [
+        "ESP32",
+        "Impression 3D",
+        "Robotique",
+        "HTML/Web",
+        "Servomoteurs"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Créer un robot quadrupède fonctionnel avec mouvements coordonnés et contrôle sans fil via interface web"
@@ -881,6 +935,12 @@
     "portfolio": {
       "title": "Portfolio Website",
       "intro": "Site web portfolio moderne et multilingue présentant mes projets, compétences et expériences en systèmes embarqués. Développé avec React et Tailwind CSS pour offrir une expérience utilisateur fluide et responsive.",
+      "heroTags": [
+        "React",
+        "Tailwind CSS",
+        "React Router",
+        "i18next"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Créer un portfolio professionnel pour présenter mes projets et faciliter les opportunités de stage à l'international"
@@ -951,7 +1011,8 @@
         "responsive": "Responsive",
         "performance": "Performance optimale"
       }
-    }
+    },
+    "notFound": "Projet introuvable"
   },
   "about": {
     "title": "À propos",
@@ -1017,5 +1078,3 @@
     "error": "Erreur lors de l'envoi ❌"
   }
 }
-
-

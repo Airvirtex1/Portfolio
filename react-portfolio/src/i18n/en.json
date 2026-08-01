@@ -31,7 +31,6 @@
     "rights": "All rights reserved.",
     "madeWith": "Made with"
   },
-  
   "project": {
     "title": "My Projects",
     "subtitle": "Discover my work in embedded systems, IoT and electronics",
@@ -40,6 +39,13 @@
     "tourelle": {
       "title": "Facial Recognition Turret",
       "intro": "Motorized system integrating computer vision and facial recognition on Raspberry Pi. Internship project combining electronics, mechanics, Python development and technical communication.",
+      "heroTags": [
+        "Python",
+        "Raspberry Pi",
+        "Computer Vision",
+        "Facial Recognition",
+        "3D Printing"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Design a functional motorized turret with accessible and educational facial recognition system"
@@ -146,6 +152,13 @@
     "asservissement": {
       "title": "Interactive Toy with Control System",
       "intro": "Design of a mechatronic system integrating a rotating base and marble launcher. Project combining power electronics, PID control and Arduino programming.",
+      "heroTags": [
+        "Arduino",
+        "PID",
+        "Electronics",
+        "Closed-Loop Control",
+        "Mechatronics"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Design a playful and functional device combining power electronics and control systems"
@@ -248,6 +261,13 @@
     "amplification": {
       "title": "Connected Audio Amplifier",
       "intro": "Design of an audio amplifier with energy optimization and SIGFOX IoT connectivity. Project combining analog electronics, amplification, filtering and data transmission.",
+      "heroTags": [
+        "Analog Electronics",
+        "Amplification",
+        "Filtering",
+        "SIGFOX",
+        "IoT"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Develop an audio amplifier combining energy efficiency, power gain and IoT connectivity"
@@ -351,10 +371,16 @@
         }
       }
     },
-
     "meteo": {
       "title": "Embedded Weather Station",
       "intro": "Environmental monitoring device designed for maritime context. Embedded weather station capable of providing complete measurement, monitoring and recording functions for environmental data.",
+      "heroTags": [
+        "Embedded Systems",
+        "Sensors",
+        "Data Acquisition",
+        "Maritime",
+        "Meteorology"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Design an easy-to-use environmental monitoring device for maritime crew"
@@ -449,6 +475,13 @@
     "aqm": {
       "title": "AQM Device (Air Quality Monitoring)",
       "intro": "Industrialization of an IoT air quality monitoring device for French startup NOSE. Production management project transforming a prototype into an industrializable product.",
+      "heroTags": [
+        "IoT",
+        "Industrialisation",
+        "Production Management",
+        "Fusion 360",
+        "CAD"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Transform a prototype meeting specifications into an industrializable and profitable product"
@@ -556,6 +589,13 @@
     "crabe": {
       "title": "Motorized Crab Robot",
       "intro": "Design of a quadruped robot controllable via wireless web interface. Personal project combining 3D modeling, ESP32 embedded electronics and web development.",
+      "heroTags": [
+        "ESP32",
+        "3D Printing",
+        "Robotics",
+        "HTML/Web",
+        "Servo Motors"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Create a functional quadruped robot with coordinated movements and wireless control via web interface"
@@ -665,6 +705,13 @@
     "argentique": {
       "title": "Film Camera Remote Trigger",
       "intro": "Remote trigger device for film cameras. Professional project combining ESP32, 433 MHz communication, 3D printing and battery management.",
+      "heroTags": [
+        "ESP32",
+        "3D Printing",
+        "433 MHz",
+        "Prototyping",
+        "Photography"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Design a practical, portable and easy-to-use trigger for the general public"
@@ -763,6 +810,13 @@
     "decors": {
       "title": "Automated Stage Decor",
       "intro": "Automated decor system for theatrical production with rotating crane, traffic lights and motorized vehicles. Professional project combining Arduino, stepper motors, 3D printing and automation.",
+      "heroTags": [
+        "Arduino",
+        "Stepper Motors",
+        "Automation",
+        "Live Performance",
+        "3D Printing"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Design autonomous and reliable stage decor for rehearsals and performances, controllable with a single button"
@@ -881,6 +935,12 @@
     "portfolio": {
       "title": "Portfolio Website",
       "intro": "Modern multilingual portfolio website showcasing my projects, skills, and experiences in embedded systems. Built with React and Tailwind CSS to deliver a smooth and responsive user experience.",
+      "heroTags": [
+        "React",
+        "Tailwind CSS",
+        "React Router",
+        "i18next"
+      ],
       "objective": {
         "title": "Objective",
         "text": "Create a professional portfolio to showcase my projects and facilitate international internship opportunities"
@@ -951,9 +1011,10 @@
         "responsive": "Responsive",
         "performance": "Optimal performance"
       }
-    }
+    },
+    "notFound": "Project not found"
   },
-   "about": {
+  "about": {
     "title": "About",
     "intro": "Engineering student passionate about embedded systems, IoT, and electronics. Discover my journey, skills, and experiences.",
     "whoAmI": "Who am I?",
@@ -1016,6 +1077,4 @@
     "success": "Message sent ✅",
     "error": "Error while sending ❌"
   }
-
-
 }

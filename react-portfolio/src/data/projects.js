@@ -1,73 +1,33 @@
-import meteoImg from "../assets/station_meteo.png";
-import opencvImg from "../assets/opencv.png";
-import asservissementImg from "../assets/asservissement.png";
-import amplificationImg from "../assets/amplification_filtrage.png";
-import aqmImg from "../assets/aqm.png";
-import crabeImg from "../assets/crabe.png";
-import decorsImg from "../assets/decors1.png";
+import projectsData from "./projects.json";
 
-export const projects = [
-  {
-    id: "portfolio",
-    titleKey: "project.portfolio.title",
-    descKey: "project.portfolio.intro",
-    image: meteoImg,
-    tags: ["React", "Tailwind", "i18next"],
-  },
-  {
-    id: "meteo",
-    titleKey: "project.meteo.title",
-    descKey: "project.meteo.intro",
-    image: meteoImg,
-    tags: ["ESP32", "MQTT", "Sensors"],
-  },
-  {
-    id: "tourrelle",
-    titleKey: "project.tourelle.title",
-    descKey: "project.tourelle.intro",
-    image: opencvImg,
-    tags: ["OpenCV", "Python", "Servo"],
-  },
-  {
-    id: "asservissement",
-    titleKey: "project.asservissement.title",
-    descKey: "project.asservissement.intro",
-    image: asservissementImg,
-    tags: ["STM32", "PID", "C"],
-  },
-  {
-    id: "amplification",
-    titleKey: "project.amplification.title",
-    descKey: "project.amplification.intro",
-    image: amplificationImg,
-    tags: ["Analog", "KiCad", "LTspice"],
-  },
-  {
-    id: "boitier-aqm",
-    titleKey: "project.aqm.title",
-    descKey: "project.aqm.intro",
-    image: aqmImg,
-    tags: ["ESP32", "IoT", "Sensors"],
-  },
-  {
-    id: "crabe",
-    titleKey: "project.crabe.title",
-    descKey: "project.crabe.intro",
-    image: crabeImg,
-    tags: ["Raspberry Pi", "Python", "Robotics"],
-  },
-  {
-    id: "argentique",
-    titleKey: "project.argentique.title",
-    descKey: "project.argentique.intro",
-    image: "/assets/argentique.png",
-    tags: ["STM32", "Firmware", "C"],
-  },
-  {
-    id: "decors",
-    titleKey: "project.decors.title",
-    descKey: "project.decors.intro",
-    image: decorsImg,
-    tags: ["3D Design", "Arduino"],
-  },
-];
+// Toutes les images de src/assets, indexées par nom de fichier.
+// Vite les bundle (hash + optimisation) : projects.json ne stocke qu'un nom.
+const assetModules = import.meta.glob("../assets/*", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const assets = Object.fromEntries(
+  Object.entries(assetModules).map(([path, url]) => [path.split("/").pop(), url])
+);
+
+/** Nom de fichier -> URL bundlée, ou null si l'asset n'existe pas encore. */
+export function resolveAsset(filename) {
+  return filename ? assets[filename] ?? null : null;
+}
+
+export const projects = projectsData.map((project) => {
+  const ns = project.ns ?? project.id;
+  return {
+    ...project,
+    ns,
+    image: resolveAsset(project.image),
+    titleKey: `project.${ns}.title`,
+    descKey: `project.${ns}.intro`,
+  };
+});
+
+export function getProject(id) {
+  return projects.find((project) => project.id === id) ?? null;
+}
