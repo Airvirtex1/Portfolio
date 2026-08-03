@@ -23,6 +23,75 @@ const isShort = (key) =>
     key
   );
 
+/**
+ * Côté pages c'est l'inverse des projets : la majorité des chaînes sont
+ * courtes (libellés de nav, de boutons, de champs), seules quelques-unes
+ * méritent un textarea. On liste donc les longues plutôt que les courtes.
+ */
+const isLongPageKey = (key) =>
+  /(intro|subtitle|bio\d|aboutText\d?|text|description|task\d|degree|focus|success|error|placeholder|Text|Desc)$/i.test(
+    key
+  );
+
+/** Chemins des feuilles d'un objet i18n : { a: { b: "x" } } -> ["a.b"]. */
+const leafKeys = (obj, prefix = "") =>
+  Object.entries(obj ?? {}).flatMap(([key, value]) =>
+    value && typeof value === "object" && !Array.isArray(value)
+      ? leafKeys(value, `${prefix}${key}.`)
+      : [`${prefix}${key}`]
+  );
+
+const NS_LABELS = {
+  nav: "Navigation",
+  home: "Accueil",
+  about: "À propos",
+  contact: "Contact",
+  footer: "Pied de page",
+  notFound: "Page 404",
+};
+
+// Mêmes descripteurs de champ que blockSchema, mais locaux : les listes de
+// About ne sont pas des blocs et n'ont pas à figurer dans BLOCK_TYPES.
+const text = (name, label) => ({ name, label, type: "text" });
+const num = (name, label, def) => ({ name, label, type: "number", default: def });
+const bool = (name, label) => ({ name, label, type: "boolean" });
+
+/**
+ * Les trois listes de la page À propos. `texts` décrit les clés i18n générées
+ * par une entrée : elles vivent dans le namespace `about`, sous `about.<key>`.
+ */
+const ABOUT_LISTS = {
+  experiences: {
+    label: "Expériences",
+    fields: [text("key", "Préfixe de clé"), num("tasks", "Nombre de missions", 2)],
+    texts: (entry) => [
+      "title",
+      "company",
+      "date",
+      ...Array.from({ length: entry.tasks ?? 0 }, (_, i) => `task${i + 1}`),
+    ],
+    blank: () => ({ key: `exp${Date.now().toString(36).slice(-3)}`, tasks: 2 }),
+  },
+  education: {
+    label: "Formations",
+    fields: [
+      text("key", "Préfixe de clé"),
+      text("school", "École (non traduit)"),
+      text("years", "Années (non traduit)"),
+      bool("focus", "Ligne « spécialité »"),
+    ],
+    texts: (entry) => ["degree", ...(entry.focus ? ["focus"] : [])],
+    blank: () => ({ key: `edu${Date.now().toString(36).slice(-3)}`, school: "", years: "", focus: false }),
+  },
+  skills: {
+    label: "Compétences",
+    fields: [text("key", "Préfixe de clé"), text("emoji", "Emoji")],
+    list: "items",
+    texts: () => [""],
+    blank: () => ({ key: `skill${Date.now().toString(36).slice(-3)}`, emoji: "🔧", items: [] }),
+  },
+};
+
 const label = "block text-xs font-medium text-text-secondary mb-1";
 const input =
   "w-full bg-surface-base border border-border-subtle rounded-lg px-3 py-2 text-sm " +
@@ -44,13 +113,14 @@ function Field({ children, title }) {
  * Défini au niveau module : un composant créé dans le corps d'Admin serait
  * remonté à chaque frappe, et l'input perdrait le focus.
  */
-function TextPair({ keyPath, title, translations, ns, setText }) {
+function TextPair({ keyPath, title, read, write, multiline }) {
   return (
     <Field title={title ?? keyPath}>
       <div className="grid grid-cols-2 gap-2">
         {LANGS.map((language) => {
-          const value = getIn(translations[language], `${ns}.${keyPath}`) ?? "";
-          const Tag = isShort(keyPath) ? "input" : "textarea";
+          const value = read(language, keyPath) ?? "";
+          const long = multiline ?? !isShort(keyPath);
+          const Tag = long ? "textarea" : "input";
 
           return (
             <div key={language}>
@@ -60,7 +130,7 @@ function TextPair({ keyPath, title, translations, ns, setText }) {
               <Tag
                 className={`${input} ${Tag === "textarea" ? "min-h-[72px]" : ""}`}
                 value={value}
-                onChange={(e) => setText(language, keyPath, e.target.value)}
+                onChange={(e) => write(language, keyPath, e.target.value)}
               />
             </div>
           );
@@ -104,6 +174,7 @@ function AssetPicker({ value, onChange, assets, onUpload }) {
 export default function Admin() {
   const [data, setData] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
+  const [tab, setTab] = useState("projects");
   const [lang, setLang] = useState("fr");
   const [status, setStatus] = useState("");
   const [dirty, setDirty] = useState(false);
@@ -160,6 +231,30 @@ export default function Admin() {
       return next;
     });
 
+  /**
+   * L'ordre du tableau est l'ordre de la grille /projects : déplacer une entrée
+   * ici, c'est la déplacer sur le site. On saute les entrées hors grille pour
+   * que les flèches suivent ce que l'on voit.
+   */
+  const moveProject = (delta) =>
+    setData((d) => {
+      const listed = d.projects.filter((p) => p.listed !== false);
+      const at = listed.findIndex((p) => p.id === selectedId);
+      const target = at + delta;
+      if (at < 0 || target < 0 || target >= listed.length) return d;
+
+      const swapped = [...listed];
+      [swapped[at], swapped[target]] = [swapped[target], swapped[at]];
+
+      // On réinjecte l'ordre des listés en laissant les non-listés en place.
+      const queue = [...swapped];
+      setDirty(true);
+      return {
+        ...d,
+        projects: d.projects.map((p) => (p.listed === false ? p : queue.shift())),
+      };
+    });
+
   const setText = (language, key, value) =>
     setData((d) => {
       setDirty(true);
@@ -170,6 +265,42 @@ export default function Admin() {
           [language]: setIn(d.translations[language], `${ns}.${key}`, value),
         },
       };
+    });
+
+  // — pages (namespaces i18n hors `project`) et listes de About ——————
+
+  const setPageText = (language, path, value) =>
+    setData((d) => {
+      setDirty(true);
+      return {
+        ...d,
+        pages: { ...d.pages, [language]: setIn(d.pages[language], path, value) },
+      };
+    });
+
+  /** Supprime une clé pointée dans les deux langues (entrée About retirée). */
+  const dropPageKeys = (d, paths) => {
+    const prune = (obj, path) => {
+      const [head, ...rest] = path.split(".");
+      if (!obj || !(head in obj)) return obj;
+      const next = { ...obj };
+      if (rest.length) next[head] = prune(next[head], rest.join("."));
+      else delete next[head];
+      return next;
+    };
+    return {
+      ...d,
+      pages: Object.fromEntries(
+        LANGS.map((l) => [l, paths.reduce(prune, d.pages[l])])
+      ),
+    };
+  };
+
+  const patchAbout = (list, updater, keysToDrop = []) =>
+    setData((d) => {
+      setDirty(true);
+      const next = keysToDrop.length ? dropPageKeys(d, keysToDrop) : d;
+      return { ...next, about: { ...next.about, [list]: updater(next.about[list]) } };
     });
 
   const addProject = () => {
@@ -212,17 +343,25 @@ export default function Admin() {
     const response = await fetch("/__content", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ projects: data.projects, translations: data.translations }),
+      body: JSON.stringify({
+        projects: data.projects,
+        translations: data.translations,
+        pages: data.pages,
+        about: data.about,
+      }),
     });
     const result = await response.json();
 
     if (result.error) return setStatus(`Erreur : ${result.error}`);
     setDirty(false);
-    setStatus("Écrit dans src/data/projects.json et src/i18n/*.json — pense à commit.");
+    setStatus("Écrit dans src/data/*.json et src/i18n/*.json — pense à commit.");
   };
 
   // Props communes, pour garder les appels courts côté rendu
-  const textProps = { translations: data.translations, ns, setText };
+  const textProps = {
+    read: (language, key) => getIn(data.translations[language], `${ns}.${key}`),
+    write: setText,
+  };
   const assetProps = { assets: data.assets, onUpload: uploadAsset };
 
   // — preview ———————————————————————————————————————————————
@@ -233,9 +372,39 @@ export default function Admin() {
   };
   const heroTags = translate("heroTags");
 
+  const tabButton = (id) =>
+    `${button} ${tab === id ? "border-accent text-accent" : ""}`;
+
   return (
     <div className="min-h-screen bg-surface-base text-text-primary pt-24">
-      <div className="grid lg:grid-cols-2 gap-6 px-6 pb-16">
+
+      <div className="flex flex-wrap items-center gap-2 px-6 pb-4">
+        <button className={tabButton("projects")} onClick={() => setTab("projects")}>
+          Projets
+        </button>
+        <button className={tabButton("pages")} onClick={() => setTab("pages")}>
+          Pages
+        </button>
+        <button
+          className={`${button} ${dirty ? "border-accent text-accent" : ""}`}
+          onClick={save}
+        >
+          {dirty ? "Enregistrer •" : "Enregistrer"}
+        </button>
+        {status && <span className="text-xs text-text-secondary">{status}</span>}
+      </div>
+
+      {tab === "pages" && (
+        <PagesEditor
+          pages={data.pages}
+          about={data.about}
+          read={(language, path) => getIn(data.pages[language], path)}
+          write={setPageText}
+          patchAbout={patchAbout}
+        />
+      )}
+
+      <div className={`grid lg:grid-cols-2 gap-6 px-6 pb-16 ${tab === "projects" ? "" : "hidden"}`}>
 
         {/* ————— ÉDITEUR ————— */}
         <div className="space-y-5 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-3">
@@ -253,16 +422,21 @@ export default function Admin() {
               ))}
             </select>
             <button className={button} onClick={addProject}>+ Projet</button>
-            <button
-              className={`${button} ${dirty ? "border-accent text-accent" : ""}`}
-              onClick={save}
-            >
-              {dirty ? "Enregistrer •" : "Enregistrer"}
-            </button>
             <Link className={button} to={`/projects/${selectedId}`}>Voir la page</Link>
           </div>
 
-          {status && <p className="text-xs text-text-secondary">{status}</p>}
+          {/* Rang dans la grille /projects — l'ordre du JSON fait foi */}
+          {project && project.listed !== false && (
+            <div className="flex items-center gap-2 text-xs text-text-secondary">
+              <span>
+                Rang {data.projects.filter((p) => p.listed !== false).findIndex((p) => p.id === selectedId) + 1}
+                {" / "}
+                {data.projects.filter((p) => p.listed !== false).length} sur la page Projets
+              </span>
+              <button className={button} onClick={() => moveProject(-1)}>↑</button>
+              <button className={button} onClick={() => moveProject(1)}>↓</button>
+            </div>
+          )}
 
           {project && (
             <>
@@ -425,6 +599,189 @@ export default function Admin() {
         </div>
       </div>
     </div>
+  );
+}
+
+/** Chemin i18n d'une entrée About : `about.exp1.title`, ou `about.hardware`. */
+const aboutPath = (entry, suffix) =>
+  suffix ? `about.${entry.key}.${suffix}` : `about.${entry.key}`;
+
+/**
+ * Onglet Pages : toutes les chaînes FR/EN des namespaces hors `project`, plus
+ * les trois listes de la page À propos, qui sont de la structure et pas du
+ * texte — on peut y ajouter, retirer et réordonner des entrées.
+ */
+function PagesEditor({ pages, about, read, write, patchAbout }) {
+  const textProps = { read, write };
+
+  // Clés du namespace `about` déjà couvertes par les listes : on ne les répète
+  // pas dans le bloc « autres chaînes », elles sont éditées dans leur entrée.
+  const ownedByLists = new Set(
+    Object.entries(ABOUT_LISTS).flatMap(([name, schema]) =>
+      (about[name] ?? []).flatMap((entry) =>
+        schema.texts(entry).map((suffix) => aboutPath(entry, suffix))
+      )
+    )
+  );
+
+  return (
+    <div className="px-6 pb-16 space-y-5 max-w-5xl">
+      {Object.keys(pages.fr).map((ns) => {
+        const keys = leafKeys(pages.fr[ns])
+          .map((key) => `${ns}.${key}`)
+          .filter((path) => !ownedByLists.has(path));
+
+        return (
+          <section key={ns} className="bg-surface-raised rounded-2xl p-4 space-y-3">
+            <h2 className="font-display font-semibold">
+              {NS_LABELS[ns] ?? ns}{" "}
+              <span className="text-xs font-normal text-text-secondary">
+                {keys.length} chaînes × 2 langues
+              </span>
+            </h2>
+
+            {keys.map((path) => (
+              <TextPair
+                key={path}
+                {...textProps}
+                keyPath={path}
+                title={path.slice(ns.length + 1)}
+                multiline={isLongPageKey(path)}
+              />
+            ))}
+
+            {ns === "about" &&
+              Object.entries(ABOUT_LISTS).map(([name, schema]) => (
+                <AboutList
+                  key={name}
+                  name={name}
+                  schema={schema}
+                  entries={about[name] ?? []}
+                  patchAbout={patchAbout}
+                  textProps={textProps}
+                />
+              ))}
+          </section>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Une liste de la page À propos : expériences, formations ou compétences. */
+function AboutList({ name, schema, entries, patchAbout, textProps }) {
+  const move = (index, delta) =>
+    patchAbout(name, (list) => {
+      const target = index + delta;
+      if (target < 0 || target >= list.length) return list;
+      const next = [...list];
+      [next[index], next[target]] = [next[target], next[index]];
+      return next;
+    });
+
+  const patchEntry = (index, changes) =>
+    patchAbout(name, (list) =>
+      list.map((entry, i) => (i === index ? { ...entry, ...changes } : entry))
+    );
+
+  return (
+    <details className="border-t border-border-subtle pt-3" open>
+      <summary className="cursor-pointer text-xs text-text-secondary mb-2">
+        {schema.label} ({entries.length})
+      </summary>
+
+      <div className="space-y-3 mt-3">
+        {entries.map((entry, index) => (
+          <div key={index} className="bg-surface-base rounded-xl p-3 space-y-2">
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-mono text-xs text-text-secondary">{entry.key}</span>
+              <div className="flex gap-1">
+                <button className={button} disabled={index === 0} onClick={() => move(index, -1)}>↑</button>
+                <button
+                  className={button}
+                  disabled={index === entries.length - 1}
+                  onClick={() => move(index, 1)}
+                >
+                  ↓
+                </button>
+                <button
+                  className={button}
+                  onClick={() =>
+                    // Retire l'entrée ET ses chaînes, dans les deux langues.
+                    patchAbout(
+                      name,
+                      (list) => list.filter((_, i) => i !== index),
+                      schema.texts(entry).map((suffix) => aboutPath(entry, suffix))
+                    )
+                  }
+                >
+                  Supprimer
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {schema.fields.map((field) => (
+                <Field key={field.name} title={field.label}>
+                  {field.type === "boolean" ? (
+                    <input
+                      type="checkbox"
+                      checked={Boolean(entry[field.name])}
+                      onChange={(e) => patchEntry(index, { [field.name]: e.target.checked })}
+                    />
+                  ) : (
+                    <input
+                      className={input}
+                      type={field.type === "number" ? "number" : "text"}
+                      value={entry[field.name] ?? ""}
+                      onChange={(e) =>
+                        patchEntry(index, {
+                          [field.name]:
+                            field.type === "number"
+                              ? Number(e.target.value)
+                              : e.target.value,
+                        })
+                      }
+                    />
+                  )}
+                </Field>
+              ))}
+            </div>
+
+            {schema.list && (
+              <Field title="Éléments (séparés par des virgules, non traduits)">
+                <input
+                  className={input}
+                  value={(entry[schema.list] ?? []).join(", ")}
+                  onChange={(e) =>
+                    patchEntry(index, {
+                      [schema.list]: e.target.value
+                        .split(",")
+                        .map((s) => s.trim())
+                        .filter(Boolean),
+                    })
+                  }
+                />
+              </Field>
+            )}
+
+            {schema.texts(entry).map((suffix) => (
+              <TextPair
+                key={suffix || "label"}
+                {...textProps}
+                keyPath={aboutPath(entry, suffix)}
+                title={suffix || "Libellé"}
+                multiline={isLongPageKey(suffix)}
+              />
+            ))}
+          </div>
+        ))}
+
+        <button className={button} onClick={() => patchAbout(name, (list) => [...list, schema.blank()])}>
+          + {schema.label.replace(/s$/, "")}
+        </button>
+      </div>
+    </details>
   );
 }
 

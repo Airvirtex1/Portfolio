@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { skills } from "../data/skills";
+import about from "../data/about.json";
 import Footer from "../components/Footer";
 
 const slideIn = {
@@ -55,20 +55,7 @@ function About() {
       <Section>
         <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6 md:mb-8">{t("about.experience")}</h2>
         <div className="space-y-4">
-          {[
-            {
-              key: "exp1",
-              tasks: ["task1", "task2"],
-            },
-            {
-              key: "exp2",
-              tasks: ["task1", "task2", "task3"],
-            },
-            {
-              key: "exp3",
-              tasks: ["task1", "task2", "task3"],
-            },
-          ].map(({ key, tasks }) => (
+          {about.experiences.map(({ key, tasks: taskCount }) => (
             <motion.div
               key={key}
               className="bg-surface-raised border border-border-subtle rounded-2xl p-6 md:p-8"
@@ -84,7 +71,7 @@ function About() {
                 </span>
               </div>
               <ul className="space-y-2 text-text-secondary">
-                {tasks.map((task) => (
+                {Array.from({ length: taskCount }, (_, i) => `task${i + 1}`).map((task) => (
                   <li key={task} className="flex items-start gap-2">
                     <span className="text-accent mt-0.5 shrink-0">›</span>
                     {t(`about.${key}.${task}`)}
@@ -100,15 +87,15 @@ function About() {
       <Section>
         <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6 md:mb-8">{t("about.skills")}</h2>
         <div className="grid md:grid-cols-2 gap-4">
-          {skills.map(({ id, labelKey, emoji, items }) => (
+          {about.skills.map(({ key, emoji, items }) => (
             <motion.div
-              key={id}
+              key={key}
               className="bg-surface-raised border border-border-subtle rounded-2xl p-6"
               whileHover={{ borderColor: "var(--accent)", transition: { duration: 0.2 } }}
             >
               <h3 className="font-display text-base font-semibold mb-4 flex items-center gap-2">
                 <span>{emoji}</span>
-                {t(labelKey)}
+                {t(`about.${key}`)}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
@@ -129,21 +116,20 @@ function About() {
       <Section>
         <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6 md:mb-8">{t("about.education")}</h2>
         <div className="space-y-4">
-          {[
-            { school: "EFREI Engineering School", degreeKey: "about.edu1.degree", focusKey: "about.edu1.focus", years: "2025–2028" },
-            { school: "CESI Engineering School",  degreeKey: "about.edu2.degree", focusKey: null,                years: "2022–2025" },
-          ].map(({ school, degreeKey, focusKey, years }) => (
-            <div key={school} className="bg-surface-raised border border-border-subtle rounded-2xl p-6 md:p-8">
+          {about.education.map(({ key, school, years, focus }) => (
+            <div key={key} className="bg-surface-raised border border-border-subtle rounded-2xl p-6 md:p-8">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                 <div>
                   <h3 className="font-display text-xl font-semibold mb-1">{school}</h3>
-                  <p className="text-text-secondary">{t(degreeKey)}</p>
+                  <p className="text-text-secondary">{t(`about.${key}.degree`)}</p>
                 </div>
                 <span className="font-mono text-xs text-accent bg-accent-bg border border-accent/20 px-3 py-1 rounded-full mt-2 md:mt-0 self-start">
                   {years}
                 </span>
               </div>
-              {focusKey && <p className="text-text-secondary text-sm mt-2">{t(focusKey)}</p>}
+              {focus && (
+                <p className="text-text-secondary text-sm mt-2">{t(`about.${key}.focus`)}</p>
+              )}
             </div>
           ))}
         </div>

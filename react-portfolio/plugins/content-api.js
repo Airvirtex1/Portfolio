@@ -10,8 +10,17 @@ import { resolve } from "node:path";
  */
 
 const PROJECTS = "src/data/projects.json";
+const ABOUT = "src/data/about.json";
 const LOCALES = { fr: "src/i18n/fr.json", en: "src/i18n/en.json" };
 const ASSETS = "src/assets";
+
+/**
+ * Les namespaces i18n des pages fixes = tout sauf `project`, qui a son propre
+ * éditeur. Déduit du fichier plutôt qu'écrit en dur : un namespace ajouté à la
+ * main dans fr.json apparaît tout seul dans /admin.
+ */
+const pageNamespaces = (locale) =>
+  Object.fromEntries(Object.entries(locale).filter(([key]) => key !== "project"));
 
 // Premier caractère alphanumérique ou `_` : interdit les noms commençant par
 // un point, et le `/` absent de la classe interdit toute traversée de chemin.
@@ -67,8 +76,9 @@ export default function contentApi() {
         try {
           // État courant : projets + tranches i18n + assets disponibles
           if (req.method === "GET") {
-            const [projects, fr, en, files] = await Promise.all([
+            const [projects, about, fr, en, files] = await Promise.all([
               readJson(PROJECTS),
+              readJson(ABOUT),
               readJson(LOCALES.fr),
               readJson(LOCALES.en),
               readdir(path(ASSETS)),
@@ -76,7 +86,9 @@ export default function contentApi() {
 
             return json(res, 200, {
               projects,
+              about,
               translations: { fr: fr.project, en: en.project },
+              pages: { fr: pageNamespaces(fr), en: pageNamespaces(en) },
               assets: files.filter((f) => SAFE_FILENAME.test(f)).sort(),
             });
           }
@@ -97,24 +109,33 @@ export default function contentApi() {
 
           // Écriture du contenu
           if (req.method === "PUT") {
-            const { projects, translations } = await readBody(req);
+            const { projects, translations, pages, about } = await readBody(req);
 
             if (!Array.isArray(projects) || !translations?.fr || !translations?.en) {
               return json(res, 400, { error: "Charge utile incomplète" });
             }
+            if (pages && (!pages.fr || !pages.en)) {
+              return json(res, 400, { error: "Pages : il faut les deux langues" });
+            }
+            if (about && !Array.isArray(about.experiences)) {
+              return json(res, 400, { error: "about.json : experiences manquant" });
+            }
 
             await writeJson(PROJECTS, projects);
+            if (about) await writeJson(ABOUT, about);
 
             for (const [lang, relative] of Object.entries(LOCALES)) {
               const data = await readJson(relative);
-              // On ne réécrit que la section `project` : nav, home, about,
-              // contact et footer restent intacts.
               data.project = { ...data.project, ...translations[lang] };
+              // Les namespaces de pages sont remplacés, pas fusionnés : c'est
+              // ce qui permet de supprimer une expérience et ses chaînes.
+              if (pages) Object.assign(data, pages[lang]);
               await writeJson(relative, data);
             }
 
             server.config.logger.info(
-              `  ✏️  contenu enregistré — ${projects.length} projets`,
+              `  ✏️  contenu enregistré — ${projects.length} projets` +
+                (pages ? `, ${Object.keys(pages.fr).length} namespaces de pages` : ""),
               { timestamp: true }
             );
             return json(res, 200, { ok: true });
