@@ -33,6 +33,7 @@ const missingKeys = [];
 const missingAssets = [];
 const unusedKeys = [];
 const duplicateIds = [];
+const undated = [];
 
 const seen = new Set();
 
@@ -41,6 +42,13 @@ for (const project of projects) {
 
   if (seen.has(project.id)) duplicateIds.push(project.id);
   seen.add(project.id);
+
+  if (!project.date) {
+    // Une entrée hors grille (listed: false) n'a pas besoin de date
+    if (project.listed !== false) undated.push(project.id);
+  } else if (!/^\d{4}-\d{2}$/.test(project.date)) {
+    missingKeys.push(`${project.id} : date "${project.date}" — format attendu AAAA-MM`);
+  }
 
   for (const file of projectAssets(project)) {
     if (!assets.has(file)) missingAssets.push(`${project.id} → ${file}`);
@@ -79,6 +87,7 @@ report("❌", "CLÉS I18N MANQUANTES", missingKeys);
 report("❌", "IDS DE PROJET EN DOUBLE", duplicateIds);
 report("🖼️ ", "ASSETS ABSENTS — bloc ignoré au rendu", missingAssets);
 report("🗑️ ", "CHAÎNES I18N PLUS UTILISÉES", unusedKeys);
+report("📅", "SANS DATE — rejetés en fin de page Projets", undated);
 
 const blocking = missingKeys.length + duplicateIds.length;
 console.log(

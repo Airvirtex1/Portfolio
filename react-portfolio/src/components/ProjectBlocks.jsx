@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { resolveAsset } from "../data/projects";
+import { projects, resolveAsset } from "../data/projects";
 
 // Classes Tailwind écrites en entier : jamais de nom de classe construit
 // dynamiquement, sinon le purge de Tailwind les supprime au build.
@@ -332,6 +333,50 @@ function StatsBlock({ block, t }) {
   );
 }
 
+/**
+ * Cartes cliquables vers d'autres pages projet — sert à la page /entreprise
+ * pour renvoyer vers les réalisations menées sous l'entreprise.
+ * `tRoot` est le t global : les titres appartiennent à d'autres namespaces.
+ */
+function ProjectsBlock({ block, t, tRoot }) {
+  const linked = projects.filter((p) => p[block.filter]);
+  if (!linked.length) return null;
+
+  return (
+    <Section>
+      <Heading>{t(`${block.titleKey}.title`)}</Heading>
+
+      <div className={`grid ${COLS[block.cols] ?? COLS[2]} gap-6`}>
+        {linked.map((project) => (
+          <Link
+            key={project.id}
+            to={`/projects/${project.id}`}
+            className="block bg-surface-raised border border-border-subtle rounded-2xl overflow-hidden hover:border-accent/30 transition-colors duration-200 group"
+          >
+            {project.image && (
+              <div className="aspect-video w-full overflow-hidden bg-surface-overlay">
+                <img
+                  src={project.image}
+                  alt={tRoot(project.titleKey)}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            )}
+            <div className="p-6">
+              <h3 className="font-display text-xl font-semibold mb-2">
+                {tRoot(project.titleKey)}
+              </h3>
+              <p className="text-text-secondary text-sm line-clamp-3 leading-relaxed">
+                {tRoot(project.descKey)}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 const RENDERERS = {
   image: ImageBlock,
   figure: FigureBlock,
@@ -342,6 +387,7 @@ const RENDERERS = {
   highlight: HighlightBlock,
   challenges: ChallengesBlock,
   stats: StatsBlock,
+  projects: ProjectsBlock,
 };
 
 /**
@@ -363,5 +409,5 @@ export default function ProjectBlock({ block, ns, translate }) {
   // Toutes les clés d'un bloc sont relatives au projet : project.<ns>.<clé>
   const scoped = translate ?? ((key) => t(`project.${ns}.${key}`));
 
-  return <Renderer block={block} t={scoped} />;
+  return <Renderer block={block} t={scoped} tRoot={t} />;
 }

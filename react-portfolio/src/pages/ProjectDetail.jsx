@@ -25,8 +25,10 @@ function BackLink({ label }) {
   );
 }
 
-export default function ProjectDetail() {
-  const { id } = useParams();
+/** `id` fixe une entrée hors grille (ex. /entreprise) ; sinon on lit l'URL. */
+export default function ProjectDetail({ id: fixedId }) {
+  const { id: routeId } = useParams();
+  const id = fixedId ?? routeId;
   const { t } = useTranslation();
   const project = getProject(id);
 
@@ -53,19 +55,22 @@ export default function ProjectDetail() {
   const { ns } = project;
   const heroTags = t(`project.${ns}.heroTags`, { returnObjects: true });
   const tags = Array.isArray(heroTags) ? heroTags : project.tags;
+  const inGrid = project.listed !== false;
 
   return (
     <div className="min-h-screen bg-surface-base text-text-primary transition-colors duration-300">
 
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-16">
-        <motion.div
-          initial={{ opacity: 0, x: -12 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <BackLink label={t("project.backToProjects")} />
-        </motion.div>
+        {inGrid && (
+          <motion.div
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <BackLink label={t("project.backToProjects")} />
+          </motion.div>
+        )}
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

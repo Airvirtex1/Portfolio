@@ -127,6 +127,16 @@ export const BLOCK_TYPES = {
     ],
   },
 
+  projects: {
+    label: "Renvoi vers des projets",
+    fields: [
+      text("titleKey", "Préfixe de clé"),
+      text("filter", "Champ filtrant (ex. venture)"),
+      num("cols", "Colonnes", 2),
+    ],
+    keys: (b) => [`${b.titleKey}.title`],
+  },
+
   stats: {
     label: "Chiffres clés",
     fields: [text("titleKey", "Préfixe de clé"), num("paragraphs", "Paragraphes", 2)],

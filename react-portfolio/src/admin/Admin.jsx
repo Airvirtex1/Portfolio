@@ -290,6 +290,15 @@ export default function Admin() {
                   </Field>
                 </div>
 
+                <Field title="Date — classe la page Projets, plus récent en haut">
+                  <input
+                    className={input}
+                    type="month"
+                    value={project.date ?? ""}
+                    onChange={(e) => patchProject({ date: e.target.value || null })}
+                  />
+                </Field>
+
                 <Field title="Image de la carte">
                   <AssetPicker
                     {...assetProps}
