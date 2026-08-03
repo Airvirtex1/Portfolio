@@ -1,19 +1,15 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import ProjectPortfolio from "./pages/projects/ProjectPortfolio"
-import ProjectAQM from "./pages/projects/ProjectAQM"
-import ProjectAsservissement from "./pages/projects/ProjectAsservissement";
-import ProjectAmplification from "./pages/projects/ProjectAmplificationFiltrage";
-import ProjectMeteo from "./pages/projects/ProjectMeteo";
-import ProjectTourelle from "./pages/projects/ProjectTourelle";
-import ProjectRobotCrabe from "./pages/projects/ProjectRobotCrabe";
-import ProjectDeclencheur from "./pages/projects/ProjectDeclencheur";
-import ProjectDecors from "./pages/projects/ProjectDecors";
+import ProjectDetail from "./pages/ProjectDetail";
 
+// Mode édition : `import.meta.env.DEV` est remplacé par `false` au build,
+// l'import dynamique est alors éliminé — /admin n'existe pas en production.
+const Admin = import.meta.env.DEV ? lazy(() => import("./admin/Admin")) : null;
 
 export default function App() {
   return (
@@ -24,16 +20,19 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/entreprise" element={<ProjectDetail id="entreprise" />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/projects/portfolio" element={<ProjectPortfolio />} />
-        <Route path="/projects/boitier-aqm" element={<ProjectAQM />} />
-        <Route path="/projects/asservissement" element={<ProjectAsservissement />} />
-        <Route path="/projects/amplification" element={<ProjectAmplification />} />
-        <Route path="/projects/meteo" element={<ProjectMeteo />} />
-        <Route path="/projects/tourrelle" element={<ProjectTourelle />} />
-        <Route path="/projects/crabe" element={<ProjectRobotCrabe />} />
-        <Route path="/projects/argentique" element={<ProjectDeclencheur />} />
-        <Route path="/projects/decors" element={<ProjectDecors />} />
+        {Admin && (
+          <Route
+            path="/admin"
+            element={
+              <Suspense fallback={null}>
+                <Admin />
+              </Suspense>
+            }
+          />
+        )}
       </Routes>
       </div>
     </BrowserRouter>

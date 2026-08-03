@@ -16,7 +16,7 @@
 
 | Dark mode | Light mode |
 |-----------|------------|
-| ![Dark]([/src/assets/site_black.png]) | ![Light]([/src/assets/site_white.png]) |
+| ![Dark](react-portfolio/src/assets/site_black.png) | ![Light](react-portfolio/src/assets/site_white.png) |
 
 🔗 **Live demo:** [portfolio](https://portfolio.indecis.ovh/)
 
@@ -54,17 +54,24 @@
 ```
 react-portfolio/
 ├── src/
-│   ├── components/        # Navbar (glassmorphism + theme toggle), Footer
+│   ├── admin/             # Edit mode UI — dev only, stripped from prod builds
+│   ├── components/        # Navbar, Footer, ProjectBlocks (block renderer)
 │   ├── context/           # ThemeContext — dark/light + localStorage
-│   ├── data/              # projects.js, skills.js — single source of truth
-│   ├── i18n/              # fr.json, en.json
+│   ├── data/
+│   │   ├── projects.json  # All project content, as typed blocks
+│   │   ├── projects.js    # Asset resolution + i18n key derivation
+│   │   ├── blockSchema.js # Block field descriptors — editor & validator
+│   │   └── skills.js
+│   ├── i18n/              # fr.json, en.json — every user-facing string
 │   ├── pages/
 │   │   ├── Home.jsx
 │   │   ├── About.jsx
 │   │   ├── Projects.jsx
-│   │   ├── Contact.jsx
-│   │   └── projects/      # 9 individual project pages
+│   │   ├── ProjectDetail.jsx  # One generic page for every project
+│   │   └── Contact.jsx
 │   └── index.css          # CSS custom properties (theme tokens), Tailwind base
+├── plugins/content-api.js # Dev-server middleware writing content to disk
+├── scripts/check-content.mjs
 ├── .env.example           # Environment variable template
 ├── tailwind.config.js     # darkMode: 'class', semantic color tokens, font families
 └── index.html             # CSP meta, Google Fonts (Space Grotesk, DM Sans, JetBrains Mono)
@@ -108,10 +115,11 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ### Scripts
 
 ```bash
-npm run dev       # Dev server at http://localhost:5173 (HMR enabled)
-npm run build     # Production build → dist/
-npm run preview   # Serve the production build locally
-npm run lint      # ESLint
+npm run dev            # Dev server at http://localhost:5173 (HMR enabled)
+npm run build          # Production build → dist/
+npm run preview        # Serve the production build locally
+npm run lint           # ESLint
+npm run check:content  # Validate project content: i18n keys (FR + EN) and assets
 ```
 
 ---
@@ -147,13 +155,47 @@ Colors are CSS custom properties in `src/index.css`, consumed as Tailwind utilit
 
 ---
 
-## Adding a Project
+## Content Architecture
 
-1. Drop the project image in `src/assets/`
-2. Add the entry in `src/data/projects.js` (id, image, tags, i18n keys)
-3. Add translation strings in `src/i18n/fr.json` and `en.json`
-4. Create the detail page under `src/pages/projects/`
-5. Register the route in `src/App.jsx`
+Project pages are **data, not code**. `src/data/projects.json` describes each project
+as an ordered list of typed blocks; `ProjectDetail.jsx` renders any of them through the
+`/projects/:id` route. Adding a project touches no JSX and no routing.
+
+| Block type | Renders |
+|-----------|---------|
+| `image` / `figure` | Full-width image, or titled image with caption |
+| `cards` | Grid of icon + title + text cards (`compact` variant for the overview row) |
+| `text` | Titled panel with N paragraphs |
+| `steps` | Numbered approach steps |
+| `stack` | Technical stack in labelled columns |
+| `highlight` | Accent panel (7 colours), optional badge and item grid |
+| `challenges` | Problem / solution pairs |
+| `stats` | Key figures with captions |
+
+All user-facing text lives in `src/i18n/*.json` under `project.<namespace>.*`; blocks
+only reference keys. A block whose image is missing from `src/assets/` is skipped at
+render time rather than showing a broken image.
+
+### Adding a project — edit mode
+
+```bash
+npm run dev     # then open http://localhost:5173/admin
+```
+
+The editor lists every project, edits blocks with FR and EN fields side by side, shows a
+live preview using the real page renderer, and uploads images straight into `src/assets/`.
+Saving writes `src/data/projects.json` and both i18n files — then commit as usual.
+
+Edit mode is served by a Vite dev-server middleware (`plugins/content-api.js`) declared
+`apply: "serve"`. It is absent from production builds: the deployed site stays a static
+SPA with no backend and no write surface.
+
+### Adding a project — by hand
+
+1. Drop the image in `src/assets/`
+2. Add the entry in `src/data/projects.json` (`id`, `image`, `tags`, `blocks`)
+3. Add the strings in `src/i18n/fr.json` and `en.json` under `project.<id>`
+4. Run `npm run check:content` to confirm no key or asset is missing
 
 ---
 

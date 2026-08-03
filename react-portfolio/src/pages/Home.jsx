@@ -108,7 +108,7 @@ function Home() {
           {[
             { titleKey: "project.portfolio.title", subtitleKey: "project.portfolio.intro" },
             { titleKey: "project.meteo.title",     subtitleKey: "project.meteo.intro"     },
-            { titleKey: "project.robotcrabe.title", subtitleKey: "project.crabe.intro"    },
+            { titleKey: "project.crabe.title",      subtitleKey: "project.crabe.intro"    },
           ].map(({ titleKey, subtitleKey }, i) => (
             <motion.div
               key={titleKey}

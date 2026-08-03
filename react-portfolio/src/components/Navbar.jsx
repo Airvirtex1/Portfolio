@@ -8,6 +8,7 @@ const NAV_LINKS = (t) => [
   { to: "/",         label: t("nav.home"),     end: true  },
   { to: "/about",    label: t("nav.about"),    end: false },
   { to: "/projects", label: t("nav.projects"), end: false },
+  { to: "/entreprise", label: t("nav.venture"), end: false },
   { to: "/contact",  label: t("nav.contact"),  end: false },
 ];
 

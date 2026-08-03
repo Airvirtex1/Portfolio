@@ -3,10 +3,10 @@
     "home": "Accueil",
     "about": "À propos",
     "projects": "Projets",
-    "contact": "Contact"
+    "contact": "Contact",
+    "venture": "Entreprise"
   },
-  
-    "home": {
+  "home": {
     "title": "Salut, moi c'est Mateo 👋",
     "subtitle": "Étudiant ingénieur en systèmes embarqués et IoT basé à Paris. J'écris du firmware, je conçois des PCB et j'imprime mes boîtiers en 3D. Sur ce site, tu trouveras mes projets IoT, mes expériences professionnelles et tout ce qui tourne autour des microcontrôleurs et de l'électronique embarquée. Actuellement en recherche de stage à l'international !",
     "viewProjects": "Voir mes projets",
@@ -36,11 +36,17 @@
     "title": "Mes Projets",
     "subtitle": "Découvrez mes réalisations en systèmes embarqués, IoT et électronique",
     "viewDetails": "Voir les détails",
-
     "backToProjects": "Retour aux projets",
     "asservissement": {
       "title": "Jouet Interactif avec Système d'Asservissement",
       "intro": "Conception d'un système mécatronique intégrant une base rotative et un lanceur de billes. Projet combinant électronique de puissance, asservissement PID et programmation Arduino.",
+      "heroTags": [
+        "Arduino",
+        "PID",
+        "Électronique",
+        "Asservissement",
+        "Mécatronique"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir un dispositif ludique et fonctionnel combinant électronique de puissance et systèmes d'asservissement"
@@ -143,6 +149,13 @@
     "amplification": {
       "title": "Amplificateur Audio Connecté",
       "intro": "Conception d'un amplificateur audio avec optimisation énergétique et connectivité IoT SIGFOX. Projet combinant électronique analogique, amplification, filtrage et transmission de données.",
+      "heroTags": [
+        "Électronique Analogique",
+        "Amplification",
+        "Filtrage",
+        "SIGFOX",
+        "IoT"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Développer un amplificateur audio alliant efficacité énergétique, gain en puissance et connectivité IoT"
@@ -249,6 +262,13 @@
     "aqm": {
       "title": "Boîtier AQM (Air Quality Monitoring)",
       "intro": "Industrialisation d'un dispositif IoT de surveillance de la qualité de l'air pour la start-up française NOSE. Projet de gestion de production transformant un prototype en produit industrialisable.",
+      "heroTags": [
+        "IoT",
+        "Industrialisation",
+        "Gestion de Production",
+        "Fusion 360",
+        "CAO"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Transformer un prototype conforme au cahier des charges en un produit industrialisable et rentable"
@@ -356,6 +376,13 @@
     "tourelle": {
       "title": "Tourelle de Reconnaissance Faciale",
       "intro": "Système motorisé intégrant vision par ordinateur et reconnaissance faciale sur Raspberry Pi. Projet de stage combinant électronique, mécanique, développement Python et communication technique.",
+      "heroTags": [
+        "Python",
+        "Raspberry Pi",
+        "Vision par Ordinateur",
+        "Reconnaissance Faciale",
+        "Impression 3D"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir une tourelle motorisée fonctionnelle avec système de reconnaissance faciale accessible et pédagogique"
@@ -462,6 +489,13 @@
     "meteo": {
       "title": "Station Météo Embarquée",
       "intro": "Dispositif de surveillance environnementale conçu pour un contexte maritime. Station météo embarquée capable d'assurer des fonctions complètes de mesure, surveillance et enregistrement des données environnementales.",
+      "heroTags": [
+        "Systèmes Embarqués",
+        "Capteurs",
+        "Acquisition de Données",
+        "Maritime",
+        "Météorologie"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir un dispositif de surveillance environnementale simple d'utilisation pour un équipage maritime"
@@ -556,6 +590,13 @@
     "argentique": {
       "title": "Déclencheur Photo Argentique",
       "intro": "Dispositif de déclenchement à distance pour appareils photo argentiques. Projet professionnel combinant ESP32, communication 433 MHz, impression 3D et gestion de batterie.",
+      "heroTags": [
+        "ESP32",
+        "Impression 3D",
+        "433 MHz",
+        "Prototypage",
+        "Photographie"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir un déclencheur pratique, transportable et facilement utilisable par le grand public"
@@ -654,6 +695,13 @@
     "decors": {
       "title": "Décors Automatisés de Spectacle",
       "intro": "Système automatisé de décors pour production théâtrale avec grue rotative, feux de signalisation et véhicules motorisés. Projet professionnel combinant Arduino, moteurs pas à pas, impression 3D et automatisation.",
+      "heroTags": [
+        "Arduino",
+        "Moteurs Pas à Pas",
+        "Automatisation",
+        "Spectacle",
+        "Impression 3D"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Concevoir des décors autonomes et fiables pour répétitions et représentations, contrôlables par un simple bouton"
@@ -772,6 +820,13 @@
     "crabe": {
       "title": "Robot Crabe Motorisé",
       "intro": "Conception d'un robot quadrupède contrôlable via interface web sans fil. Projet personnel combinant modélisation 3D, électronique embarquée ESP32 et développement web.",
+      "heroTags": [
+        "ESP32",
+        "Impression 3D",
+        "Robotique",
+        "HTML/Web",
+        "Servomoteurs"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Créer un robot quadrupède fonctionnel avec mouvements coordonnés et contrôle sans fil via interface web"
@@ -881,6 +936,12 @@
     "portfolio": {
       "title": "Portfolio Website",
       "intro": "Site web portfolio moderne et multilingue présentant mes projets, compétences et expériences en systèmes embarqués. Développé avec React et Tailwind CSS pour offrir une expérience utilisateur fluide et responsive.",
+      "heroTags": [
+        "React",
+        "Tailwind CSS",
+        "React Router",
+        "i18next"
+      ],
       "objective": {
         "title": "Objectif",
         "text": "Créer un portfolio professionnel pour présenter mes projets et faciliter les opportunités de stage à l'international"
@@ -951,6 +1012,257 @@
         "responsive": "Responsive",
         "performance": "Performance optimale"
       }
+    },
+    "notFound": "Projet introuvable",
+    "entreprise": {
+      "title": "Urban Custom Print",
+      "intro": "Micro-entreprise de fabrication à la demande : impression 3D en majorité, complétée par du prototypage électronique et de la découpe laser. Je produis sur mes propres machines, pour des particuliers, des makers et de petites entreprises.",
+      "heroTags": [
+        "Impression 3D",
+        "Prototypage électronique",
+        "Découpe laser",
+        "Micro-entreprise",
+        "Fabrication à la demande"
+      ],
+      "activity": {
+        "title": "Activité",
+        "text": "L'impression 3D à la demande constitue l'essentiel du volume, complétée par du prototypage électronique et de la découpe laser."
+      },
+      "status": {
+        "title": "Statut",
+        "text": "Micro-entreprise immatriculée. La production est réalisée en interne, sur mon propre parc de machines."
+      },
+      "clients": {
+        "title": "Clientèle",
+        "text": "Particuliers, makers et petites entreprises : pièces à l'unité, remplacement de pièces introuvables, petites séries et prototypes."
+      },
+      "context": {
+        "title": "Pourquoi cette activité",
+        "p1": "Élève ingénieur en systèmes embarqués, j'avais déjà les machines et les compétences pour concevoir puis fabriquer des pièces. Passer de « je fabrique pour mes projets » à « je fabrique pour des clients » était l'étape logique — et elle s'est révélée bien plus formatrice que prévu.",
+        "p2": "Une commande ne s'arrête pas à l'impression. Il faut comprendre un besoin souvent exprimé sans plan, arbitrer entre matériau, tolérances et temps machine, chiffrer, tenir un délai, et assumer le résultat quand la pièce ne convient pas. C'est précisément cette partie-là, qu'aucun projet scolaire ne m'a apprise, qui m'intéresse."
+      },
+      "services": {
+        "title": "Ce que je fabrique",
+        "print3d": {
+          "title": "Impression 3D à la demande",
+          "text": "Le cœur de l'activité : pièces à l'unité ou en petite série, prototypes, remplacement de pièces introuvables, accessoires sur mesure."
+        },
+        "electronics": {
+          "title": "Prototypage électronique",
+          "text": "Montage et test de circuits, câblage, intégration de cartes et de capteurs — le prolongement direct de ma formation en embarqué."
+        },
+        "laser": {
+          "title": "Découpe laser",
+          "text": "Découpe et gravure : pièces plates, gabarits, façades de boîtiers et éléments décoratifs."
+        }
+      },
+      "skills": {
+        "title": "Ce que ça m'apporte",
+        "p1": "Faire tourner une micro-entreprise en parallèle des études impose des arbitrages que la théorie ne pose jamais : refuser une commande intenable, chiffrer son propre temps de travail, choisir entre finir vite et finir bien.",
+        "p2": "C'est aussi la boucle complète — besoin, conception, fabrication, livraison, retour client — sur laquelle j'itère en quelques jours là où un projet scolaire demande un semestre.",
+        "badge1": {
+          "title": "Autonomie",
+          "text": "Décider seul, du devis à la livraison"
+        },
+        "badge2": {
+          "title": "Relation client",
+          "text": "Traduire un besoin flou en pièce concrète"
+        },
+        "badge3": {
+          "title": "Chaîne complète",
+          "text": "De la modélisation à la pièce livrée"
+        }
+      },
+      "cta": {
+        "title": "Un besoin de pièce ?",
+        "text": "Impression 3D, découpe laser ou coup de main sur un prototype électronique : décrivez-moi le besoin, même sans plan ni modèle 3D, et je vous dis si c'est faisable."
+      },
+      "work": {
+        "title": "Réalisations sous Urban Custom Print"
+      }
+    },
+    "aerolog": {
+      "title": "AERO-LOG — Drone autonome pour la logistique médicale",
+      "intro": "Preuve de concept d'un drone quadricoptère autonome dédié à la logistique médicale d'urgence, menée à six à l'Efrei. Architecture entièrement sur mesure en trois couches : une mini-FCU ESP32 pour le temps réel, un Raspberry Pi 5 avec accélérateur Hailo-8L pour la perception, une station sol pour la supervision. J'y ai piloté le firmware embarqué et la mise en vol du drone.",
+      "heroTags": [
+        "ESP32",
+        "Raspberry Pi 5",
+        "C/C++",
+        "Python",
+        "Temps réel",
+        "Vision embarquée",
+        "Drone"
+      ],
+      "objective": {
+        "title": "Objectif",
+        "text": "Démontrer qu'un quadricoptère autonome à faible coût peut acheminer une charge médicale de 500 g et se poser sur une cible détectée par vision, sous supervision humaine"
+      },
+      "timeline": {
+        "title": "Durée",
+        "text": "Innovation Project Efrei — avril à juillet 2026"
+      },
+      "team": {
+        "title": "Équipe",
+        "text": "Six étudiants de trois majeures — chef de projet et responsable embarqué"
+      },
+      "context": {
+        "title": "Le constat de départ",
+        "p1": "En France, 23 294 malades étaient en attente de greffe en janvier 2026, et 6 154 greffes seulement ont pu être réalisées en 2025 — environ dix-sept par jour. Sur le trajet d'un greffon, d'un échantillon ou d'un médicament urgent, chaque minute gagnée compte, or ce transport reste entièrement dépendant du réseau routier : saturé en ville, parfois coupé en zone sinistrée.",
+        "p2": "Le besoin n'a rien de théorique. Lors d'un essai européen mené en Belgique pour acheminer un greffon entre deux hôpitaux, le drone a mis 10 minutes contre 21 en voiture, soit environ deux fois plus vite en s'affranchissant des embouteillages. En France, un rein a parcouru en juillet 2026 les 60 km séparant le CHU de Nantes du CH de La Roche-sur-Yon par drone, en 36 minutes. AERO-LOG explore la même idée à l'échelle d'un démonstrateur étudiant, sur une plateforme low-cost et sans autopilote clé en main.",
+        "p3": "Le périmètre du POC reste explicite : la charge est simulée par une masse inerte de 300 à 500 g, les vols se font en terrain autorisé et sous supervision, et aucun produit biologique réel n'est transporté — un tel usage relèverait d'une validation médicale, technique et réglementaire hors de portée du projet.",
+        "stat1": "malades en attente de greffe en France, en janvier 2026",
+        "stat2": "greffes réalisées en 2025, soit environ 17 par jour",
+        "stat3": "plus rapide que la voiture sur un transfert de greffon entre deux hôpitaux"
+      },
+      "role": {
+        "title": "Mon rôle sur le projet",
+        "badge": "Chef de projet et responsable embarqué",
+        "p1": "J'ai coordonné l'équipe et pris en charge tout le bas niveau : conception de la carte de vol, intégration des capteurs, calibration et mise en vol effective du drone.",
+        "p2": "Côté firmware, cela couvre la lecture de la centrale inertielle à haute fréquence avec filtre complémentaire, la boucle de stabilisation PID en cascade (angle puis vitesse angulaire), le mixage quadricoptère en X vers les quatre ESC en DSHOT300, la réception radio ELRS/CRSF toujours prioritaire, et un watchdog qui replie vers la commande manuelle si le calculateur de bord cesse de répondre.",
+        "p3": "J'ai également défini et implémenté l'interface entre le calculateur de bord et la carte de vol, en lien direct avec l'équipe vision et navigation qui développait la perception embarquée sur Raspberry Pi.",
+        "item1": {
+          "title": "Conception et mise en vol",
+          "text": "Carte de vol, intégration capteurs, calibration et campagnes d'essais"
+        },
+        "item2": {
+          "title": "Firmware temps réel",
+          "text": "IMU, PID en cascade, mixage quad X DSHOT300, failsafe"
+        },
+        "item3": {
+          "title": "Interface Pi ↔ FCU",
+          "text": "Protocole série maison et bascule radio / calculateur de bord"
+        }
+      },
+      "architecture": {
+        "title": "Une architecture en trois couches",
+        "ground": {
+          "title": "Couche opérateur",
+          "text": "Station sol : préparation de mission, télémétrie temps réel, carte et waypoints, failsafe manuel à portée de clic."
+        },
+        "highlevel": {
+          "title": "Couche haut niveau",
+          "text": "Raspberry Pi 5 et son AI HAT+ (Hailo-8L) : perception embarquée, navigation locale (cost-map et planificateur) et machine à états de mission."
+        },
+        "realtime": {
+          "title": "Couche temps réel",
+          "text": "ESP32 en mini-FCU : stabilisation à 1 kHz, mixage moteurs, armement et failsafe, réglage des PID en vol depuis une interface web embarquée — parce que Linux n'est pas déterministe."
+        }
+      },
+      "technical": {
+        "title": "Stack technique",
+        "vector": "Vecteur et bas niveau",
+        "onboard": "Calculateur et perception",
+        "software": "Logiciel",
+        "frame": "Châssis quadricoptère reconçu sur mesure, quatre moteurs brushless et leurs ESC",
+        "fcu": "Carte électronique à base d'ESP32 conçue pour le projet, en mini-FCU",
+        "imu": "Centrale inertielle MPU6050 fusionnée par filtre complémentaire",
+        "rc": "Récepteur ELRS / CRSF — commande manuelle toujours prioritaire",
+        "power": "Batterie LiPo 6S et BEC 5 V pour l'alimentation logique",
+        "rpi": "Raspberry Pi 5 — calculateur de bord haut niveau",
+        "hailo": "Raspberry Pi AI HAT+ (Hailo-8L) — inférence des modèles à bord",
+        "camera": "Caméra Pi 3 autofocus orientée vers le sol",
+        "gps": "Module GNSS VK-162 (u-blox), lu via gpsd",
+        "sonar": "Télémètre ultrason HC-SR04 — hauteur sol compensée de l'assiette",
+        "firmware": "Firmware C/C++ sous PlatformIO, boucle de contrôle à 1 kHz sur cœur dédié",
+        "python": "Python pur (threading / asyncio), sans ROS, pour la navigation",
+        "aerolink": "aerolink — protocole série binaire maison protégé par CRC16-CCITT",
+        "dashboard": "Dashboard FastAPI + WebSocket, avec mode simulation sans matériel",
+        "opencv": "OpenCV — marqueurs ArUco et flux optique Lucas-Kanade"
+      },
+      "hardware": {
+        "title": "Le drone, conçu et assemblé de A à Z",
+        "caption": "Assemblage matériel au banc de test, à l'iLab de l'Efrei : carte électronique et châssis conçus sur mesure, au terme de deux itérations."
+      },
+      "perception": {
+        "title": "Perception embarquée",
+        "caption": "Une seule passe de perception à bord du Raspberry Pi 5 : carte de profondeur, grille d'occupation, détection de personne, lecture du marqueur ArUco avec son décalage en pixels, geste de l'opérateur — et la consigne de navigation qui en découle."
+      },
+      "mission": {
+        "title": "Le déroulé d'une mission",
+        "step1": {
+          "title": "Pré-vol",
+          "text": "Check-list depuis la station sol : batterie, capteurs, fix GNSS et liaison radio. Toute anomalie est signalée à l'opérateur et bloque l'armement."
+        },
+        "step2": {
+          "title": "Décollage",
+          "text": "Montée contrôlée sous supervision, la stabilisation étant assurée de bout en bout par la mini-FCU ESP32."
+        },
+        "step3": {
+          "title": "Croisière",
+          "text": "Navigation par waypoints GNSS, hauteur sol mesurée à l'ultrason et compensée de l'assiette, évitement par flux optique."
+        },
+        "step4": {
+          "title": "Approche finale",
+          "text": "Bascule du guidage satellitaire vers la vision dès que le marqueur au sol est détecté et sa pose relative estimée."
+        },
+        "step5": {
+          "title": "Descente de précision",
+          "text": "Asservissement de la descente sur la distance et l'angle mesurés vis-à-vis du marqueur, avec un objectif d'erreur inférieure à 2 m."
+        },
+        "step6": {
+          "title": "Largage et retour",
+          "text": "Ouverture du servo de largage commandée par l'ESP32, puis retour au point de départ. Chaque transition d'état est journalisée pour être rejouée hors ligne."
+        }
+      },
+      "challenges": {
+        "title": "Les points durs",
+        "solutionLabel": "Solution retenue",
+        "realtime": {
+          "title": "Linux n'est pas temps réel",
+          "problem": "Stabiliser un quadricoptère demande une boucle déterministe autour du kilohertz. Sur Raspberry Pi, l'ordonnanceur Linux introduit des latences imprévisibles : largement de quoi perdre l'appareil.",
+          "solution": "Découpage en trois couches et délégation stricte du temps réel à l'ESP32, qui ne fait que cela — IMU, PID, mixage moteurs, watchdog — et conserve toujours la priorité à la radio. Le Raspberry Pi se limite aux consignes d'angle et de poussée, à la vision et à la navigation."
+        },
+        "link": {
+          "title": "Fiabiliser la liaison calculateur ↔ carte de vol",
+          "problem": "Un format texte type JSON coûtait trop cher à parser sur l'ESP32 pour un flux à fréquence fixe, et MAVLink imposait une pile complète pour un besoin très restreint.",
+          "solution": "Un protocole maison, aerolink : trames binaires compactes protégées par un CRC16-CCITT sur UART, watchdog des deux côtés et repli automatique vers la radio si le calculateur se tait. Un décodeur Python accompagne le firmware pour le débogage — avec la règle apprise à nos dépens de toujours déployer firmware et décodeur ensemble."
+        },
+        "mixing": {
+          "title": "Un mixage envoyé aux mauvais moteurs",
+          "problem": "Le firmware déduisait la position de chaque moteur de son ordre de câblage. Les corrections de roulis et de tangage partaient donc vers les mauvais bras : un défaut invisible au sol, mais fatal dès le décollage.",
+          "solution": "Campagne de tests au banc hélices retirées, avec identification moteur par moteur depuis une interface web embarquée dans l'ESP32. Le mixage étant écrit avec des noms symboliques de position plutôt que des indices, la correction a tenu en une ligne."
+        }
+      },
+      "results": {
+        "title": "Où en est le prototype",
+        "badge": "3e prix du Poster Prize Efrei",
+        "p1": "Côté matériel, la carte électronique et le châssis ont été conçus sur mesure et assemblés intégralement à l'iLab de l'Efrei, au terme de deux itérations de tests — et le drone vole. Côté logiciel, l'autopilote est en place : on lui donne des waypoints et une altitude, qu'il tient sous supervision ; la télémétrie temps réel et le dashboard opérateur fonctionnent, la reprise manuelle et le failsafe aussi. La perception tourne bien sur la carte cible : détection de personnes, lecture de codes ArUco et carte de profondeur, à partir du seul flux RGB.",
+        "p2": "La limite est assumée : perception et contrôle restent deux briques séparées, pas encore refermées en boucle. L'atterrissage de précision sous 2 m et le transport d'une charge de bout en bout en dépendent directement. Budget total du prototype : 541 €, dont 404 € financés par une subvention et 137 € de matériel déjà possédé par l'équipe.",
+        "done": {
+          "title": "Acquis",
+          "text": "Décollage et vol stable, télémétrie temps réel, dashboard de contrôle, détection visuelle de la cible."
+        },
+        "ongoing": {
+          "title": "En cours",
+          "text": "Navigation autonome par waypoints : l'autopilote tient consigne et altitude, reste à consolider en vol."
+        },
+        "todo": {
+          "title": "À faire",
+          "text": "Atterrissage de précision sous 2 m, et vol avec la charge de 300 à 500 g embarquée."
+        },
+        "next": {
+          "title": "Suite",
+          "text": "Capteurs de distance dédiés et cartographie 3D, pour une navigation choisie par le drone plutôt que suivie."
+        }
+      },
+      "skills": {
+        "title": "Ce que le projet m'a apporté",
+        "p1": "AERO-LOG m'a fait pratiquer l'embarqué temps réel dans des conditions réelles : lecture capteurs à haute fréquence, boucle de stabilisation, filtrage du bruit d'hélices sur le terme dérivé, et surtout la discipline des essais par paliers — armement, moteurs, PID, liaison — tous menés hélices retirées avant le moindre vol.",
+        "p2": "Il m'a appris à concevoir l'interface entre deux mondes qui ne fonctionnent pas au même rythme : un microcontrôleur déterministe et un Linux applicatif. Cela suppose un protocole pensé pour la corruption, un versionnage conjoint des deux côtés, et un comportement de repli défini avant d'en avoir besoin.",
+        "p3": "Enfin, coordonner six étudiants issus de trois majeures — Systèmes embarqués, Data & IA, Business Intelligence — a été l'expérience la plus formatrice du projet : faire converger firmware, perception et analyse de valeur vers un même produit, avec la contrainte de dates communes.",
+        "badge1": {
+          "title": "Temps réel",
+          "text": "IMU, PID en cascade, mixage moteurs"
+        },
+        "badge2": {
+          "title": "Interfaçage",
+          "text": "Protocole binaire et stratégie de repli"
+        },
+        "badge3": {
+          "title": "Coordination",
+          "text": "Six étudiants, trois majeures"
+        }
+      }
     }
   },
   "about": {
@@ -1017,5 +1329,3 @@
     "error": "Erreur lors de l'envoi ❌"
   }
 }
-
-
