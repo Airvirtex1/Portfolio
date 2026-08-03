@@ -1,6 +1,253 @@
 [
   {
+    "id": "aero-log",
+    "ns": "aerolog",
+    "date": "2026-07",
+    "image": "aerolog_vol.jpg",
+    "tags": [
+      "ESP32",
+      "Raspberry Pi",
+      "C/C++",
+      "Python",
+      "Temps réel",
+      "Vision"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "aerolog_vol.jpg"
+      },
+      {
+        "type": "cards",
+        "variant": "compact",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🎯",
+            "key": "objective"
+          },
+          {
+            "icon": "📅",
+            "key": "timeline"
+          },
+          {
+            "icon": "👥",
+            "key": "team"
+          }
+        ]
+      },
+      {
+        "type": "stats",
+        "titleKey": "context",
+        "paragraphs": 3,
+        "items": [
+          {
+            "value": "23 294",
+            "key": "context.stat1"
+          },
+          {
+            "value": "6 154",
+            "key": "context.stat2"
+          },
+          {
+            "value": "2×",
+            "key": "context.stat3"
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "blue",
+        "icon": "🛠️",
+        "titleKey": "role",
+        "badgeKey": "role.badge",
+        "paragraphs": 3,
+        "cols": 3,
+        "items": [
+          {
+            "icon": "📐",
+            "key": "role.item1"
+          },
+          {
+            "icon": "⚙️",
+            "key": "role.item2"
+          },
+          {
+            "icon": "🔗",
+            "key": "role.item3"
+          }
+        ]
+      },
+      {
+        "type": "cards",
+        "titleKey": "architecture",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🖥️",
+            "key": "architecture.ground"
+          },
+          {
+            "icon": "🧠",
+            "key": "architecture.highlevel"
+          },
+          {
+            "icon": "⚡",
+            "key": "architecture.realtime"
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "titleKey": "hardware",
+        "src": "PXL_20260716_160019688.jpg",
+        "caption": true
+      },
+      {
+        "type": "stack",
+        "titleKey": "technical",
+        "columns": [
+          {
+            "labelKey": "technical.vector",
+            "items": [
+              {
+                "key": "technical.frame"
+              },
+              {
+                "key": "technical.fcu"
+              },
+              {
+                "key": "technical.imu"
+              },
+              {
+                "key": "technical.rc"
+              },
+              {
+                "key": "technical.power"
+              }
+            ]
+          },
+          {
+            "labelKey": "technical.onboard",
+            "items": [
+              {
+                "key": "technical.rpi"
+              },
+              {
+                "key": "technical.hailo"
+              },
+              {
+                "key": "technical.camera"
+              },
+              {
+                "key": "technical.gps"
+              },
+              {
+                "key": "technical.sonar"
+              }
+            ]
+          },
+          {
+            "labelKey": "technical.software",
+            "items": [
+              {
+                "key": "technical.firmware"
+              },
+              {
+                "key": "technical.python"
+              },
+              {
+                "key": "technical.aerolink"
+              },
+              {
+                "key": "technical.dashboard"
+              },
+              {
+                "key": "technical.opencv"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "titleKey": "perception",
+        "src": "aerolog_perception.jpg",
+        "caption": true
+      },
+      {
+        "type": "steps",
+        "titleKey": "mission",
+        "count": 6
+      },
+      {
+        "type": "challenges",
+        "titleKey": "challenges",
+        "solutionLabelKey": "challenges.solutionLabel",
+        "items": [
+          "challenges.realtime",
+          "challenges.link",
+          "challenges.mixing"
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "green",
+        "icon": "🏆",
+        "titleKey": "results",
+        "badgeKey": "results.badge",
+        "paragraphs": 2,
+        "cols": 2,
+        "items": [
+          {
+            "icon": "✅",
+            "key": "results.done"
+          },
+          {
+            "icon": "🔄",
+            "key": "results.ongoing"
+          },
+          {
+            "icon": "⏳",
+            "key": "results.todo"
+          },
+          {
+            "icon": "🚀",
+            "key": "results.next"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "20260716_172510_966.jpg"
+      },
+      {
+        "type": "highlight",
+        "accent": "neutral",
+        "titleKey": "skills",
+        "paragraphs": 3,
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "icon": "⚡",
+            "key": "skills.badge1"
+          },
+          {
+            "icon": "🔗",
+            "key": "skills.badge2"
+          },
+          {
+            "icon": "🤝",
+            "key": "skills.badge3"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "portfolio",
+    "date": "2025-02",
     "image": "site_black.png",
     "tags": [
       "React",
@@ -131,6 +378,7 @@
   },
   {
     "id": "meteo",
+    "date": null,
     "image": "station_meteo.png",
     "tags": [
       "ESP32",
@@ -267,6 +515,7 @@
   {
     "id": "tourrelle",
     "ns": "tourelle",
+    "date": "2024-07",
     "image": "opencv.png",
     "tags": [
       "OpenCV",
@@ -408,6 +657,7 @@
   },
   {
     "id": "asservissement",
+    "date": null,
     "image": "asservissement.png",
     "tags": [
       "STM32",
@@ -567,6 +817,7 @@
   },
   {
     "id": "amplification",
+    "date": null,
     "image": "amplification_filtrage.png",
     "tags": [
       "Analog",
@@ -720,6 +971,7 @@
   {
     "id": "boitier-aqm",
     "ns": "aqm",
+    "date": null,
     "image": "aqm.png",
     "tags": [
       "ESP32",
@@ -872,6 +1124,7 @@
   },
   {
     "id": "crabe",
+    "date": null,
     "image": "crabe.png",
     "tags": [
       "ESP32",
@@ -1025,6 +1278,7 @@
   },
   {
     "id": "argentique",
+    "date": null,
     "image": "argentique.png",
     "tags": [
       "ESP32",
@@ -1165,10 +1419,12 @@
           }
         ]
       }
-    ]
+    ],
+    "venture": true
   },
   {
     "id": "decors",
+    "date": null,
     "image": "decors1.png",
     "tags": [
       "Arduino",
@@ -1322,6 +1578,97 @@
             "icon": "🎭",
             "key": "skills.badge3"
           }
+        ]
+      }
+    ],
+    "venture": true
+  },
+  {
+    "id": "entreprise",
+    "ns": "entreprise",
+    "listed": false,
+    "date": null,
+    "image": null,
+    "tags": [],
+    "blocks": [
+      {
+        "type": "cards",
+        "variant": "compact",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🏭",
+            "key": "activity"
+          },
+          {
+            "icon": "📋",
+            "key": "status"
+          },
+          {
+            "icon": "👥",
+            "key": "clients"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "titleKey": "context",
+        "paragraphs": 2
+      },
+      {
+        "type": "cards",
+        "titleKey": "services",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🖨️",
+            "key": "services.print3d"
+          },
+          {
+            "icon": "⚡",
+            "key": "services.electronics"
+          },
+          {
+            "icon": "📐",
+            "key": "services.laser"
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "neutral",
+        "titleKey": "skills",
+        "paragraphs": 2,
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "icon": "🧭",
+            "key": "skills.badge1"
+          },
+          {
+            "icon": "🤝",
+            "key": "skills.badge2"
+          },
+          {
+            "icon": "🔄",
+            "key": "skills.badge3"
+          }
+        ]
+      },
+      {
+        "type": "projects",
+        "titleKey": "work",
+        "filter": "venture",
+        "cols": 2
+      },
+      {
+        "type": "highlight",
+        "accent": "orange",
+        "titleKey": "cta",
+        "icon": "✉️",
+        "paragraphKeys": [
+          "cta.text"
         ]
       }
     ]
