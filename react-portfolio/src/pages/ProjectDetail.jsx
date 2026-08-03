@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { getProject } from "../data/projects";
 import ProjectBlock from "../components/ProjectBlocks";
 import Footer from "../components/Footer";
+import NotFound from "./NotFound";
 
 function BackLink({ label }) {
   return (
@@ -38,19 +39,8 @@ export default function ProjectDetail({ id: fixedId }) {
     window.scrollTo(0, 0);
   }, [id]);
 
-  if (!project) {
-    return (
-      <div className="min-h-screen bg-surface-base text-text-primary transition-colors duration-300">
-        <section className="max-w-6xl mx-auto px-6 pt-32 pb-32">
-          <BackLink label={t("project.backToProjects")} />
-          <h1 className="font-display text-4xl md:text-5xl font-bold">
-            {t("project.notFound")}
-          </h1>
-        </section>
-        <Footer />
-      </div>
-    );
-  }
+  // Un id de projet inconnu est une adresse morte comme une autre : même page.
+  if (!project) return <NotFound />;
 
   const { ns } = project;
   const heroTags = t(`project.${ns}.heroTags`, { returnObjects: true });

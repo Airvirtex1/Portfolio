@@ -1013,7 +1013,6 @@
         "performance": "Performance optimale"
       }
     },
-    "notFound": "Projet introuvable",
     "entreprise": {
       "title": "Urban Custom Print",
       "intro": "Micro-entreprise de fabrication à la demande : impression 3D en majorité, complétée par du prototypage électronique et de la découpe laser. Je produis sur mes propres machines, pour des particuliers, des makers et de petites entreprises.",
@@ -1264,6 +1263,13 @@
         }
       }
     }
+  },
+  "notFound": {
+    "code": "Erreur 404",
+    "title": "Cette page n’existe pas",
+    "text": "L’adresse que tu as suivie ne mène nulle part : elle a peut-être été modifiée, ou elle contient une coquille. Rien n’est perdu, tout le reste du site est à un clic.",
+    "backHome": "Retour à l’accueil",
+    "seeProjects": "Voir les projets"
   },
   "about": {
     "title": "À propos",

@@ -1013,7 +1013,6 @@
         "performance": "Optimal performance"
       }
     },
-    "notFound": "Project not found",
     "entreprise": {
       "title": "Urban Custom Print",
       "intro": "A registered one-person manufacturing business: mostly on-demand 3D printing, alongside electronic prototyping and laser cutting. Everything is produced in-house, on my own machines, for individuals, makers and small businesses.",
@@ -1264,6 +1263,13 @@
         }
       }
     }
+  },
+  "notFound": {
+    "code": "Error 404",
+    "title": "This page doesn’t exist",
+    "text": "The address you followed leads nowhere — it may have changed, or it contains a typo. Nothing is lost: the rest of the site is one click away.",
+    "backHome": "Back to home",
+    "seeProjects": "See the projects"
   },
   "about": {
     "title": "About",

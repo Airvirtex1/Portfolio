@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
+import NotFound from "./pages/NotFound";
 
 // Mode édition : `import.meta.env.DEV` est remplacé par `false` au build,
 // l'import dynamique est alors éliminé — /admin n'existe pas en production.
@@ -33,6 +34,8 @@ export default function App() {
             }
           />
         )}
+        {/* Toujours en dernier : capture tout ce qui n'a matché aucune route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       </div>
     </BrowserRouter>
