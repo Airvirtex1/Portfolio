@@ -377,18 +377,18 @@
     ]
   },
   {
-    "id": "meteo",
+    "id": "decors",
     "date": null,
-    "image": "station_meteo.png",
+    "image": "decors1.png",
     "tags": [
-      "ESP32",
-      "MQTT",
-      "Sensors"
+      "Arduino",
+      "3D Design",
+      "Steppers"
     ],
     "blocks": [
       {
         "type": "image",
-        "src": "station_meteo.png"
+        "src": "decors1.png"
       },
       {
         "type": "cards",
@@ -404,8 +404,315 @@
             "key": "timeline"
           },
           {
-            "icon": "👥",
-            "key": "team"
+            "icon": "💼",
+            "key": "type"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "titleKey": "context",
+        "paragraphs": 2
+      },
+      {
+        "type": "cards",
+        "titleKey": "goals",
+        "cols": 2,
+        "items": [
+          {
+            "icon": "🏗️",
+            "key": "goals.crane"
+          },
+          {
+            "icon": "🚦",
+            "key": "goals.lights"
+          },
+          {
+            "icon": "🚗",
+            "key": "goals.cars"
+          },
+          {
+            "icon": "🔘",
+            "key": "goals.control"
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "titleKey": "scene",
+        "src": "decors2.png",
+        "caption": true
+      },
+      {
+        "type": "steps",
+        "titleKey": "approach",
+        "count": 6
+      },
+      {
+        "type": "stack",
+        "titleKey": "technical",
+        "columns": [
+          {
+            "labelKey": "technical.hardware",
+            "items": [
+              {
+                "key": "technical.arduino"
+              },
+              {
+                "key": "technical.steppers"
+              },
+              {
+                "key": "technical.drivers"
+              },
+              {
+                "key": "technical.servo"
+              },
+              {
+                "key": "technical.power"
+              }
+            ]
+          },
+          {
+            "labelKey": "technical.software",
+            "items": [
+              {
+                "key": "technical.programming"
+              },
+              {
+                "key": "technical.cycles"
+              },
+              {
+                "key": "technical.button"
+              },
+              {
+                "key": "technical.cad"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "red",
+        "titleKey": "constraints",
+        "paragraphKeys": [
+          "constraints.intro"
+        ],
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "key": "constraints.reliability"
+          },
+          {
+            "key": "constraints.battery"
+          },
+          {
+            "key": "constraints.simplicity"
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "neutral",
+        "titleKey": "skills",
+        "paragraphs": 2,
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "icon": "⚙️",
+            "key": "skills.badge1"
+          },
+          {
+            "icon": "🔌",
+            "key": "skills.badge2"
+          },
+          {
+            "icon": "🎭",
+            "key": "skills.badge3"
+          }
+        ]
+      }
+    ],
+    "venture": true
+  },
+  {
+    "id": "argentique",
+    "date": null,
+    "image": "argentique.png",
+    "tags": [
+      "ESP32",
+      "Firmware",
+      "3D Print"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "argentique_hero.png"
+      },
+      {
+        "type": "cards",
+        "variant": "compact",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🎯",
+            "key": "objective"
+          },
+          {
+            "icon": "📅",
+            "key": "timeline"
+          },
+          {
+            "icon": "💼",
+            "key": "type"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "titleKey": "context",
+        "paragraphs": 2
+      },
+      {
+        "type": "cards",
+        "titleKey": "goals",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "📷",
+            "key": "goals.trigger"
+          },
+          {
+            "icon": "⏱️",
+            "key": "goals.modes"
+          },
+          {
+            "icon": "🔋",
+            "key": "goals.portable"
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "titleKey": "prototype",
+        "src": "argentique_prototype.png",
+        "caption": true
+      },
+      {
+        "type": "steps",
+        "titleKey": "approach",
+        "count": 5
+      },
+      {
+        "type": "highlight",
+        "accent": "yellow",
+        "titleKey": "status",
+        "icon": "⚗️",
+        "badgeKey": "status.badge",
+        "paragraphKeys": [
+          "status.text"
+        ]
+      },
+      {
+        "type": "stack",
+        "titleKey": "technical",
+        "columns": [
+          {
+            "labelKey": "technical.hardware",
+            "items": [
+              {
+                "key": "technical.esp32"
+              },
+              {
+                "key": "technical.servo"
+              },
+              {
+                "key": "technical.radio"
+              },
+              {
+                "key": "technical.battery"
+              },
+              {
+                "key": "technical.bms"
+              }
+            ]
+          },
+          {
+            "labelKey": "technical.software",
+            "items": [
+              {
+                "key": "technical.programming"
+              },
+              {
+                "key": "technical.modes"
+              },
+              {
+                "key": "technical.signal"
+              },
+              {
+                "key": "technical.cad"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "neutral",
+        "titleKey": "skills",
+        "paragraphs": 1,
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "icon": "📡",
+            "key": "skills.badge1"
+          },
+          {
+            "icon": "🖨️",
+            "key": "skills.badge2"
+          },
+          {
+            "icon": "🔋",
+            "key": "skills.badge3"
+          }
+        ]
+      }
+    ],
+    "venture": true
+  },
+  {
+    "id": "crabe",
+    "date": null,
+    "image": "crabe.png",
+    "tags": [
+      "ESP32",
+      "Robotics",
+      "3D Print"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "crabe.png"
+      },
+      {
+        "type": "cards",
+        "variant": "compact",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🎯",
+            "key": "objective"
+          },
+          {
+            "icon": "📅",
+            "key": "timeline"
+          },
+          {
+            "icon": "👤",
+            "key": "type"
           }
         ]
       },
@@ -416,8 +723,8 @@
       },
       {
         "type": "figure",
-        "titleKey": "diagram",
-        "src": "meteo_diagram.png",
+        "titleKey": "assembled",
+        "src": "crabe_assembled.png",
         "caption": true
       },
       {
@@ -431,20 +738,20 @@
         "cols": 2,
         "items": [
           {
-            "icon": "🌡️",
-            "key": "features.sensors"
+            "icon": "🦀",
+            "key": "features.quadruped"
           },
           {
-            "icon": "💾",
-            "key": "features.storage"
+            "icon": "📱",
+            "key": "features.web"
           },
           {
-            "icon": "📊",
-            "key": "features.interface"
+            "icon": "📹",
+            "key": "features.camera"
           },
           {
-            "icon": "⚓",
-            "key": "features.marine"
+            "icon": "🖨️",
+            "key": "features.print3d"
           }
         ]
       },
@@ -456,16 +763,16 @@
             "labelKey": "technical.hardware",
             "items": [
               {
-                "key": "technical.mcu"
+                "key": "technical.esp32"
               },
               {
-                "key": "technical.tempSensor"
+                "key": "technical.servos"
               },
               {
-                "key": "technical.pressureSensor"
+                "key": "technical.camera"
               },
               {
-                "key": "technical.display"
+                "key": "technical.printed"
               }
             ]
           },
@@ -473,16 +780,16 @@
             "labelKey": "technical.software",
             "items": [
               {
-                "key": "technical.embedded"
+                "key": "technical.programming"
               },
               {
-                "key": "technical.protocols"
+                "key": "technical.webInterface"
               },
               {
-                "key": "technical.dataManagement"
+                "key": "technical.wifi"
               },
               {
-                "key": "technical.architecture"
+                "key": "technical.cad"
               }
             ]
           }
@@ -490,14 +797,32 @@
       },
       {
         "type": "highlight",
+        "accent": "orange",
+        "titleKey": "integration",
+        "paragraphs": 1,
+        "cols": 3,
+        "items": [
+          {
+            "key": "integration.meca"
+          },
+          {
+            "key": "integration.elec"
+          },
+          {
+            "key": "integration.soft"
+          }
+        ]
+      },
+      {
+        "type": "highlight",
         "accent": "neutral",
         "titleKey": "skills",
-        "paragraphs": 3,
+        "paragraphs": 2,
         "cols": 3,
         "centered": true,
         "items": [
           {
-            "icon": "🎯",
+            "icon": "🤖",
             "key": "skills.badge1"
           },
           {
@@ -505,7 +830,7 @@
             "key": "skills.badge2"
           },
           {
-            "icon": "📝",
+            "icon": "🔧",
             "key": "skills.badge3"
           }
         ]
@@ -649,6 +974,142 @@
           },
           {
             "icon": "🎥",
+            "key": "skills.badge3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "meteo",
+    "date": null,
+    "image": "station_meteo.png",
+    "tags": [
+      "ESP32",
+      "MQTT",
+      "Sensors"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "station_meteo.png"
+      },
+      {
+        "type": "cards",
+        "variant": "compact",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🎯",
+            "key": "objective"
+          },
+          {
+            "icon": "📅",
+            "key": "timeline"
+          },
+          {
+            "icon": "👥",
+            "key": "team"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "titleKey": "context",
+        "paragraphs": 2
+      },
+      {
+        "type": "figure",
+        "titleKey": "diagram",
+        "src": "meteo_diagram.png",
+        "caption": true
+      },
+      {
+        "type": "steps",
+        "titleKey": "approach",
+        "count": 4
+      },
+      {
+        "type": "cards",
+        "titleKey": "features",
+        "cols": 2,
+        "items": [
+          {
+            "icon": "🌡️",
+            "key": "features.sensors"
+          },
+          {
+            "icon": "💾",
+            "key": "features.storage"
+          },
+          {
+            "icon": "📊",
+            "key": "features.interface"
+          },
+          {
+            "icon": "⚓",
+            "key": "features.marine"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "titleKey": "technical",
+        "columns": [
+          {
+            "labelKey": "technical.hardware",
+            "items": [
+              {
+                "key": "technical.mcu"
+              },
+              {
+                "key": "technical.tempSensor"
+              },
+              {
+                "key": "technical.pressureSensor"
+              },
+              {
+                "key": "technical.display"
+              }
+            ]
+          },
+          {
+            "labelKey": "technical.software",
+            "items": [
+              {
+                "key": "technical.embedded"
+              },
+              {
+                "key": "technical.protocols"
+              },
+              {
+                "key": "technical.dataManagement"
+              },
+              {
+                "key": "technical.architecture"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "neutral",
+        "titleKey": "skills",
+        "paragraphs": 3,
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "icon": "🎯",
+            "key": "skills.badge1"
+          },
+          {
+            "icon": "📡",
+            "key": "skills.badge2"
+          },
+          {
+            "icon": "📝",
             "key": "skills.badge3"
           }
         ]
@@ -1121,467 +1582,6 @@
         ]
       }
     ]
-  },
-  {
-    "id": "crabe",
-    "date": null,
-    "image": "crabe.png",
-    "tags": [
-      "ESP32",
-      "Robotics",
-      "3D Print"
-    ],
-    "blocks": [
-      {
-        "type": "image",
-        "src": "crabe.png"
-      },
-      {
-        "type": "cards",
-        "variant": "compact",
-        "cols": 3,
-        "items": [
-          {
-            "icon": "🎯",
-            "key": "objective"
-          },
-          {
-            "icon": "📅",
-            "key": "timeline"
-          },
-          {
-            "icon": "👤",
-            "key": "type"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "titleKey": "context",
-        "paragraphs": 2
-      },
-      {
-        "type": "figure",
-        "titleKey": "assembled",
-        "src": "crabe_assembled.png",
-        "caption": true
-      },
-      {
-        "type": "steps",
-        "titleKey": "approach",
-        "count": 4
-      },
-      {
-        "type": "cards",
-        "titleKey": "features",
-        "cols": 2,
-        "items": [
-          {
-            "icon": "🦀",
-            "key": "features.quadruped"
-          },
-          {
-            "icon": "📱",
-            "key": "features.web"
-          },
-          {
-            "icon": "📹",
-            "key": "features.camera"
-          },
-          {
-            "icon": "🖨️",
-            "key": "features.print3d"
-          }
-        ]
-      },
-      {
-        "type": "stack",
-        "titleKey": "technical",
-        "columns": [
-          {
-            "labelKey": "technical.hardware",
-            "items": [
-              {
-                "key": "technical.esp32"
-              },
-              {
-                "key": "technical.servos"
-              },
-              {
-                "key": "technical.camera"
-              },
-              {
-                "key": "technical.printed"
-              }
-            ]
-          },
-          {
-            "labelKey": "technical.software",
-            "items": [
-              {
-                "key": "technical.programming"
-              },
-              {
-                "key": "technical.webInterface"
-              },
-              {
-                "key": "technical.wifi"
-              },
-              {
-                "key": "technical.cad"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "highlight",
-        "accent": "orange",
-        "titleKey": "integration",
-        "paragraphs": 1,
-        "cols": 3,
-        "items": [
-          {
-            "key": "integration.meca"
-          },
-          {
-            "key": "integration.elec"
-          },
-          {
-            "key": "integration.soft"
-          }
-        ]
-      },
-      {
-        "type": "highlight",
-        "accent": "neutral",
-        "titleKey": "skills",
-        "paragraphs": 2,
-        "cols": 3,
-        "centered": true,
-        "items": [
-          {
-            "icon": "🤖",
-            "key": "skills.badge1"
-          },
-          {
-            "icon": "📡",
-            "key": "skills.badge2"
-          },
-          {
-            "icon": "🔧",
-            "key": "skills.badge3"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "argentique",
-    "date": null,
-    "image": "argentique.png",
-    "tags": [
-      "ESP32",
-      "Firmware",
-      "3D Print"
-    ],
-    "blocks": [
-      {
-        "type": "image",
-        "src": "argentique_hero.png"
-      },
-      {
-        "type": "cards",
-        "variant": "compact",
-        "cols": 3,
-        "items": [
-          {
-            "icon": "🎯",
-            "key": "objective"
-          },
-          {
-            "icon": "📅",
-            "key": "timeline"
-          },
-          {
-            "icon": "💼",
-            "key": "type"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "titleKey": "context",
-        "paragraphs": 2
-      },
-      {
-        "type": "cards",
-        "titleKey": "goals",
-        "cols": 3,
-        "items": [
-          {
-            "icon": "📷",
-            "key": "goals.trigger"
-          },
-          {
-            "icon": "⏱️",
-            "key": "goals.modes"
-          },
-          {
-            "icon": "🔋",
-            "key": "goals.portable"
-          }
-        ]
-      },
-      {
-        "type": "figure",
-        "titleKey": "prototype",
-        "src": "argentique_prototype.png",
-        "caption": true
-      },
-      {
-        "type": "steps",
-        "titleKey": "approach",
-        "count": 5
-      },
-      {
-        "type": "highlight",
-        "accent": "yellow",
-        "titleKey": "status",
-        "icon": "⚗️",
-        "badgeKey": "status.badge",
-        "paragraphKeys": [
-          "status.text"
-        ]
-      },
-      {
-        "type": "stack",
-        "titleKey": "technical",
-        "columns": [
-          {
-            "labelKey": "technical.hardware",
-            "items": [
-              {
-                "key": "technical.esp32"
-              },
-              {
-                "key": "technical.servo"
-              },
-              {
-                "key": "technical.radio"
-              },
-              {
-                "key": "technical.battery"
-              },
-              {
-                "key": "technical.bms"
-              }
-            ]
-          },
-          {
-            "labelKey": "technical.software",
-            "items": [
-              {
-                "key": "technical.programming"
-              },
-              {
-                "key": "technical.modes"
-              },
-              {
-                "key": "technical.signal"
-              },
-              {
-                "key": "technical.cad"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "highlight",
-        "accent": "neutral",
-        "titleKey": "skills",
-        "paragraphs": 1,
-        "cols": 3,
-        "centered": true,
-        "items": [
-          {
-            "icon": "📡",
-            "key": "skills.badge1"
-          },
-          {
-            "icon": "🖨️",
-            "key": "skills.badge2"
-          },
-          {
-            "icon": "🔋",
-            "key": "skills.badge3"
-          }
-        ]
-      }
-    ],
-    "venture": true
-  },
-  {
-    "id": "decors",
-    "date": null,
-    "image": "decors1.png",
-    "tags": [
-      "Arduino",
-      "3D Design",
-      "Steppers"
-    ],
-    "blocks": [
-      {
-        "type": "image",
-        "src": "decors1.png"
-      },
-      {
-        "type": "cards",
-        "variant": "compact",
-        "cols": 3,
-        "items": [
-          {
-            "icon": "🎯",
-            "key": "objective"
-          },
-          {
-            "icon": "📅",
-            "key": "timeline"
-          },
-          {
-            "icon": "💼",
-            "key": "type"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "titleKey": "context",
-        "paragraphs": 2
-      },
-      {
-        "type": "cards",
-        "titleKey": "goals",
-        "cols": 2,
-        "items": [
-          {
-            "icon": "🏗️",
-            "key": "goals.crane"
-          },
-          {
-            "icon": "🚦",
-            "key": "goals.lights"
-          },
-          {
-            "icon": "🚗",
-            "key": "goals.cars"
-          },
-          {
-            "icon": "🔘",
-            "key": "goals.control"
-          }
-        ]
-      },
-      {
-        "type": "figure",
-        "titleKey": "scene",
-        "src": "decors2.png",
-        "caption": true
-      },
-      {
-        "type": "steps",
-        "titleKey": "approach",
-        "count": 6
-      },
-      {
-        "type": "stack",
-        "titleKey": "technical",
-        "columns": [
-          {
-            "labelKey": "technical.hardware",
-            "items": [
-              {
-                "key": "technical.arduino"
-              },
-              {
-                "key": "technical.steppers"
-              },
-              {
-                "key": "technical.drivers"
-              },
-              {
-                "key": "technical.servo"
-              },
-              {
-                "key": "technical.power"
-              }
-            ]
-          },
-          {
-            "labelKey": "technical.software",
-            "items": [
-              {
-                "key": "technical.programming"
-              },
-              {
-                "key": "technical.cycles"
-              },
-              {
-                "key": "technical.button"
-              },
-              {
-                "key": "technical.cad"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "highlight",
-        "accent": "red",
-        "titleKey": "constraints",
-        "paragraphKeys": [
-          "constraints.intro"
-        ],
-        "cols": 3,
-        "centered": true,
-        "items": [
-          {
-            "key": "constraints.reliability"
-          },
-          {
-            "key": "constraints.battery"
-          },
-          {
-            "key": "constraints.simplicity"
-          }
-        ]
-      },
-      {
-        "type": "highlight",
-        "accent": "neutral",
-        "titleKey": "skills",
-        "paragraphs": 2,
-        "cols": 3,
-        "centered": true,
-        "items": [
-          {
-            "icon": "⚙️",
-            "key": "skills.badge1"
-          },
-          {
-            "icon": "🔌",
-            "key": "skills.badge2"
-          },
-          {
-            "icon": "🎭",
-            "key": "skills.badge3"
-          }
-        ]
-      }
-    ],
-    "venture": true
   },
   {
     "id": "entreprise",

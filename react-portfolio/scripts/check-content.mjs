@@ -44,7 +44,8 @@ for (const project of projects) {
   seen.add(project.id);
 
   if (!project.date) {
-    // Une entrée hors grille (listed: false) n'a pas besoin de date
+    // La date ne classe plus la grille (c'est l'ordre du JSON qui le fait),
+    // mais elle reste une métadonnée utile : on la signale si elle manque.
     if (project.listed !== false) undated.push(project.id);
   } else if (!/^\d{4}-\d{2}$/.test(project.date)) {
     missingKeys.push(`${project.id} : date "${project.date}" — format attendu AAAA-MM`);
@@ -87,7 +88,7 @@ report("❌", "CLÉS I18N MANQUANTES", missingKeys);
 report("❌", "IDS DE PROJET EN DOUBLE", duplicateIds);
 report("🖼️ ", "ASSETS ABSENTS — bloc ignoré au rendu", missingAssets);
 report("🗑️ ", "CHAÎNES I18N PLUS UTILISÉES", unusedKeys);
-report("📅", "SANS DATE — rejetés en fin de page Projets", undated);
+report("📅", "SANS DATE — métadonnée manquante, sans effet sur l'ordre", undated);
 
 const blocking = missingKeys.length + duplicateIds.length;
 console.log(
