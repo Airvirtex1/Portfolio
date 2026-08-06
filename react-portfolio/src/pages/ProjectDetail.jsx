@@ -87,7 +87,7 @@ export default function ProjectDetail({ id: fixedId }) {
         </p>
       </section>
 
-      {/* BLOCS — dernière section : marge basse avant le footer */}
+      {/* BLOCS : dernière section, marge basse avant le footer */}
       <div className="[&>section:last-child]:pb-32">
         {project.blocks.map((block, i) => (
           <ProjectBlock key={`${block.type}-${i}`} block={block} ns={ns} />

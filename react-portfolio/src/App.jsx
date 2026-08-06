@@ -9,7 +9,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
 
 // Mode édition : `import.meta.env.DEV` est remplacé par `false` au build,
-// l'import dynamique est alors éliminé — /admin n'existe pas en production.
+// l'import dynamique est alors éliminé : /admin n'existe pas en production.
 const Admin = import.meta.env.DEV ? lazy(() => import("./admin/Admin")) : null;
 
 export default function App() {

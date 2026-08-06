@@ -1,4 +1,4 @@
-# Dépendances — jamais versionnées, régénérées par npm install
+# Dépendances : jamais versionnées, régénérées par npm install
 node_modules/
 
 # Builds
@@ -19,5 +19,5 @@ npm-debug.log*
 .vscode/
 .idea/
 
-# Instructions Claude Code — chemins locaux du second brain, non publiables
+# Instructions Claude Code : chemins locaux du second brain, non publiables
 CLAUDE.md

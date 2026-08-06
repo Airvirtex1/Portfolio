@@ -1037,8 +1037,8 @@
       },
       "context": {
         "title": "Why this business",
-        "p1": "As an embedded systems engineering student, I already had the machines and the skills to design and manufacture parts. Going from « I build for my own projects » to « I build for customers » was the logical next step — and it taught me far more than I expected.",
-        "p2": "An order does not end at the print. You have to understand a need that rarely comes with a drawing, weigh material against tolerances and machine time, quote it, meet the deadline, and own the outcome when the part does not fit. That part — the one no school project ever taught me — is exactly what interests me."
+        "p1": "As an embedded systems engineering student, I already had the machines and the skills to design and manufacture parts. Going from « I build for my own projects » to « I build for customers » was the logical next step, and it taught me far more than I expected.",
+        "p2": "An order does not end at the print. You have to understand a need that rarely comes with a drawing, weigh material against tolerances and machine time, quote it, meet the deadline, and own the outcome when the part does not fit. That part, the one no school project ever taught me, is exactly what interests me."
       },
       "services": {
         "title": "What I make",
@@ -1048,7 +1048,7 @@
         },
         "electronics": {
           "title": "Electronic prototyping",
-          "text": "Building and testing circuits, wiring, integrating boards and sensors — a direct extension of my embedded systems training."
+          "text": "Building and testing circuits, wiring, integrating boards and sensors, a direct extension of my embedded systems training."
         },
         "laser": {
           "title": "Laser cutting",
@@ -1058,7 +1058,7 @@
       "skills": {
         "title": "What I get out of it",
         "p1": "Running a business alongside my studies forces trade-offs that theory never raises: turning down an order you cannot deliver, pricing your own time, choosing between finishing fast and finishing well.",
-        "p2": "It is also the full loop — need, design, manufacture, delivery, customer feedback — which I can iterate on in days where a school project takes a semester.",
+        "p2": "It is also the full loop (need, design, manufacture, delivery, customer feedback), which I can iterate on in days where a school project takes a semester.",
         "badge1": {
           "title": "Autonomy",
           "text": "Deciding alone, from quote to delivery"
@@ -1074,14 +1074,14 @@
       },
       "cta": {
         "title": "Need a part made?",
-        "text": "3D printing, laser cutting or a hand with an electronics prototype: describe what you need — no drawing or 3D model required — and I'll tell you whether it can be done."
+        "text": "3D printing, laser cutting or a hand with an electronics prototype: describe what you need, no drawing or 3D model required, and I'll tell you whether it can be done."
       },
       "work": {
         "title": "Work delivered through Urban Custom Print"
       }
     },
     "aerolog": {
-      "title": "AERO-LOG — Autonomous Drone for Emergency Medical Logistics",
+      "title": "AERO-LOG: Autonomous Drone for Emergency Medical Logistics",
       "intro": "Proof of concept for an autonomous quadcopter dedicated to emergency medical logistics, built by a team of six at Efrei. A fully custom three-layer architecture: an ESP32 mini flight controller for real time, a Raspberry Pi 5 with a Hailo-8L accelerator for perception, and a ground station for supervision. I led the embedded firmware and the drone's flight bring-up.",
       "heroTags": [
         "ESP32",
@@ -1098,17 +1098,17 @@
       },
       "timeline": {
         "title": "Duration",
-        "text": "Efrei Innovation Project — April to July 2026"
+        "text": "Efrei Innovation Project, April to July 2026"
       },
       "team": {
         "title": "Team",
-        "text": "Six students across three majors — project lead and embedded systems owner"
+        "text": "Six students across three majors; project lead and embedded systems owner"
       },
       "context": {
         "title": "Where it started",
-        "p1": "In France, 23,294 patients were on the transplant waiting list in January 2026, and only 6,154 transplants could be performed in 2025 — around seventeen a day. On the journey of a graft, a sample or an urgent drug, every minute saved counts, yet that transport depends entirely on the road network: congested in cities, sometimes cut off in disaster areas.",
-        "p2": "The need is anything but theoretical. In a European trial run in Belgium to move a graft between two hospitals, the drone took 10 minutes against 21 by car — roughly twice as fast, simply by rising above the traffic. In France, a kidney travelled the 60 km between Nantes University Hospital and La Roche-sur-Yon hospital by drone in July 2026, in 36 minutes. AERO-LOG explores the same idea at student-demonstrator scale, on a low-cost platform with no off-the-shelf autopilot.",
-        "p3": "The scope of the proof of concept is stated explicitly: the payload is simulated by a 300 to 500 g inert mass, flights take place on authorised ground under supervision, and no real biological product is carried — such a use would require medical, technical and regulatory clearance well beyond the project.",
+        "p1": "In France, 23,294 patients were on the transplant waiting list in January 2026, and only 6,154 transplants could be performed in 2025, around seventeen a day. On the journey of a graft, a sample or an urgent drug, every minute saved counts, yet that transport depends entirely on the road network: congested in cities, sometimes cut off in disaster areas.",
+        "p2": "The need is anything but theoretical. In a European trial run in Belgium to move a graft between two hospitals, the drone took 10 minutes against 21 by car, roughly twice as fast, simply by rising above the traffic. In France, a kidney travelled the 60 km between Nantes University Hospital and La Roche-sur-Yon hospital by drone in July 2026, in 36 minutes. AERO-LOG explores the same idea at student-demonstrator scale, on a low-cost platform with no off-the-shelf autopilot.",
+        "p3": "The scope of the proof of concept is stated explicitly: the payload is simulated by a 300 to 500 g inert mass, flights take place on authorised ground under supervision, and no real biological product is carried. Such a use would require medical, technical and regulatory clearance well beyond the project.",
         "stat1": "patients on the transplant waiting list in France, January 2026",
         "stat2": "transplants performed in 2025, around 17 a day",
         "stat3": "faster than a car on a graft transfer between two hospitals"
@@ -1144,7 +1144,7 @@
         },
         "realtime": {
           "title": "Real-time layer",
-          "text": "ESP32 as a mini flight controller: 1 kHz stabilisation, motor mixing, arming and failsafe, in-flight PID tuning from an embedded web interface — because Linux is not deterministic."
+          "text": "ESP32 as a mini flight controller: 1 kHz stabilisation, motor mixing, arming and failsafe, in-flight PID tuning from an embedded web interface, because Linux is not deterministic."
         }
       },
       "technical": {
@@ -1155,18 +1155,18 @@
         "frame": "Custom-redesigned quadcopter frame, four brushless motors and their ESCs",
         "fcu": "Custom ESP32-based board acting as a mini flight controller",
         "imu": "MPU6050 inertial measurement unit fused by a complementary filter",
-        "rc": "ELRS / CRSF receiver — manual control always takes priority",
+        "rc": "ELRS / CRSF receiver, manual control always takes priority",
         "power": "6S LiPo battery and a 5 V BEC for the logic supply",
-        "rpi": "Raspberry Pi 5 — high-level onboard computer",
-        "hailo": "Raspberry Pi AI HAT+ (Hailo-8L) — model inference run onboard",
+        "rpi": "Raspberry Pi 5, high-level onboard computer",
+        "hailo": "Raspberry Pi AI HAT+ (Hailo-8L), model inference run onboard",
         "camera": "Downward-facing Pi Camera 3 with autofocus",
         "gps": "VK-162 GNSS module (u-blox), read through gpsd",
-        "sonar": "HC-SR04 ultrasonic rangefinder — ground height, tilt-compensated",
+        "sonar": "HC-SR04 ultrasonic rangefinder, ground height, tilt-compensated",
         "firmware": "C/C++ firmware under PlatformIO, 1 kHz control loop on a dedicated core",
         "python": "Plain Python (threading / asyncio), no ROS, for navigation",
-        "aerolink": "aerolink — in-house binary serial protocol protected by CRC16-CCITT",
+        "aerolink": "aerolink, in-house binary serial protocol protected by CRC16-CCITT",
         "dashboard": "FastAPI + WebSocket dashboard, with a hardware-free simulation mode",
-        "opencv": "OpenCV — ArUco markers and Lucas-Kanade optical flow"
+        "opencv": "OpenCV, ArUco markers and Lucas-Kanade optical flow"
       },
       "hardware": {
         "title": "A drone designed and built from scratch",
@@ -1174,7 +1174,7 @@
       },
       "perception": {
         "title": "Embedded perception",
-        "caption": "A single perception pass onboard the Raspberry Pi 5: depth map, occupancy grid, person detection, ArUco marker reading with its pixel offset, operator gesture — and the resulting navigation command."
+        "caption": "A single perception pass onboard the Raspberry Pi 5: depth map, occupancy grid, person detection, ArUco marker reading with its pixel offset, operator gesture, and the resulting navigation command."
       },
       "mission": {
         "title": "How a mission unfolds",
@@ -1208,13 +1208,13 @@
         "solutionLabel": "Solution adopted",
         "realtime": {
           "title": "Linux is not real-time",
-          "problem": "Stabilising a quadcopter requires a deterministic loop around one kilohertz. On a Raspberry Pi, the Linux scheduler introduces unpredictable latency — more than enough to lose the aircraft.",
-          "solution": "Split into three layers, with real time strictly delegated to the ESP32, which does nothing else — IMU, PID, motor mixing, watchdog — and always keeps radio priority. The Raspberry Pi is limited to attitude and thrust setpoints, vision and navigation."
+          "problem": "Stabilising a quadcopter requires a deterministic loop around one kilohertz. On a Raspberry Pi, the Linux scheduler introduces unpredictable latency, more than enough to lose the aircraft.",
+          "solution": "Split into three layers, with real time strictly delegated to the ESP32, which does nothing else (IMU, PID, motor mixing, watchdog) and always keeps radio priority. The Raspberry Pi is limited to attitude and thrust setpoints, vision and navigation."
         },
         "link": {
           "title": "Making the computer ↔ flight controller link reliable",
           "problem": "A text format such as JSON was too expensive to parse on the ESP32 for a fixed-rate stream, and MAVLink meant carrying a full stack for a very narrow need.",
-          "solution": "An in-house protocol, aerolink: compact binary frames protected by a CRC16-CCITT over UART, watchdogs on both sides and automatic fallback to the radio if the computer goes silent. A Python decoder ships alongside the firmware for debugging — with the rule, learned the hard way, of always deploying firmware and decoder together."
+          "solution": "An in-house protocol, aerolink: compact binary frames protected by a CRC16-CCITT over UART, watchdogs on both sides and automatic fallback to the radio if the computer goes silent. A Python decoder ships alongside the firmware for debugging, with the rule (learned the hard way) of always deploying firmware and decoder together."
         },
         "mixing": {
           "title": "Mixing sent to the wrong motors",
@@ -1225,7 +1225,7 @@
       "results": {
         "title": "Where the prototype stands",
         "badge": "3rd place, Efrei Poster Prize",
-        "p1": "On the hardware side, the electronic board and the frame were custom-designed and assembled end to end at Efrei's iLab, after two test iterations — and the drone flies. On the software side, the autopilot is in place: give it waypoints and an altitude and it holds them under supervision; real-time telemetry and the operator dashboard work, as do manual takeover and failsafe. Perception runs on the target board: person detection, ArUco code reading and a depth map, all from the RGB stream alone.",
+        "p1": "On the hardware side, the electronic board and the frame were custom-designed and assembled end to end at Efrei's iLab, after two test iterations, and the drone flies. On the software side, the autopilot is in place: give it waypoints and an altitude and it holds them under supervision; real-time telemetry and the operator dashboard work, as do manual takeover and failsafe. Perception runs on the target board: person detection, ArUco code reading and a depth map, all from the RGB stream alone.",
         "p2": "The limit is acknowledged: perception and control remain two separate blocks, not yet closed into a loop. Precision landing under 2 m and end-to-end payload transport depend directly on that. Total prototype budget: €541, of which €404 was funded by a grant and €137 came from hardware the team already owned.",
         "done": {
           "title": "Achieved",
@@ -1246,9 +1246,9 @@
       },
       "skills": {
         "title": "What the project taught me",
-        "p1": "AERO-LOG had me practise real-time embedded work under real conditions: high-frequency sensor reading, a stabilisation loop, filtering propeller noise out of the derivative term, and above all the discipline of testing in stages — arming, motors, PID, link — all carried out with propellers removed before any flight.",
+        "p1": "AERO-LOG had me practise real-time embedded work under real conditions: high-frequency sensor reading, a stabilisation loop, filtering propeller noise out of the derivative term, and above all the discipline of testing in stages (arming, motors, PID, link), all carried out with propellers removed before any flight.",
         "p2": "It taught me to design the interface between two worlds that do not run at the same pace: a deterministic microcontroller and an application-level Linux. That means a protocol designed for corruption, joint versioning on both sides, and fallback behaviour defined before it is needed.",
-        "p3": "Finally, coordinating six students from three majors — Embedded Systems, Data & AI, Business Intelligence — was the most formative part of the project: making firmware, perception and value analysis converge on a single product, against shared deadlines.",
+        "p3": "Finally, coordinating six students from three majors (Embedded Systems, Data & AI, Business Intelligence) was the most formative part of the project: making firmware, perception and value analysis converge on a single product, against shared deadlines.",
         "badge1": {
           "title": "Real-time",
           "text": "IMU, cascaded PID, motor mixing"
@@ -1267,7 +1267,7 @@
   "notFound": {
     "code": "Error 404",
     "title": "This page doesn’t exist",
-    "text": "The address you followed leads nowhere — it may have changed, or it contains a typo. Nothing is lost: the rest of the site is one click away.",
+    "text": "The address you followed leads nowhere: it may have changed, or it contains a typo. Nothing is lost: the rest of the site is one click away.",
     "backHome": "Back to home",
     "seeProjects": "See the projects"
   },

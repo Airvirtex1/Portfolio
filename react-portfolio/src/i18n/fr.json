@@ -1037,7 +1037,7 @@
       },
       "context": {
         "title": "Pourquoi cette activité",
-        "p1": "Élève ingénieur en systèmes embarqués, j'avais déjà les machines et les compétences pour concevoir puis fabriquer des pièces. Passer de « je fabrique pour mes projets » à « je fabrique pour des clients » était l'étape logique — et elle s'est révélée bien plus formatrice que prévu.",
+        "p1": "Élève ingénieur en systèmes embarqués, j'avais déjà les machines et les compétences pour concevoir puis fabriquer des pièces. Passer de « je fabrique pour mes projets » à « je fabrique pour des clients » était l'étape logique, et elle s'est révélée bien plus formatrice que prévu.",
         "p2": "Une commande ne s'arrête pas à l'impression. Il faut comprendre un besoin souvent exprimé sans plan, arbitrer entre matériau, tolérances et temps machine, chiffrer, tenir un délai, et assumer le résultat quand la pièce ne convient pas. C'est précisément cette partie-là, qu'aucun projet scolaire ne m'a apprise, qui m'intéresse."
       },
       "services": {
@@ -1048,7 +1048,7 @@
         },
         "electronics": {
           "title": "Prototypage électronique",
-          "text": "Montage et test de circuits, câblage, intégration de cartes et de capteurs — le prolongement direct de ma formation en embarqué."
+          "text": "Montage et test de circuits, câblage, intégration de cartes et de capteurs, le prolongement direct de ma formation en embarqué."
         },
         "laser": {
           "title": "Découpe laser",
@@ -1058,7 +1058,7 @@
       "skills": {
         "title": "Ce que ça m'apporte",
         "p1": "Faire tourner une micro-entreprise en parallèle des études impose des arbitrages que la théorie ne pose jamais : refuser une commande intenable, chiffrer son propre temps de travail, choisir entre finir vite et finir bien.",
-        "p2": "C'est aussi la boucle complète — besoin, conception, fabrication, livraison, retour client — sur laquelle j'itère en quelques jours là où un projet scolaire demande un semestre.",
+        "p2": "C'est aussi la boucle complète (besoin, conception, fabrication, livraison, retour client) sur laquelle j'itère en quelques jours là où un projet scolaire demande un semestre.",
         "badge1": {
           "title": "Autonomie",
           "text": "Décider seul, du devis à la livraison"
@@ -1081,7 +1081,7 @@
       }
     },
     "aerolog": {
-      "title": "AERO-LOG — Drone autonome pour la logistique médicale",
+      "title": "AERO-LOG : drone autonome pour la logistique médicale",
       "intro": "Preuve de concept d'un drone quadricoptère autonome dédié à la logistique médicale d'urgence, menée à six à l'Efrei. Architecture entièrement sur mesure en trois couches : une mini-FCU ESP32 pour le temps réel, un Raspberry Pi 5 avec accélérateur Hailo-8L pour la perception, une station sol pour la supervision. J'y ai piloté le firmware embarqué et la mise en vol du drone.",
       "heroTags": [
         "ESP32",
@@ -1098,17 +1098,17 @@
       },
       "timeline": {
         "title": "Durée",
-        "text": "Innovation Project Efrei — avril à juillet 2026"
+        "text": "Innovation Project Efrei, avril à juillet 2026"
       },
       "team": {
         "title": "Équipe",
-        "text": "Six étudiants de trois majeures — chef de projet et responsable embarqué"
+        "text": "Six étudiants de trois majeures ; chef de projet et responsable embarqué"
       },
       "context": {
         "title": "Le constat de départ",
-        "p1": "En France, 23 294 malades étaient en attente de greffe en janvier 2026, et 6 154 greffes seulement ont pu être réalisées en 2025 — environ dix-sept par jour. Sur le trajet d'un greffon, d'un échantillon ou d'un médicament urgent, chaque minute gagnée compte, or ce transport reste entièrement dépendant du réseau routier : saturé en ville, parfois coupé en zone sinistrée.",
+        "p1": "En France, 23 294 malades étaient en attente de greffe en janvier 2026, et 6 154 greffes seulement ont pu être réalisées en 2025, soit environ dix-sept par jour. Sur le trajet d'un greffon, d'un échantillon ou d'un médicament urgent, chaque minute gagnée compte, or ce transport reste entièrement dépendant du réseau routier : saturé en ville, parfois coupé en zone sinistrée.",
         "p2": "Le besoin n'a rien de théorique. Lors d'un essai européen mené en Belgique pour acheminer un greffon entre deux hôpitaux, le drone a mis 10 minutes contre 21 en voiture, soit environ deux fois plus vite en s'affranchissant des embouteillages. En France, un rein a parcouru en juillet 2026 les 60 km séparant le CHU de Nantes du CH de La Roche-sur-Yon par drone, en 36 minutes. AERO-LOG explore la même idée à l'échelle d'un démonstrateur étudiant, sur une plateforme low-cost et sans autopilote clé en main.",
-        "p3": "Le périmètre du POC reste explicite : la charge est simulée par une masse inerte de 300 à 500 g, les vols se font en terrain autorisé et sous supervision, et aucun produit biologique réel n'est transporté — un tel usage relèverait d'une validation médicale, technique et réglementaire hors de portée du projet.",
+        "p3": "Le périmètre du POC reste explicite : la charge est simulée par une masse inerte de 300 à 500 g, les vols se font en terrain autorisé et sous supervision, et aucun produit biologique réel n'est transporté. Un tel usage relèverait d'une validation médicale, technique et réglementaire hors de portée du projet.",
         "stat1": "malades en attente de greffe en France, en janvier 2026",
         "stat2": "greffes réalisées en 2025, soit environ 17 par jour",
         "stat3": "plus rapide que la voiture sur un transfert de greffon entre deux hôpitaux"
@@ -1144,7 +1144,7 @@
         },
         "realtime": {
           "title": "Couche temps réel",
-          "text": "ESP32 en mini-FCU : stabilisation à 1 kHz, mixage moteurs, armement et failsafe, réglage des PID en vol depuis une interface web embarquée — parce que Linux n'est pas déterministe."
+          "text": "ESP32 en mini-FCU : stabilisation à 1 kHz, mixage moteurs, armement et failsafe, réglage des PID en vol depuis une interface web embarquée, parce que Linux n'est pas déterministe."
         }
       },
       "technical": {
@@ -1155,18 +1155,18 @@
         "frame": "Châssis quadricoptère reconçu sur mesure, quatre moteurs brushless et leurs ESC",
         "fcu": "Carte électronique à base d'ESP32 conçue pour le projet, en mini-FCU",
         "imu": "Centrale inertielle MPU6050 fusionnée par filtre complémentaire",
-        "rc": "Récepteur ELRS / CRSF — commande manuelle toujours prioritaire",
+        "rc": "Récepteur ELRS / CRSF, commande manuelle toujours prioritaire",
         "power": "Batterie LiPo 6S et BEC 5 V pour l'alimentation logique",
-        "rpi": "Raspberry Pi 5 — calculateur de bord haut niveau",
-        "hailo": "Raspberry Pi AI HAT+ (Hailo-8L) — inférence des modèles à bord",
+        "rpi": "Raspberry Pi 5, calculateur de bord haut niveau",
+        "hailo": "Raspberry Pi AI HAT+ (Hailo-8L), inférence des modèles à bord",
         "camera": "Caméra Pi 3 autofocus orientée vers le sol",
         "gps": "Module GNSS VK-162 (u-blox), lu via gpsd",
-        "sonar": "Télémètre ultrason HC-SR04 — hauteur sol compensée de l'assiette",
+        "sonar": "Télémètre ultrason HC-SR04, hauteur sol compensée de l'assiette",
         "firmware": "Firmware C/C++ sous PlatformIO, boucle de contrôle à 1 kHz sur cœur dédié",
         "python": "Python pur (threading / asyncio), sans ROS, pour la navigation",
-        "aerolink": "aerolink — protocole série binaire maison protégé par CRC16-CCITT",
+        "aerolink": "aerolink, protocole série binaire maison protégé par CRC16-CCITT",
         "dashboard": "Dashboard FastAPI + WebSocket, avec mode simulation sans matériel",
-        "opencv": "OpenCV — marqueurs ArUco et flux optique Lucas-Kanade"
+        "opencv": "OpenCV, marqueurs ArUco et flux optique Lucas-Kanade"
       },
       "hardware": {
         "title": "Le drone, conçu et assemblé de A à Z",
@@ -1174,7 +1174,7 @@
       },
       "perception": {
         "title": "Perception embarquée",
-        "caption": "Une seule passe de perception à bord du Raspberry Pi 5 : carte de profondeur, grille d'occupation, détection de personne, lecture du marqueur ArUco avec son décalage en pixels, geste de l'opérateur — et la consigne de navigation qui en découle."
+        "caption": "Une seule passe de perception à bord du Raspberry Pi 5 : carte de profondeur, grille d'occupation, détection de personne, lecture du marqueur ArUco avec son décalage en pixels, geste de l'opérateur, et la consigne de navigation qui en découle."
       },
       "mission": {
         "title": "Le déroulé d'une mission",
@@ -1209,12 +1209,12 @@
         "realtime": {
           "title": "Linux n'est pas temps réel",
           "problem": "Stabiliser un quadricoptère demande une boucle déterministe autour du kilohertz. Sur Raspberry Pi, l'ordonnanceur Linux introduit des latences imprévisibles : largement de quoi perdre l'appareil.",
-          "solution": "Découpage en trois couches et délégation stricte du temps réel à l'ESP32, qui ne fait que cela — IMU, PID, mixage moteurs, watchdog — et conserve toujours la priorité à la radio. Le Raspberry Pi se limite aux consignes d'angle et de poussée, à la vision et à la navigation."
+          "solution": "Découpage en trois couches et délégation stricte du temps réel à l'ESP32, qui ne fait que cela (IMU, PID, mixage moteurs, watchdog) et conserve toujours la priorité à la radio. Le Raspberry Pi se limite aux consignes d'angle et de poussée, à la vision et à la navigation."
         },
         "link": {
           "title": "Fiabiliser la liaison calculateur ↔ carte de vol",
           "problem": "Un format texte type JSON coûtait trop cher à parser sur l'ESP32 pour un flux à fréquence fixe, et MAVLink imposait une pile complète pour un besoin très restreint.",
-          "solution": "Un protocole maison, aerolink : trames binaires compactes protégées par un CRC16-CCITT sur UART, watchdog des deux côtés et repli automatique vers la radio si le calculateur se tait. Un décodeur Python accompagne le firmware pour le débogage — avec la règle apprise à nos dépens de toujours déployer firmware et décodeur ensemble."
+          "solution": "Un protocole maison, aerolink : trames binaires compactes protégées par un CRC16-CCITT sur UART, watchdog des deux côtés et repli automatique vers la radio si le calculateur se tait. Un décodeur Python accompagne le firmware pour le débogage, avec la règle apprise à nos dépens de toujours déployer firmware et décodeur ensemble."
         },
         "mixing": {
           "title": "Un mixage envoyé aux mauvais moteurs",
@@ -1225,7 +1225,7 @@
       "results": {
         "title": "Où en est le prototype",
         "badge": "3e prix du Poster Prize Efrei",
-        "p1": "Côté matériel, la carte électronique et le châssis ont été conçus sur mesure et assemblés intégralement à l'iLab de l'Efrei, au terme de deux itérations de tests — et le drone vole. Côté logiciel, l'autopilote est en place : on lui donne des waypoints et une altitude, qu'il tient sous supervision ; la télémétrie temps réel et le dashboard opérateur fonctionnent, la reprise manuelle et le failsafe aussi. La perception tourne bien sur la carte cible : détection de personnes, lecture de codes ArUco et carte de profondeur, à partir du seul flux RGB.",
+        "p1": "Côté matériel, la carte électronique et le châssis ont été conçus sur mesure et assemblés intégralement à l'iLab de l'Efrei, au terme de deux itérations de tests, et le drone vole. Côté logiciel, l'autopilote est en place : on lui donne des waypoints et une altitude, qu'il tient sous supervision ; la télémétrie temps réel et le dashboard opérateur fonctionnent, la reprise manuelle et le failsafe aussi. La perception tourne bien sur la carte cible : détection de personnes, lecture de codes ArUco et carte de profondeur, à partir du seul flux RGB.",
         "p2": "La limite est assumée : perception et contrôle restent deux briques séparées, pas encore refermées en boucle. L'atterrissage de précision sous 2 m et le transport d'une charge de bout en bout en dépendent directement. Budget total du prototype : 541 €, dont 404 € financés par une subvention et 137 € de matériel déjà possédé par l'équipe.",
         "done": {
           "title": "Acquis",
@@ -1246,9 +1246,9 @@
       },
       "skills": {
         "title": "Ce que le projet m'a apporté",
-        "p1": "AERO-LOG m'a fait pratiquer l'embarqué temps réel dans des conditions réelles : lecture capteurs à haute fréquence, boucle de stabilisation, filtrage du bruit d'hélices sur le terme dérivé, et surtout la discipline des essais par paliers — armement, moteurs, PID, liaison — tous menés hélices retirées avant le moindre vol.",
+        "p1": "AERO-LOG m'a fait pratiquer l'embarqué temps réel dans des conditions réelles : lecture capteurs à haute fréquence, boucle de stabilisation, filtrage du bruit d'hélices sur le terme dérivé, et surtout la discipline des essais par paliers (armement, moteurs, PID, liaison), tous menés hélices retirées avant le moindre vol.",
         "p2": "Il m'a appris à concevoir l'interface entre deux mondes qui ne fonctionnent pas au même rythme : un microcontrôleur déterministe et un Linux applicatif. Cela suppose un protocole pensé pour la corruption, un versionnage conjoint des deux côtés, et un comportement de repli défini avant d'en avoir besoin.",
-        "p3": "Enfin, coordonner six étudiants issus de trois majeures — Systèmes embarqués, Data & IA, Business Intelligence — a été l'expérience la plus formatrice du projet : faire converger firmware, perception et analyse de valeur vers un même produit, avec la contrainte de dates communes.",
+        "p3": "Enfin, coordonner six étudiants issus de trois majeures (Systèmes embarqués, Data & IA, Business Intelligence) a été l'expérience la plus formatrice du projet : faire converger firmware, perception et analyse de valeur vers un même produit, avec la contrainte de dates communes.",
         "badge1": {
           "title": "Temps réel",
           "text": "IMU, PID en cascade, mixage moteurs"

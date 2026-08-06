@@ -218,7 +218,7 @@ function StackBlock({ block, t }) {
                     <span className="text-text-primary mr-2">•</span>
                     <span>
                       {item.label && <strong>{item.label}</strong>}
-                      {item.label && " — "}
+                      {item.label && ", "}
                       {t(item.key)}
                     </span>
                   </li>
@@ -334,7 +334,7 @@ function StatsBlock({ block, t }) {
 }
 
 /**
- * Cartes cliquables vers d'autres pages projet — sert à la page /entreprise
+ * Cartes cliquables vers d'autres pages projet, sert à la page /entreprise
  * pour renvoyer vers les réalisations menées sous l'entreprise.
  * `tRoot` est le t global : les titres appartiennent à d'autres namespaces.
  */

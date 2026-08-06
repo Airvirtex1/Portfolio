@@ -79,7 +79,7 @@ function Home() {
             <div className="space-y-3">
               {[
                 { title: t("home.currentFocus"), content: "STM32 · ESP32 · IoT · Firmware" },
-                { title: t("home.education"),    content: "EFREI — Master Embedded Systems & IoT" },
+                { title: t("home.education"),    content: "EFREI, Master Embedded Systems & IoT" },
                 { title: t("home.availability"), content: t("home.availabilityText") },
               ].map(({ title, content }) => (
                 <div key={title} className="bg-surface-overlay border border-border-subtle p-4 rounded-xl">

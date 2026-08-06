@@ -13,7 +13,7 @@ export default {
         mono:    ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        // Semantic surface tokens — light / dark via CSS vars
+        // Semantic surface tokens: light / dark via CSS vars
         surface: {
           base:    'var(--surface-base)',
           raised:  'var(--surface-raised)',

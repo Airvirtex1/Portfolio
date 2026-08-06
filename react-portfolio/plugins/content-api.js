@@ -5,7 +5,7 @@ import { resolve } from "node:path";
  * API de contenu du mode édition (/admin).
  *
  * `apply: "serve"` : ce plugin n'existe que dans le dev server. Rien de tout
- * ceci n'est inclus dans le build de production — le site déployé reste un
+ * ceci n'est inclus dans le build de production : le site déployé reste un
  * SPA statique, sans backend ni surface d'écriture.
  */
 
@@ -134,7 +134,7 @@ export default function contentApi() {
             }
 
             server.config.logger.info(
-              `  ✏️  contenu enregistré — ${projects.length} projets` +
+              `  ✏️  contenu enregistré : ${projects.length} projets` +
                 (pages ? `, ${Object.keys(pages.fr).length} namespaces de pages` : ""),
               { timestamp: true }
             );

@@ -48,7 +48,7 @@ for (const project of projects) {
     // mais elle reste une métadonnée utile : on la signale si elle manque.
     if (project.listed !== false) undated.push(project.id);
   } else if (!/^\d{4}-\d{2}$/.test(project.date)) {
-    missingKeys.push(`${project.id} : date "${project.date}" — format attendu AAAA-MM`);
+    missingKeys.push(`${project.id} : date "${project.date}" : format attendu AAAA-MM`);
   }
 
   for (const file of projectAssets(project)) {
@@ -86,15 +86,15 @@ const report = (icon, label, list) => {
 
 report("❌", "CLÉS I18N MANQUANTES", missingKeys);
 report("❌", "IDS DE PROJET EN DOUBLE", duplicateIds);
-report("🖼️ ", "ASSETS ABSENTS — bloc ignoré au rendu", missingAssets);
+report("🖼️ ", "ASSETS ABSENTS (bloc ignoré au rendu)", missingAssets);
 report("🗑️ ", "CHAÎNES I18N PLUS UTILISÉES", unusedKeys);
-report("📅", "SANS DATE — métadonnée manquante, sans effet sur l'ordre", undated);
+report("📅", "SANS DATE (métadonnée manquante, sans effet sur l'ordre)", undated);
 
 const blocking = missingKeys.length + duplicateIds.length;
 console.log(
   blocking
     ? `\n${blocking} erreur(s) bloquante(s).`
-    : `\n✅ ${projects.length} projets valides — FR et EN complets.`
+    : `\n✅ ${projects.length} projets valides, FR et EN complets.`
 );
 
 process.exit(blocking ? 1 : 0);

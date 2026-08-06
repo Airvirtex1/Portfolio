@@ -54,7 +54,7 @@ export default function Contact() {
   const [status,    setStatus   ] = useState({ type: "idle", message: "" });
   const [isSending, setIsSending] = useState(false);
   const [cooldown,  setCooldown ] = useState(0);
-  // Honeypot — invisible to humans, bots fill it automatically
+  // Honeypot: invisible to humans, bots fill it automatically
   const [honeypot,  setHoneypot ] = useState("");
 
   const handleChange = (e) => {

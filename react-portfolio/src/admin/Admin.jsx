@@ -148,7 +148,7 @@ function AssetPicker({ value, onChange, assets, onUpload }) {
         value={value ?? ""}
         onChange={(e) => onChange(e.target.value || null)}
       >
-        <option value="">— aucun —</option>
+        <option value="">aucun</option>
         {assets.map((file) => (
           <option key={file} value={file}>
             {file}
@@ -203,7 +203,7 @@ export default function Admin() {
     );
   }
 
-  // — mutations —————————————————————————————————————————————
+  // ===== mutations =====
 
   const patchProject = (changes) =>
     setData((d) => {
@@ -267,7 +267,7 @@ export default function Admin() {
       };
     });
 
-  // — pages (namespaces i18n hors `project`) et listes de About ——————
+  // ===== pages (namespaces i18n hors `project`) et listes de About =====
 
   const setPageText = (language, path, value) =>
     setData((d) => {
@@ -354,7 +354,7 @@ export default function Admin() {
 
     if (result.error) return setStatus(`Erreur : ${result.error}`);
     setDirty(false);
-    setStatus("Écrit dans src/data/*.json et src/i18n/*.json — pense à commit.");
+    setStatus("Écrit dans src/data/*.json et src/i18n/*.json. Pense à commit.");
   };
 
   // Props communes, pour garder les appels courts côté rendu
@@ -364,7 +364,7 @@ export default function Admin() {
   };
   const assetProps = { assets: data.assets, onUpload: uploadAsset };
 
-  // — preview ———————————————————————————————————————————————
+  // ===== preview =====
 
   const translate = (key) => {
     const value = getIn(data.translations[lang], `${ns}.${key}`);
@@ -406,7 +406,7 @@ export default function Admin() {
 
       <div className={`grid lg:grid-cols-2 gap-6 px-6 pb-16 ${tab === "projects" ? "" : "hidden"}`}>
 
-        {/* ————— ÉDITEUR ————— */}
+        {/* ===== ÉDITEUR ===== */}
         <div className="space-y-5 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-3">
 
           <div className="flex flex-wrap items-center gap-2">
@@ -425,7 +425,7 @@ export default function Admin() {
             <Link className={button} to={`/projects/${selectedId}`}>Voir la page</Link>
           </div>
 
-          {/* Rang dans la grille /projects — l'ordre du JSON fait foi */}
+          {/* Rang dans la grille /projects, l'ordre du JSON fait foi */}
           {project && project.listed !== false && (
             <div className="flex items-center gap-2 text-xs text-text-secondary">
               <span>
@@ -464,7 +464,7 @@ export default function Admin() {
                   </Field>
                 </div>
 
-                <Field title="Date — classe la page Projets, plus récent en haut">
+                <Field title="Date : classe la page Projets, plus récent en haut">
                   <input
                     className={input}
                     type="month"
@@ -553,7 +553,7 @@ export default function Admin() {
           )}
         </div>
 
-        {/* ————— PREVIEW ————— */}
+        {/* ===== PREVIEW ===== */}
         <div className="lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto border border-border-subtle rounded-2xl">
           <div className="sticky top-0 z-10 flex gap-2 bg-surface-raised/95 backdrop-blur px-4 py-2 border-b border-border-subtle">
             {LANGS.map((language) => (
@@ -566,7 +566,7 @@ export default function Admin() {
               </button>
             ))}
             <span className="text-xs text-text-secondary self-center">
-              preview — rendu réel de la page
+              preview : rendu réel de la page
             </span>
           </div>
 
@@ -609,7 +609,7 @@ const aboutPath = (entry, suffix) =>
 /**
  * Onglet Pages : toutes les chaînes FR/EN des namespaces hors `project`, plus
  * les trois listes de la page À propos, qui sont de la structure et pas du
- * texte — on peut y ajouter, retirer et réordonner des entrées.
+ * texte : on peut y ajouter, retirer et réordonner des entrées.
  */
 function PagesEditor({ pages, about, read, write, patchAbout }) {
   const textProps = { read, write };
@@ -904,7 +904,7 @@ function BlockEditor({ block, index, total, onPatch, onMove, onRemove, textProps
 
       {block.type === "stack" && (
         <div className="space-y-2">
-          <span className={label}>Colonnes — une clé par ligne</span>
+          <span className={label}>Colonnes : une clé par ligne</span>
           {(block.columns ?? []).map((column, columnIndex) => (
             <div key={columnIndex} className="space-y-1">
               <input
@@ -957,7 +957,7 @@ function BlockEditor({ block, index, total, onPatch, onMove, onRemove, textProps
       )}
 
       {block.type === "challenges" && (
-        <Field title="Préfixes des problèmes — un par ligne">
+        <Field title="Préfixes des problèmes : un par ligne">
           <textarea
             className={`${input} min-h-[64px] font-mono text-xs`}
             value={(block.items ?? []).join("\n")}
@@ -985,7 +985,7 @@ function BlockEditor({ block, index, total, onPatch, onMove, onRemove, textProps
 
       {resolveAsset(block.src) === null && block.src && (
         <p className="text-xs text-yellow-500">
-          ⚠ {block.src} absent de src/assets — le bloc ne s'affichera pas.
+          ⚠ {block.src} absent de src/assets, le bloc ne s'affichera pas.
         </p>
       )}
     </section>

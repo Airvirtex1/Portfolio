@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 /**
  * Sert deux cas : une URL qui ne correspond à aucune route (`path="*"`) et un
  * `/projects/<id>` dont l'id n'existe pas. Le message reste volontairement
- * commun aux deux — dans les deux cas l'utilisateur est arrivé sur une adresse
+ * commun aux deux : dans les deux cas l'utilisateur est arrivé sur une adresse
  * qui ne mène nulle part, et les deux issues utiles sont les mêmes.
  */
 export default function NotFound() {
