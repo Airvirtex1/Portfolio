@@ -379,7 +379,7 @@
   {
     "id": "decors",
     "date": null,
-    "image": "decors1.png",
+    "image": "decors1.jpg",
     "tags": [
       "Arduino",
       "3D Design",
@@ -388,7 +388,7 @@
     "blocks": [
       {
         "type": "image",
-        "src": "decors1.png"
+        "src": "decors1.jpg"
       },
       {
         "type": "cards",
@@ -440,7 +440,7 @@
       {
         "type": "figure",
         "titleKey": "scene",
-        "src": "decors2.png",
+        "src": "decors2.jpg",
         "caption": true
       },
       {
