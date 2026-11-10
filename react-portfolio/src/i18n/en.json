@@ -933,6 +933,362 @@
         }
       }
     },
+    "sable": {
+      "title": "Remote-Controlled Sand Reservoir",
+      "intro": "A 2-litre reservoir that drops sand on stage at the press of a remote. A client project for a show, combining Arduino, 433 MHz radio reception, a servo and 3D-printed parts built around an off-the-shelf water bottle.",
+      "heroTags": [
+        "Arduino",
+        "433 MHz",
+        "Servo",
+        "3D Printing",
+        "Stage show"
+      ],
+      "objective": {
+        "title": "Objective",
+        "text": "Drop sand on stage on the stage manager's cue, at the right moment, at every performance"
+      },
+      "timeline": {
+        "title": "Status",
+        "text": "Delivered - Several performances across France"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Professional project"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "A client brought me this project for a show performed several times across France: make sand fall on stage at a precise moment, from a spot that cannot be reached during the performance. I built the whole device on my own, from design to installation: electronics, firmware and mechanical parts.",
+        "p2": "The requirements were clear: a reservoir of about 2 litres, a valve triggered remotely by a 433 MHz radio remote, and mains power so the show never depends on a battery."
+      },
+      "goals": {
+        "title": "Requirements",
+        "remote": {
+          "title": "Remote trigger",
+          "text": "Open the valve from the control booth with a 433 MHz radio remote"
+        },
+        "dosing": {
+          "title": "Open and close",
+          "text": "One press opens the valve, a second one closes it: the amount of sand stays under control"
+        },
+        "capacity": {
+          "title": "2-litre reservoir",
+          "text": "Enough capacity for the effect, in a volume that is easy to hang"
+        },
+        "power": {
+          "title": "Mains power",
+          "text": "Plugged into the mains: no battery to monitor or recharge between dates"
+        }
+      },
+      "piece": {
+        "title": "The piece",
+        "caption": "The assembled reservoir: bottle, printed adapters and valve"
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Needs analysis",
+          "text": "Discussion with the show's team to set the capacity, trigger method, power supply and mounting position."
+        },
+        "step2": {
+          "title": "Choosing the reservoir",
+          "text": "Rather than printing a watertight 2-litre tank, I chose an off-the-shelf water bottle that is sturdy and easy to replace."
+        },
+        "step3": {
+          "title": "3D-printed adapters",
+          "text": "Modelling and printing the parts that fit onto the bottle: valve mount, servo bracket and electronics enclosure."
+        },
+        "step4": {
+          "title": "Electronics prototyping",
+          "text": "Breadboard build with an Arduino Nano, the 433 MHz receiver and the servo to validate the control chain."
+        },
+        "step5": {
+          "title": "Firmware and radio filtering",
+          "text": "Firmware that ignores noise and bounces on the radio signal, so that one press always produces exactly one action."
+        },
+        "step6": {
+          "title": "Soldered board and installation",
+          "text": "Designing the circuit and soldering it on perfboard, fitting it into the enclosure, then testing and tuning on site."
+        }
+      },
+      "prototype": {
+        "title": "Prototyping",
+        "caption": "Validating the remote, Arduino and servo chain"
+      },
+      "pcb": {
+        "title": "Circuit board",
+        "caption": "Arduino Nano and 433 MHz receiver soldered on perfboard"
+      },
+      "technical": {
+        "title": "Tech Stack",
+        "hardware": "Hardware",
+        "software": "Software & Design",
+        "arduino": "Arduino Nano - Main controller",
+        "receiver": "RX40A 433 MHz 2-channel receiver + remote",
+        "servo": "Servo - Opens and closes the valve",
+        "pcb": "Circuit soldered on perfboard",
+        "power": "Mains power supply",
+        "programming": "Arduino C/C++ programming",
+        "filter": "Time-based radio signal filtering",
+        "toggle": "Open / closed toggle on each press",
+        "cad": "3D modelling of the bottle adapters"
+      },
+      "challenges": {
+        "title": "Technical Challenges",
+        "solutionLabel": "Chosen solution",
+        "radio": {
+          "title": "A bouncing radio signal",
+          "problem": "The 433 MHz receiver does not output a clean signal: a single press can produce several pulses, and noise can look like a press. The valve could open and close again immediately, or open on its own.",
+          "solution": "Three-stage filtering in the firmware: a press only counts after 30 ms of continuous signal, the command is locked for 800 ms after each state change, and the button must be released for 200 ms before a new press is accepted."
+        },
+        "tank": {
+          "title": "A reliable 2-litre reservoir",
+          "problem": "Printing a sturdy, watertight 2-litre tank would have taken a lot of machine time, with a risk of leaks or breakage under the weight of the sand.",
+          "solution": "Start from an off-the-shelf water bottle, already designed to be sturdy and watertight, and print only the adapters that attach to it. The piece stays light and the bottle is easy to replace."
+        }
+      },
+      "field": {
+        "title": "On site",
+        "caption": "The reservoir installed at the show venue"
+      },
+      "constraints": {
+        "title": "Stage Constraints",
+        "intro": "On stage, the effect happens once per performance and cannot be replayed. The device must respond to the first press, never trigger on its own, and be usable by the crew without any technical knowledge.",
+        "reliability": {
+          "title": "No false triggers",
+          "text": "Radio noise is filtered before it reaches the valve"
+        },
+        "timing": {
+          "title": "Instant response",
+          "text": "The valve opens the moment the crew presses the button"
+        },
+        "simplicity": {
+          "title": "Ease of use",
+          "text": "One button to open, the same one to close"
+        }
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project covered the whole chain of a stage device: radio reception, filtering a noisy signal, driving an actuator and moving from a breadboard prototype to a reliable soldered board.",
+        "p2": "It also taught me to build on an existing object instead of redoing everything: designing printed parts that fit a commercial product, with its dimensions and tolerances.",
+        "badge1": {
+          "title": "Radio communication",
+          "text": "433 MHz reception and signal filtering"
+        },
+        "badge2": {
+          "title": "3D design",
+          "text": "Custom adapters for an off-the-shelf bottle"
+        },
+        "badge3": {
+          "title": "Stage constraints",
+          "text": "Reliable on the first press"
+        }
+      }
+    },
+    "lanterne": {
+      "title": "Trick Lantern for a Magic Show",
+      "intro": "An old gas lantern turned into a magic prop: at the press of a remote, a fake fly starts buzzing inside, then seems to catch fire when it touches the light. A professional project combining Arduino, a DFPlayer audio module, a motor, pyrotechnic effects and 433 MHz radio.",
+      "heroTags": [
+        "Arduino Nano",
+        "DFPlayer",
+        "433 MHz",
+        "Pyrotechnics",
+        "Magic"
+      ],
+      "objective": {
+        "title": "Objective",
+        "text": "Bring a fake fly to life inside a lantern, then set it on fire, in perfect time with the magician's act"
+      },
+      "timeline": {
+        "title": "Status",
+        "text": "Working prototype - PCB in progress"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Professional project"
+      },
+      "context": {
+        "title": "Project Context",
+        "p1": "A magician's show needed a lantern that reacts at the exact moment the performer chooses. I was handed the project with a first circuit board that did not work, so I rebuilt everything from scratch, from the electronics to the firmware. The prop had to look like a real antique lantern, so all the electronics are hidden inside the frame of an old gas lantern.",
+        "p2": "The effect tells a short story in three beats: a fly drawn to the light circles the flame, touches it, then catches fire. The buzzing sound was recorded by the show's team, and everything is triggered from a 433 MHz radio remote."
+      },
+      "sequence": {
+        "title": "The act in three presses",
+        "step1": {
+          "title": "Press 1: the fly wakes up",
+          "text": "The lantern lights up, the motor moves the fake fly back and forth in irregular bursts and the speaker plays the buzzing. The motor stops when the sound ends."
+        },
+        "step2": {
+          "title": "Press 2: the fly burns",
+          "text": "The two pyrotechnic wires ignite, as if the fly had touched the light. The motor is cut and the LED stays on."
+        },
+        "step3": {
+          "title": "Press 3: blackout",
+          "text": "The LED turns off and the lantern becomes a simple piece of scenery again."
+        }
+      },
+      "piece": {
+        "title": "The lantern",
+        "caption": "The frame of an antique gas lantern, hiding all the electronics"
+      },
+      "goals": {
+        "title": "Requirements",
+        "fly": {
+          "title": "A believable fly",
+          "text": "Irregular movement like an insect, not the steady back and forth of a machine"
+        },
+        "sound": {
+          "title": "Synchronised sound",
+          "text": "The buzzing recorded by the team starts and stops with the movement"
+        },
+        "pyro": {
+          "title": "Fire effect",
+          "text": "Two pyrotechnic wires ignited at the right moment, with no risk of accidental triggering"
+        },
+        "remote": {
+          "title": "Discreet control",
+          "text": "The whole act is driven by a 433 MHz remote and an onboard battery"
+        }
+      },
+      "approach": {
+        "title": "Approach",
+        "step1": {
+          "title": "Starting from scratch",
+          "text": "The board I was given did not work. Rather than patch it blindly, I restarted the project from the ground up by breaking the act down with the team: what the audience sees at each press, and what must happen inside the lantern."
+        },
+        "step2": {
+          "title": "Choosing the components",
+          "text": "Arduino Nano, DFPlayer Mini MP3 module with speaker, DC motor, LED, two pyrotechnic outputs, 433 MHz receiver and battery."
+        },
+        "step3": {
+          "title": "Testing each subsystem",
+          "text": "A test program for each function (sound, motor, LED, pyro outputs) before assembling everything, to isolate problems one at a time."
+        },
+        "step4": {
+          "title": "Act firmware",
+          "text": "A state machine that runs the three beats of the act in a fixed order, with randomised motor movement to imitate a fly."
+        },
+        "step5": {
+          "title": "Fitting into the lantern",
+          "text": "Mounting the prototype inside the gas lantern frame, tuning the movement and validating the full sequence."
+        }
+      },
+      "prototype": {
+        "title": "Prototype",
+        "caption": "The prototype that validates the full sequence"
+      },
+      "technical": {
+        "title": "Tech Stack",
+        "hardware": "Hardware",
+        "software": "Software & Design",
+        "arduino": "Arduino Nano - Main controller",
+        "dfplayer": "DFPlayer Mini + speaker - Fly sound",
+        "motor": "DC motor on an IRLZ44N MOSFET + flyback diode",
+        "led": "LED - Lantern light",
+        "pyro": "2 pyrotechnic outputs on IRLZ44N MOSFETs",
+        "receiver": "433 MHz radio receiver + remote",
+        "power": "Battery, fuse, switch and 5 V regulator",
+        "programming": "Arduino C/C++ programming",
+        "states": "State machine: one press, one beat of the act",
+        "random": "Motor pulses of random duration",
+        "debounce": "Remote signal debouncing",
+        "structure": "Integration into an antique gas lantern"
+      },
+      "challenges": {
+        "title": "Technical Challenges",
+        "solutionLabel": "Chosen solution",
+        "fly": {
+          "title": "A fly that does not move like a robot",
+          "problem": "With a motor running and stopping at fixed intervals, the fly moved in a mechanical, repetitive way. The audience would have spotted the trick right away.",
+          "solution": "The motor runs in short pulses, about 50 ms on then 500 ms off, and each duration is randomised around its value. The movement becomes unpredictable, like a real insect."
+        },
+        "order": {
+          "title": "A fire effect with no second chance",
+          "problem": "The pyrotechnic wires can only be used once. A stray press or a bounce on the remote signal could ignite them too early and ruin the act.",
+          "solution": "The remote signal is debounced, and a state machine enforces the order of the act: the pyrotechnics can only fire at the planned step, and only once."
+        }
+      },
+      "constraints": {
+        "title": "Stage Constraints",
+        "intro": "The lantern is handled on stage, so no cable can come out of it. All the electronics, the battery, the speaker and the effects must fit inside the lantern itself, and the act must be able to start at any moment of the show, just as reliably at every performance.",
+        "integration": {
+          "title": "Everything inside the lantern",
+          "text": "Board, battery, sound, motor and pyros hidden in the original frame"
+        },
+        "battery": {
+          "title": "Battery powered, ready anytime",
+          "text": "No visible wire, the act starts whenever the magician decides"
+        },
+        "reliability": {
+          "title": "Reliable at every show",
+          "text": "An effect that cannot be replayed: it must work the first time"
+        }
+      },
+      "status": {
+        "title": "Project Status",
+        "badge": "Prototype validated - PCB in design",
+        "text": "The prototype works and performs the whole sequence of the act. The next step is a dedicated PCB: the schematic is done and the board layout is still to come. It is organised in six blocks: a protected power supply (fuse, switch, 5 V regulator), the Arduino Nano, audio with the DFPlayer, a power stage with three MOSFETs for the motor and the two pyros, the LED and the 433 MHz receiver."
+      },
+      "schema": {
+        "title": "The PCB schematic",
+        "caption": "KiCad schematic in six blocks: power, microcontroller, audio, power stage (motor and pyros), LED and receiver"
+      },
+      "skills": {
+        "title": "Skills Developed",
+        "p1": "This project combined sound, movement, light and pyrotechnics in a single object, all synchronised and remotely controlled.",
+        "p2": "It also taught me to take over a project that did not work and to turn an artistic effect into technical constraints: making movement look natural, guaranteeing the order of a sequence that cannot be replayed, and hiding everything inside an antique object.",
+        "badge1": {
+          "title": "Sequencing",
+          "text": "State machine and effect synchronisation"
+        },
+        "badge2": {
+          "title": "Embedded audio",
+          "text": "Sound playback with the DFPlayer Mini"
+        },
+        "badge3": {
+          "title": "Stage effects",
+          "text": "Pyrotechnics and illusion"
+        }
+      }
+    },
+    "modelisation": {
+      "title": "3D Modelling",
+      "intro": "A selection of parts I designed and then printed, almost always to serve an electronics project: enclosures, brackets, mechanisms and adaptations of off-the-shelf objects.",
+      "heroTags": [
+        "Fusion 360",
+        "3D Printing",
+        "CAD",
+        "Prototyping"
+      ],
+      "approach": {
+        "title": "My approach",
+        "p1": "I model my parts in Fusion 360 and print them on my own machines. Most of them come from a concrete need in a project: housing a board and its battery, mounting a motor, turning an existing object into a mechanism.",
+        "p2": "Each card sums up the part and the problem it had to solve. When it belongs to a larger project, the link leads to the full page."
+      },
+      "models": {
+        "title": "Work",
+        "linkLabel": "View the project",
+        "sable": {
+          "title": "Sand reservoir valve",
+          "text": "An assembly that fits onto an off-the-shelf water bottle: a rotary plug valve driven by a servo, 6, 8 and 12 mm outlet nozzles and an enclosure for the electronics."
+        },
+        "lanterne": {
+          "title": "Trick lantern integration",
+          "text": "Internal brackets that hide the board, battery, speaker and motor inside an antique gas lantern, with a custom pulley for the motor."
+        },
+        "decors": {
+          "title": "Stage decor brackets and enclosure",
+          "text": "Brackets for the stepper motors and the main enclosure of the automated stage decor, designed to stay sturdy show after show."
+        },
+        "argentique": {
+          "title": "Film camera trigger enclosure",
+          "text": "A PLA enclosure modelled in Fusion 360 for a portable film camera trigger that anyone can use."
+        },
+        "crabe": {
+          "title": "Crab robot frame",
+          "text": "Body and mechanical parts of a four-legged robot, fully designed and 3D printed around its four motorised legs."
+        }
+      }
+    },
     "portfolio": {
       "title": "Portfolio Website",
       "intro": "Modern multilingual portfolio website showcasing my projects, skills, and experiences in embedded systems. Built with React and Tailwind CSS to deliver a smooth and responsive user experience.",

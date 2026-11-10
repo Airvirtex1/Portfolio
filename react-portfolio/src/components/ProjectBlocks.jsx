@@ -377,6 +377,66 @@ function ProjectsBlock({ block, t, tRoot }) {
   );
 }
 
+/** Mini-fiches : une carte par réalisation, image + titre + texte + tags. */
+function ModelsBlock({ block, t }) {
+  return (
+    <Section>
+      {block.titleKey && <Heading>{t(`${block.titleKey}.title`)}</Heading>}
+
+      <div className={`grid ${COLS[block.cols] ?? COLS[3]} gap-6`}>
+        {(block.items ?? []).map((item) => {
+          const { title, text } = itemText(t, item);
+          const src = resolveAsset(item.src);
+
+          return (
+            <article
+              key={item.key}
+              className="bg-surface-raised border border-border-subtle rounded-2xl overflow-hidden flex flex-col"
+            >
+              <div className="aspect-[4/3] w-full overflow-hidden bg-surface-overlay">
+                {src ? (
+                  <img src={src} alt={title} loading="lazy" className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface-overlay to-surface-raised text-4xl">
+                    {item.icon ?? "🧊"}
+                  </div>
+                )}
+              </div>
+
+              <div className="p-6 flex flex-col gap-3 flex-1">
+                <h3 className="font-display text-xl font-semibold">{title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{text}</p>
+
+                {item.tags?.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-auto pt-2">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-mono text-xs bg-accent-bg text-accent border border-accent/20 px-2 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {item.link && block.titleKey && (
+                  <Link
+                    to={`/projects/${item.link}`}
+                    className="text-sm font-medium text-accent hover:underline"
+                  >
+                    {t(`${block.titleKey}.linkLabel`)} →
+                  </Link>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </Section>
+  );
+}
+
 const RENDERERS = {
   image: ImageBlock,
   figure: FigureBlock,
@@ -388,6 +448,7 @@ const RENDERERS = {
   challenges: ChallengesBlock,
   stats: StatsBlock,
   projects: ProjectsBlock,
+  models: ModelsBlock,
 };
 
 /**

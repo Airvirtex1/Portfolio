@@ -785,6 +785,57 @@ function AboutList({ name, schema, entries, patchAbout, textProps }) {
   );
 }
 
+/** Une mini-fiche : clé, image, tags et lien, sur plusieurs lignes. */
+function RichItemEditor({ item, index, total, onPatch, onMove, onRemove, assetProps }) {
+  return (
+    <div className="border border-border-subtle rounded-xl p-3 space-y-2">
+      <div className="flex gap-2 items-center">
+        <input
+          className={`${input} w-16 text-center`}
+          value={item.icon ?? ""}
+          placeholder="🧊"
+          onChange={(e) => onPatch({ icon: e.target.value || undefined })}
+        />
+        <input
+          className={input}
+          value={item.key ?? ""}
+          placeholder="clé (ex. models.vanne)"
+          onChange={(e) => onPatch({ key: e.target.value })}
+        />
+        <button className={button} disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
+        <button className={button} disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
+        <button className={button} onClick={onRemove}>×</button>
+      </div>
+      <Field title="Image">
+        <AssetPicker {...assetProps} value={item.src} onChange={(src) => onPatch({ src: src || undefined })} />
+      </Field>
+      <div className="grid grid-cols-2 gap-2">
+        <Field title="Tags (séparés par des virgules)">
+          <input
+            className={input}
+            value={(item.tags ?? []).join(", ")}
+            onChange={(e) => {
+              const tags = e.target.value.split(",").map((s) => s.trim()).filter(Boolean);
+              onPatch({ tags: tags.length ? tags : undefined });
+            }}
+          />
+        </Field>
+        <Field title="Lien vers un projet (id, optionnel)">
+          <input
+            className={input}
+            value={item.link ?? ""}
+            placeholder="ex. sable"
+            onChange={(e) => onPatch({ link: e.target.value.trim() || undefined })}
+          />
+        </Field>
+      </div>
+      {item.src && resolveAsset(item.src) === null && (
+        <p className="text-xs text-yellow-500">⚠ {item.src} absent de src/assets.</p>
+      )}
+    </div>
+  );
+}
+
 /** Éditeur d'un bloc : champs de structure + toutes ses chaînes FR/EN. */
 function BlockEditor({ block, index, total, onPatch, onMove, onRemove, textProps, assetProps }) {
   const schema = BLOCK_TYPES[block.type];
@@ -857,7 +908,23 @@ function BlockEditor({ block, index, total, onPatch, onMove, onRemove, textProps
       {schema.items && (
         <div className="space-y-2">
           <span className={label}>Items</span>
-          {(block.items ?? []).map((item, itemIndex) => (
+          {(block.items ?? []).map((item, itemIndex) => schema.items.asset ? (
+            <RichItemEditor
+              key={itemIndex}
+              item={item}
+              index={itemIndex}
+              total={block.items.length}
+              onPatch={(changes) => patchItem(itemIndex, changes)}
+              onMove={(dir) => {
+                const items = [...block.items];
+                const target = itemIndex + dir;
+                [items[itemIndex], items[target]] = [items[target], items[itemIndex]];
+                onPatch({ items });
+              }}
+              onRemove={() => onPatch({ items: block.items.filter((_, i) => i !== itemIndex) })}
+              assetProps={assetProps}
+            />
+          ) : (
             <div key={itemIndex} className="flex gap-2 items-center">
               {schema.items.icon && (
                 <input

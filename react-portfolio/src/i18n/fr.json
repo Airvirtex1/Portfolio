@@ -817,6 +817,362 @@
         }
       }
     },
+    "sable": {
+      "title": "Réservoir de Sable Télécommandé",
+      "intro": "Réservoir de 2 litres qui lâche du sable sur scène à l'appui d'une télécommande. Projet client pour un spectacle, combinant Arduino, réception radio 433 MHz, servomoteur et pièces imprimées en 3D autour d'une gourde du commerce.",
+      "heroTags": [
+        "Arduino",
+        "433 MHz",
+        "Servomoteur",
+        "Impression 3D",
+        "Spectacle"
+      ],
+      "objective": {
+        "title": "Objectif",
+        "text": "Lâcher du sable sur scène au signal de la régie, au bon moment et à chaque représentation"
+      },
+      "timeline": {
+        "title": "Statut",
+        "text": "Livré - Plusieurs représentations en France"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Projet professionnel"
+      },
+      "context": {
+        "title": "Contexte du projet",
+        "p1": "Un client m'a confié ce projet pour un spectacle joué lors de plusieurs représentations en France : faire tomber du sable sur scène à un instant précis, depuis un point inaccessible pendant la représentation. J'ai réalisé seul l'ensemble du dispositif, de la conception à l'installation : électronique, firmware et pièces mécaniques.",
+        "p2": "Le cahier des charges était clair : un réservoir d'environ 2 litres, une vanne commandée à distance par une télécommande radio 433 MHz, et une alimentation sur secteur pour ne jamais dépendre d'une batterie le soir de la représentation."
+      },
+      "goals": {
+        "title": "Cahier des charges",
+        "remote": {
+          "title": "Déclenchement à distance",
+          "text": "Ouverture de la vanne depuis la régie avec une télécommande radio 433 MHz"
+        },
+        "dosing": {
+          "title": "Ouverture et fermeture",
+          "text": "Un appui ouvre la vanne, un second la referme : la quantité de sable reste maîtrisée"
+        },
+        "capacity": {
+          "title": "Réservoir de 2 litres",
+          "text": "Une contenance suffisante pour l'effet voulu, dans un volume facile à suspendre"
+        },
+        "power": {
+          "title": "Alimentation secteur",
+          "text": "Branché sur le secteur : aucune batterie à surveiller ni à recharger entre deux dates"
+        }
+      },
+      "piece": {
+        "title": "La pièce",
+        "caption": "Le réservoir assemblé : gourde, adaptateurs imprimés et vanne"
+      },
+      "approach": {
+        "title": "Démarche",
+        "step1": {
+          "title": "Analyse du besoin",
+          "text": "Échange avec l'équipe du spectacle pour fixer la contenance, le mode de déclenchement, l'alimentation et l'emplacement du réservoir."
+        },
+        "step2": {
+          "title": "Choix du réservoir",
+          "text": "Plutôt que d'imprimer un réservoir étanche de 2 litres, choix d'une gourde du commerce, robuste et facile à remplacer."
+        },
+        "step3": {
+          "title": "Adaptateurs imprimés en 3D",
+          "text": "Modélisation et impression des pièces qui se fixent sur la gourde : support de vanne, fixation du servomoteur et boîtier de l'électronique."
+        },
+        "step4": {
+          "title": "Prototypage électronique",
+          "text": "Montage sur breadboard d'un Arduino Nano, du récepteur 433 MHz et du servomoteur pour valider la chaîne de commande."
+        },
+        "step5": {
+          "title": "Firmware et filtrage radio",
+          "text": "Écriture d'un firmware qui ignore les parasites et les rebonds du signal radio, pour qu'un appui produise toujours une seule action."
+        },
+        "step6": {
+          "title": "Carte soudée et installation",
+          "text": "Conception du circuit et soudure sur plaque de prototypage, intégration dans le boîtier, puis essais et réglages sur le lieu du spectacle."
+        }
+      },
+      "prototype": {
+        "title": "Prototypage",
+        "caption": "Validation de la chaîne télécommande, Arduino et servomoteur"
+      },
+      "pcb": {
+        "title": "Carte électronique",
+        "caption": "Arduino Nano et récepteur 433 MHz soudés sur plaque de prototypage"
+      },
+      "technical": {
+        "title": "Stack technique",
+        "hardware": "Hardware",
+        "software": "Logiciel & Conception",
+        "arduino": "Arduino Nano - Contrôleur principal",
+        "receiver": "Récepteur RX40A 433 MHz 2 voies + télécommande",
+        "servo": "Servomoteur - Ouverture et fermeture de la vanne",
+        "pcb": "Circuit soudé sur plaque de prototypage",
+        "power": "Alimentation sur secteur",
+        "programming": "Programmation Arduino C/C++",
+        "filter": "Filtrage du signal radio par temporisations",
+        "toggle": "Bascule ouvert / fermé à chaque appui",
+        "cad": "Modélisation 3D des adaptateurs de la gourde"
+      },
+      "challenges": {
+        "title": "Défis techniques",
+        "solutionLabel": "Solution retenue",
+        "radio": {
+          "title": "Un signal radio qui rebondit",
+          "problem": "Le récepteur 433 MHz ne délivre pas un signal propre : un seul appui peut produire plusieurs impulsions, et un parasite peut ressembler à un appui. Résultat, la vanne risquait de s'ouvrir puis de se refermer aussitôt, ou de s'ouvrir toute seule.",
+          "solution": "Un filtrage en trois temps dans le firmware : un appui n'est pris en compte qu'après 30 ms continues, la commande est verrouillée 800 ms après chaque changement d'état, et il faut 200 ms de relâchement avant d'accepter un nouvel appui."
+        },
+        "tank": {
+          "title": "Un réservoir de 2 litres fiable",
+          "problem": "Imprimer un réservoir de 2 litres étanche et solide aurait demandé beaucoup de temps machine, avec un risque de fuite ou de casse sous le poids du sable.",
+          "solution": "Partir d'une gourde du commerce, déjà conçue pour être solide et étanche, et n'imprimer que les adaptateurs qui s'y fixent. La pièce reste légère, et la gourde se remplace facilement."
+        }
+      },
+      "field": {
+        "title": "Sur le terrain",
+        "caption": "Le réservoir installé sur le lieu du spectacle"
+      },
+      "constraints": {
+        "title": "Contraintes scéniques",
+        "intro": "Sur scène, l'effet n'a lieu qu'une fois par représentation et il ne peut pas être rejoué. Le dispositif doit répondre au premier appui, ne jamais se déclencher seul, et rester utilisable par la régie sans aucune connaissance technique.",
+        "reliability": {
+          "title": "Aucun déclenchement intempestif",
+          "text": "Les parasites radio sont filtrés avant d'agir sur la vanne"
+        },
+        "timing": {
+          "title": "Réponse immédiate",
+          "text": "La vanne s'ouvre au moment exact où la régie appuie"
+        },
+        "simplicity": {
+          "title": "Simplicité d'usage",
+          "text": "Un bouton pour ouvrir, le même pour refermer"
+        }
+      },
+      "skills": {
+        "title": "Compétences développées",
+        "p1": "Ce projet m'a fait travailler toute la chaîne d'un dispositif scénique : réception radio, filtrage d'un signal bruité, commande d'un actionneur et passage d'un prototype sur breadboard à une carte soudée fiable.",
+        "p2": "Il m'a aussi appris à partir d'un objet existant plutôt que de tout refaire : concevoir des pièces imprimées qui s'adaptent à un produit du commerce, avec ses cotes et ses tolérances.",
+        "badge1": {
+          "title": "Communication radio",
+          "text": "Réception 433 MHz et filtrage du signal"
+        },
+        "badge2": {
+          "title": "Conception 3D",
+          "text": "Adaptateurs sur mesure pour une gourde du commerce"
+        },
+        "badge3": {
+          "title": "Contraintes scéniques",
+          "text": "Fiabilité au premier appui"
+        }
+      }
+    },
+    "lanterne": {
+      "title": "Lanterne Truquée pour Spectacle de Magie",
+      "intro": "Une vieille lanterne à gaz transformée en accessoire de magie : à la télécommande, une fausse mouche s'y met à bourdonner puis semble prendre feu au contact de la lumière. Projet professionnel combinant Arduino, lecteur audio DFPlayer, moteur, effets pyrotechniques et radio 433 MHz.",
+      "heroTags": [
+        "Arduino Nano",
+        "DFPlayer",
+        "433 MHz",
+        "Pyrotechnie",
+        "Magie"
+      ],
+      "objective": {
+        "title": "Objectif",
+        "text": "Faire vivre puis brûler une fausse mouche dans une lanterne, au rythme exact du numéro de l'illusionniste"
+      },
+      "timeline": {
+        "title": "Statut",
+        "text": "Prototype fonctionnel - PCB en cours"
+      },
+      "type": {
+        "title": "Type",
+        "text": "Projet professionnel"
+      },
+      "context": {
+        "title": "Contexte du projet",
+        "p1": "Pour un spectacle d'illusionniste, il fallait une lanterne qui réagisse au moment précis où le magicien le décide. On m'a confié le projet avec une première carte électronique qui ne fonctionnait pas : j'ai tout repris depuis zéro, de l'électronique au firmware. L'accessoire devait garder l'apparence d'une vraie lanterne ancienne, donc toute l'électronique est cachée dans la structure d'une vieille lanterne à gaz.",
+        "p2": "L'effet raconte une petite histoire en trois temps : une mouche attirée par la lumière tourne autour de la flamme, la touche, puis prend feu. Le son du bourdonnement a été enregistré par l'équipe du spectacle, et tout se déclenche depuis une télécommande radio 433 MHz."
+      },
+      "sequence": {
+        "title": "Le numéro en trois appuis",
+        "step1": {
+          "title": "Appui 1 : la mouche s'éveille",
+          "text": "La lanterne s'allume, le moteur entraîne la fausse mouche en va-et-vient irréguliers et le haut-parleur joue le bourdonnement. Le moteur s'arrête à la fin du son."
+        },
+        "step2": {
+          "title": "Appui 2 : la mouche brûle",
+          "text": "Les deux fils pyrotechniques s'enflamment, comme si la mouche avait touché la lumière. Le moteur est coupé et la LED reste allumée."
+        },
+        "step3": {
+          "title": "Appui 3 : noir",
+          "text": "La LED s'éteint et la lanterne redevient un simple objet de décor."
+        }
+      },
+      "piece": {
+        "title": "La lanterne",
+        "caption": "La structure d'une ancienne lanterne à gaz, qui cache toute l'électronique"
+      },
+      "goals": {
+        "title": "Cahier des charges",
+        "fly": {
+          "title": "Une mouche crédible",
+          "text": "Un mouvement irrégulier, comme celui d'un insecte, et pas le va-et-vient régulier d'une machine"
+        },
+        "sound": {
+          "title": "Son synchronisé",
+          "text": "Le bourdonnement enregistré par l'équipe démarre et s'arrête avec le mouvement"
+        },
+        "pyro": {
+          "title": "Effet de feu",
+          "text": "Deux fils pyrotechniques allumés au bon moment, sans risque de déclenchement accidentel"
+        },
+        "remote": {
+          "title": "Commande discrète",
+          "text": "Tout le numéro se pilote avec une télécommande 433 MHz et une batterie embarquée"
+        }
+      },
+      "approach": {
+        "title": "Démarche",
+        "step1": {
+          "title": "Reprise depuis zéro",
+          "text": "La carte fournie au départ ne fonctionnait pas. Plutôt que de la corriger à l'aveugle, j'ai repris le projet à la base en découpant le numéro avec l'équipe : ce que voit le public à chaque appui, et ce qui doit se passer dans la lanterne."
+        },
+        "step2": {
+          "title": "Choix des composants",
+          "text": "Arduino Nano, lecteur MP3 DFPlayer Mini avec haut-parleur, moteur à courant continu, LED, deux sorties pyrotechniques, récepteur 433 MHz et batterie."
+        },
+        "step3": {
+          "title": "Tests par sous-ensemble",
+          "text": "Un programme de test pour chaque fonction (son, moteur, LED, sorties pyro) avant de tout assembler, pour isoler les problèmes un par un."
+        },
+        "step4": {
+          "title": "Firmware du numéro",
+          "text": "Une machine à états qui enchaîne les trois temps du numéro dans un ordre fixe, avec un mouvement de moteur tiré au hasard pour imiter une mouche."
+        },
+        "step5": {
+          "title": "Intégration dans la lanterne",
+          "text": "Montage du prototype dans la structure de la lanterne à gaz, réglage du mouvement et validation de la séquence complète."
+        }
+      },
+      "prototype": {
+        "title": "Prototype",
+        "caption": "Le prototype qui valide la séquence complète"
+      },
+      "technical": {
+        "title": "Stack technique",
+        "hardware": "Hardware",
+        "software": "Logiciel & Conception",
+        "arduino": "Arduino Nano - Contrôleur principal",
+        "dfplayer": "DFPlayer Mini + haut-parleur - Son de la mouche",
+        "motor": "Moteur à courant continu sur MOSFET IRLZ44N + diode de roue libre",
+        "led": "LED - Lumière de la lanterne",
+        "pyro": "2 sorties pyrotechniques sur MOSFET IRLZ44N",
+        "receiver": "Récepteur radio 433 MHz + télécommande",
+        "power": "Batterie, fusible, interrupteur et régulateur 5 V",
+        "programming": "Programmation Arduino C/C++",
+        "states": "Machine à états : un appui, une étape du numéro",
+        "random": "Impulsions moteur de durée aléatoire",
+        "debounce": "Anti-rebond du signal de la télécommande",
+        "structure": "Intégration dans une lanterne à gaz ancienne"
+      },
+      "challenges": {
+        "title": "Défis techniques",
+        "solutionLabel": "Solution retenue",
+        "fly": {
+          "title": "Une mouche qui ne bouge pas comme un robot",
+          "problem": "Avec un moteur qui tourne puis s'arrête à intervalles fixes, la mouche avait un mouvement mécanique et répétitif. Le public aurait tout de suite vu le trucage.",
+          "solution": "Le moteur fonctionne par impulsions courtes, environ 50 ms de marche puis 500 ms de pause, et chaque durée est tirée au hasard autour de sa valeur. Le mouvement devient imprévisible, comme celui d'un vrai insecte."
+        },
+        "order": {
+          "title": "Un effet de feu qui ne pardonne pas",
+          "problem": "Les fils pyrotechniques ne servent qu'une fois. Un appui parasite ou un rebond de la télécommande pourrait les allumer trop tôt et gâcher le numéro.",
+          "solution": "Le signal de la télécommande est filtré contre les rebonds, et une machine à états impose l'ordre du numéro : la pyrotechnie ne peut s'activer qu'à l'étape prévue, une seule fois."
+        }
+      },
+      "constraints": {
+        "title": "Contraintes scéniques",
+        "intro": "La lanterne passe de main en main sur scène : aucun câble ne peut en sortir. Toute l'électronique, la batterie, le haut-parleur et les effets doivent tenir dans la lanterne elle-même, et le numéro doit pouvoir partir à n'importe quel moment du spectacle, avec la même fiabilité à chaque représentation.",
+        "integration": {
+          "title": "Tout dans la lanterne",
+          "text": "Carte, batterie, son, moteur et pyros cachés dans la structure d'origine"
+        },
+        "battery": {
+          "title": "Sur batterie, prête à tout moment",
+          "text": "Aucun fil apparent, le numéro se déclenche quand le magicien le décide"
+        },
+        "reliability": {
+          "title": "Fiabilité à chaque représentation",
+          "text": "Un effet qui ne se rejoue pas : il doit marcher du premier coup"
+        }
+      },
+      "status": {
+        "title": "État du projet",
+        "badge": "Prototype validé - PCB en conception",
+        "text": "Le prototype fonctionne et réalise toute la séquence du numéro. La suite est un PCB dédié : le schéma est terminé, le dessin de la carte reste à faire. Il est organisé en six blocs : une alimentation protégée (fusible, interrupteur, régulateur 5 V), l'Arduino Nano, l'audio avec le DFPlayer, la puissance avec trois MOSFET pour le moteur et les deux pyros, la LED et le récepteur 433 MHz."
+      },
+      "schema": {
+        "title": "Le schéma du PCB",
+        "caption": "Schéma KiCad en six blocs : alimentation, microcontrôleur, audio, puissance (moteur et pyros), LED et récepteur"
+      },
+      "skills": {
+        "title": "Compétences développées",
+        "p1": "Ce projet m'a fait combiner dans un seul objet du son, du mouvement, de la lumière et de la pyrotechnie, tous synchronisés et pilotés à distance.",
+        "p2": "Il m'a aussi appris à reprendre un projet qui ne fonctionnait pas et à traduire un effet artistique en contraintes techniques : rendre un mouvement naturel, garantir l'ordre d'une séquence qui ne se rejoue pas, et tout cacher dans un objet ancien.",
+        "badge1": {
+          "title": "Séquençage",
+          "text": "Machine à états et synchronisation des effets"
+        },
+        "badge2": {
+          "title": "Audio embarqué",
+          "text": "Lecture de son avec le DFPlayer Mini"
+        },
+        "badge3": {
+          "title": "Effets de scène",
+          "text": "Pyrotechnie et illusion"
+        }
+      }
+    },
+    "modelisation": {
+      "title": "Modélisations 3D",
+      "intro": "Une sélection de pièces que j'ai conçues puis imprimées, presque toujours au service d'un projet électronique : boîtiers, supports, mécanismes et adaptations sur des objets du commerce.",
+      "heroTags": [
+        "Fusion 360",
+        "Impression 3D",
+        "CAO",
+        "Prototypage"
+      ],
+      "approach": {
+        "title": "Ma démarche",
+        "p1": "Je modélise mes pièces sur Fusion 360 et je les imprime sur mes propres machines. La plupart naissent d'un besoin concret dans un projet : loger une carte et sa batterie, fixer un moteur, transformer un objet existant en mécanisme.",
+        "p2": "Chaque fiche résume la pièce et ce qu'elle devait résoudre. Quand elle fait partie d'un projet plus large, le lien mène à la page complète."
+      },
+      "models": {
+        "title": "Réalisations",
+        "linkLabel": "Voir le projet",
+        "sable": {
+          "title": "Vanne du réservoir de sable",
+          "text": "Ensemble qui se fixe sur une gourde du commerce : vanne à boisseau rotatif entraînée par un servomoteur, buses de sortie de 6, 8 et 12 mm et boîtier pour l'électronique."
+        },
+        "lanterne": {
+          "title": "Intégration de la lanterne truquée",
+          "text": "Supports internes qui cachent la carte, la batterie, le haut-parleur et le moteur dans une lanterne à gaz ancienne, avec une poulie sur mesure pour le moteur."
+        },
+        "decors": {
+          "title": "Supports et boîtier des décors",
+          "text": "Supports pour les moteurs pas à pas et boîtier principal des décors automatisés, conçus pour rester robustes représentation après représentation."
+        },
+        "argentique": {
+          "title": "Boîtier du déclencheur photo",
+          "text": "Boîtier en PLA modélisé sur Fusion 360 pour un déclencheur argentique transportable et simple à utiliser par le grand public."
+        },
+        "crabe": {
+          "title": "Structure du robot crabe",
+          "text": "Corps et pièces mécaniques d'un robot quadrupède, entièrement conçus et imprimés en 3D autour de ses quatre pattes motorisées."
+        }
+      }
+    },
     "crabe": {
       "title": "Robot Crabe Motorisé",
       "intro": "Conception d'un robot quadrupède contrôlable via interface web sans fil. Projet personnel combinant modélisation 3D, électronique embarquée ESP32 et développement web.",

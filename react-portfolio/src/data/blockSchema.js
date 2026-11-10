@@ -147,6 +147,22 @@ export const BLOCK_TYPES = {
       ...(b.items ?? []).map((i) => i.key),
     ],
   },
+
+  models: {
+    label: "Mini-fiches (image + texte + tags)",
+    fields: [
+      text("titleKey", "Préfixe de clé (vide = pas de titre)"),
+      num("cols", "Colonnes", 3),
+    ],
+    // Chaque fiche : clé i18n (.title / .text), image, tags et lien optionnel
+    // vers la page d'un autre projet.
+    items: { icon: true, asset: true, tags: true, link: true },
+    keys: (b) => [
+      ...(b.titleKey ? [`${b.titleKey}.title`] : []),
+      ...(b.titleKey && (b.items ?? []).some((i) => i.link) ? [`${b.titleKey}.linkLabel`] : []),
+      ...(b.items ?? []).flatMap(itemKeys),
+    ],
+  },
 };
 
 /** Toutes les clés i18n (relatives au projet) référencées par un bloc. */
@@ -172,6 +188,9 @@ export function projectAssets(project) {
     ...(project.blocks ?? [])
       .filter((b) => b.type === "image" || b.type === "figure")
       .map((b) => b.src),
+    ...(project.blocks ?? [])
+      .filter((b) => b.type === "models")
+      .flatMap((b) => (b.items ?? []).map((i) => i.src)),
   ].filter(Boolean);
 }
 

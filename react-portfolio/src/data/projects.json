@@ -538,6 +538,485 @@
     "venture": true
   },
   {
+    "id": "sable",
+    "date": "2026-09",
+    "image": "sable_terrain.svg",
+    "tags": [
+      "Arduino",
+      "433 MHz",
+      "3D Print"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "sable_terrain.svg"
+      },
+      {
+        "type": "cards",
+        "variant": "compact",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🎯",
+            "key": "objective"
+          },
+          {
+            "icon": "📅",
+            "key": "timeline"
+          },
+          {
+            "icon": "💼",
+            "key": "type"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "titleKey": "context",
+        "paragraphs": 2
+      },
+      {
+        "type": "cards",
+        "titleKey": "goals",
+        "cols": 2,
+        "items": [
+          {
+            "icon": "📡",
+            "key": "goals.remote"
+          },
+          {
+            "icon": "⏯️",
+            "key": "goals.dosing"
+          },
+          {
+            "icon": "🫙",
+            "key": "goals.capacity"
+          },
+          {
+            "icon": "🔌",
+            "key": "goals.power"
+          }
+        ]
+      },
+      {
+        "type": "figure",
+        "titleKey": "piece",
+        "src": "sable_piece.svg",
+        "caption": true
+      },
+      {
+        "type": "steps",
+        "titleKey": "approach",
+        "count": 6
+      },
+      {
+        "type": "figure",
+        "titleKey": "prototype",
+        "src": "sable_prototype.svg",
+        "caption": true,
+        "width": "half"
+      },
+      {
+        "type": "figure",
+        "titleKey": "pcb",
+        "src": "sable_pcb.svg",
+        "caption": true,
+        "width": "half"
+      },
+      {
+        "type": "stack",
+        "titleKey": "technical",
+        "columns": [
+          {
+            "labelKey": "technical.hardware",
+            "items": [
+              {
+                "key": "technical.arduino"
+              },
+              {
+                "key": "technical.receiver"
+              },
+              {
+                "key": "technical.servo"
+              },
+              {
+                "key": "technical.pcb"
+              },
+              {
+                "key": "technical.power"
+              }
+            ]
+          },
+          {
+            "labelKey": "technical.software",
+            "items": [
+              {
+                "key": "technical.programming"
+              },
+              {
+                "key": "technical.filter"
+              },
+              {
+                "key": "technical.toggle"
+              },
+              {
+                "key": "technical.cad"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "challenges",
+        "titleKey": "challenges",
+        "solutionLabelKey": "challenges.solutionLabel",
+        "items": [
+          "challenges.radio",
+          "challenges.tank"
+        ]
+      },
+      {
+        "type": "figure",
+        "titleKey": "field",
+        "src": "sable_spectacle.svg",
+        "caption": true
+      },
+      {
+        "type": "highlight",
+        "accent": "red",
+        "titleKey": "constraints",
+        "paragraphKeys": [
+          "constraints.intro"
+        ],
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "key": "constraints.reliability"
+          },
+          {
+            "key": "constraints.timing"
+          },
+          {
+            "key": "constraints.simplicity"
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "neutral",
+        "titleKey": "skills",
+        "paragraphs": 2,
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "icon": "📡",
+            "key": "skills.badge1"
+          },
+          {
+            "icon": "🖨️",
+            "key": "skills.badge2"
+          },
+          {
+            "icon": "🎭",
+            "key": "skills.badge3"
+          }
+        ]
+      }
+    ],
+    "venture": true
+  },
+  {
+    "id": "lanterne",
+    "date": "2026-09",
+    "image": "lanterne_hero.svg",
+    "tags": [
+      "Arduino",
+      "DFPlayer",
+      "433 MHz"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "lanterne_hero.svg"
+      },
+      {
+        "type": "cards",
+        "variant": "compact",
+        "cols": 3,
+        "items": [
+          {
+            "icon": "🎯",
+            "key": "objective"
+          },
+          {
+            "icon": "📅",
+            "key": "timeline"
+          },
+          {
+            "icon": "💼",
+            "key": "type"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "titleKey": "context",
+        "paragraphs": 2
+      },
+      {
+        "type": "steps",
+        "titleKey": "sequence",
+        "count": 3
+      },
+      {
+        "type": "figure",
+        "titleKey": "piece",
+        "src": "lanterne_piece.svg",
+        "caption": true
+      },
+      {
+        "type": "cards",
+        "titleKey": "goals",
+        "cols": 2,
+        "items": [
+          {
+            "icon": "🪰",
+            "key": "goals.fly"
+          },
+          {
+            "icon": "🔊",
+            "key": "goals.sound"
+          },
+          {
+            "icon": "🔥",
+            "key": "goals.pyro"
+          },
+          {
+            "icon": "📡",
+            "key": "goals.remote"
+          }
+        ]
+      },
+      {
+        "type": "steps",
+        "titleKey": "approach",
+        "count": 5
+      },
+      {
+        "type": "figure",
+        "titleKey": "prototype",
+        "src": "lanterne_prototype.svg",
+        "caption": true,
+        "width": "half"
+      },
+      {
+        "type": "stack",
+        "titleKey": "technical",
+        "columns": [
+          {
+            "labelKey": "technical.hardware",
+            "items": [
+              {
+                "key": "technical.arduino"
+              },
+              {
+                "key": "technical.dfplayer"
+              },
+              {
+                "key": "technical.motor"
+              },
+              {
+                "key": "technical.led"
+              },
+              {
+                "key": "technical.pyro"
+              },
+              {
+                "key": "technical.receiver"
+              },
+              {
+                "key": "technical.power"
+              }
+            ]
+          },
+          {
+            "labelKey": "technical.software",
+            "items": [
+              {
+                "key": "technical.programming"
+              },
+              {
+                "key": "technical.states"
+              },
+              {
+                "key": "technical.random"
+              },
+              {
+                "key": "technical.debounce"
+              },
+              {
+                "key": "technical.structure"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "challenges",
+        "titleKey": "challenges",
+        "solutionLabelKey": "challenges.solutionLabel",
+        "items": [
+          "challenges.fly",
+          "challenges.order"
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "red",
+        "titleKey": "constraints",
+        "paragraphKeys": [
+          "constraints.intro"
+        ],
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "key": "constraints.integration"
+          },
+          {
+            "key": "constraints.battery"
+          },
+          {
+            "key": "constraints.reliability"
+          }
+        ]
+      },
+      {
+        "type": "highlight",
+        "accent": "yellow",
+        "titleKey": "status",
+        "icon": "⚗️",
+        "badgeKey": "status.badge",
+        "paragraphKeys": [
+          "status.text"
+        ]
+      },
+      {
+        "type": "figure",
+        "titleKey": "schema",
+        "src": "lanterne_schema.svg",
+        "caption": true
+      },
+      {
+        "type": "highlight",
+        "accent": "neutral",
+        "titleKey": "skills",
+        "paragraphs": 2,
+        "cols": 3,
+        "centered": true,
+        "items": [
+          {
+            "icon": "🎛️",
+            "key": "skills.badge1"
+          },
+          {
+            "icon": "🔊",
+            "key": "skills.badge2"
+          },
+          {
+            "icon": "🎩",
+            "key": "skills.badge3"
+          }
+        ]
+      }
+    ],
+    "venture": true
+  },
+  {
+    "id": "modelisation",
+    "date": "2026-11",
+    "image": "modelisation_cover.svg",
+    "tags": [
+      "Fusion 360",
+      "3D Print",
+      "CAD"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "modelisation_cover.svg"
+      },
+      {
+        "type": "text",
+        "titleKey": "approach",
+        "paragraphs": 2
+      },
+      {
+        "type": "models",
+        "titleKey": "models",
+        "cols": 3,
+        "items": [
+          {
+            "key": "models.sable",
+            "icon": "⏳",
+            "src": "sable_piece.svg",
+            "tags": [
+              "Fusion 360",
+              "Impression 3D",
+              "Mécanisme"
+            ],
+            "link": "sable"
+          },
+          {
+            "key": "models.lanterne",
+            "icon": "🏮",
+            "src": "lanterne_piece.svg",
+            "tags": [
+              "Fusion 360",
+              "Impression 3D",
+              "Intégration"
+            ],
+            "link": "lanterne"
+          },
+          {
+            "key": "models.decors",
+            "icon": "🏗️",
+            "src": "decors2.jpg",
+            "tags": [
+              "CAO",
+              "Impression 3D",
+              "Spectacle"
+            ],
+            "link": "decors"
+          },
+          {
+            "key": "models.argentique",
+            "icon": "📷",
+            "src": "argentique.jpg",
+            "tags": [
+              "Fusion 360",
+              "PLA",
+              "Boîtier"
+            ],
+            "link": "argentique"
+          },
+          {
+            "key": "models.crabe",
+            "icon": "🦀",
+            "src": "crabe.png",
+            "tags": [
+              "Impression 3D",
+              "Robotique"
+            ],
+            "link": "crabe"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "argentique",
     "date": null,
     "image": "argentique.jpg",
